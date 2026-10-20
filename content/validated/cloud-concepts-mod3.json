@@ -1,0 +1,194 @@
+[
+  {
+    "topic_id": "cloud-concepts-mod3",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-cloud-service-types/2-describe-infrastructure-service",
+    "difficulty": 1,
+    "question": "A Kenyan logistics company lifts its legacy route-planning application onto Azure Virtual Machines so it can keep its existing operating system and third-party software intact. After the move, who is responsible for applying security patches to the guest operating system on those VMs?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The logistics company, because with IaaS the customer manages the guest OS and its updates.",
+        "is_correct": true,
+        "rationale": "IaaS shifts physical infrastructure management to the provider but leaves the customer responsible for the guest OS, including patching, configuration, and installed software. Azure manages the physical host; the customer owns the VM workload above it.",
+        "explanation": "Spot on! Option A is correct: IaaS shifts physical infrastructure management to the provider but leaves the customer responsible for the guest OS, including patching, configuration, and installed software. Think of this like leasing an empty commercial stall on Biashara Street\u2014the building landlord handles the roof and foundation, but you are responsible for installing shelves, locks, and sweeping the floor. Exact Azure term to remember: Infrastructure as a Service (IaaS).",
+        "explanation_word_count": 70
+      },
+      {
+        "id": "B",
+        "text": "Microsoft, because the VMs run on Azure hardware that Microsoft already maintains.",
+        "is_correct": false,
+        "rationale": "Microsoft maintaining the physical host hardware does not extend to the guest operating system. The shared responsibility model is explicit: with IaaS, the customer retains OS-level responsibility. Physical hosting and guest OS management are separate layers.",
+        "explanation": "Not quite: Option B is incorrect because Microsoft maintaining the physical host hardware does not extend to the guest operating system. Think of this like leasing an empty commercial stall on Biashara Street\u2014the building landlord handles the roof and foundation, but you are responsible for installing shelves, locks, and sweeping the floor. Exact Azure term to remember: Infrastructure as a Service (IaaS).",
+        "explanation_word_count": 62
+      },
+      {
+        "id": "C",
+        "text": "Both equally, because the shared responsibility model splits OS patching 50/50.",
+        "is_correct": false,
+        "rationale": "The shared responsibility model does not split OS patching 50/50 for IaaS. Guest OS maintenance is the customer's responsibility; the provider's responsibility is the physical infrastructure below it. The split is not equal for this layer.",
+        "explanation": "Not quite: Option C is incorrect because the shared responsibility model does not split OS patching 50/50 for IaaS. Think of this like leasing an empty commercial stall on Biashara Street\u2014the building landlord handles the roof and foundation, but you are responsible for installing shelves, locks, and sweeping the floor. Exact Azure term to remember: Infrastructure as a Service (IaaS).",
+        "explanation_word_count": 60
+      },
+      {
+        "id": "D",
+        "text": "Neither party, because virtual machines automatically apply their own patches through Azure Update Manager.",
+        "is_correct": false,
+        "rationale": "Azure Update Manager is a tool the customer can configure to help manage patches, but its use is the customer's operational choice. Patching does not happen automatically without the customer setting it up; responsibility remains with the customer.",
+        "explanation": "Not quite: Option D is incorrect because Azure Update Manager is a tool the customer can configure to help manage patches, but its use is the customer's operational choice. Think of this like leasing an empty commercial stall on Biashara Street\u2014the building landlord handles the roof and foundation, but you are responsible for installing shelves, locks, and sweeping the floor. Exact Azure term to remember: Infrastructure as a Service (IaaS).",
+        "explanation_word_count": 70
+      }
+    ],
+    "summary": "With IaaS, Microsoft manages physical infrastructure; the customer manages the guest OS, including patching and configuration.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Infrastructure as a Service (IaaS)",
+      "analogy": "Think of this like leasing an empty commercial stall on Biashara Street\u2014the building landlord handles the roof and foundation, but you are responsible for installing shelves, locks, and sweeping the floor.",
+      "key_takeaway": "In IaaS, Microsoft manages the physical server hardware, but the customer is responsible for guest operating system patching and configuration."
+    }
+  },
+  {
+    "topic_id": "cloud-concepts-mod3",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-cloud-service-types/3-describe-platform-service",
+    "difficulty": 2,
+    "question": "A backend team at a Nairobi fintech deploys its FastAPI payment service to Azure App Service (a PaaS offering). Which of the following does the team still own after deploying to this managed platform?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Patching the server operating system that hosts the App Service runtime.",
+        "is_correct": false,
+        "rationale": "With PaaS, the provider manages the underlying OS and runtime platform. OS patching is one of the responsibilities that shifts to Microsoft when using Azure App Service.",
+        "explanation": "Not quite: Option A is incorrect because with PaaS, the provider manages the underlying OS and runtime platform. Think of this like renting a commercial cooking station in a food court\u2014the management provides the gas supply, stoves, and water, but you bring your own recipes, food ingredients, and secret spices. Exact Azure term to remember: Platform as a Service (PaaS).",
+        "explanation_word_count": 60
+      },
+      {
+        "id": "B",
+        "text": "Replacing physical hardware in the datacenter if an App Service host fails.",
+        "is_correct": false,
+        "rationale": "Physical hardware management is always the cloud provider's responsibility across all service models. The team has no access to or role in physical datacenter operations.",
+        "explanation": "Not quite: Option B is incorrect because physical hardware management is always the cloud provider's responsibility across all service models. Think of this like renting a commercial cooking station in a food court\u2014the management provides the gas supply, stoves, and water, but you bring your own recipes, food ingredients, and secret spices. Exact Azure term to remember: Platform as a Service (PaaS).",
+        "explanation_word_count": 62
+      },
+      {
+        "id": "C",
+        "text": "The application code, API authorization logic, database credentials, and the data it processes.",
+        "is_correct": true,
+        "rationale": "PaaS reduces platform and OS maintenance, but the team remains fully responsible for application behavior, secrets, authorization correctness, SQL migrations, and data protection. Moving to a managed platform does not transfer code or data responsibility to the provider.",
+        "explanation": "Spot on! Option C is correct: PaaS reduces platform and OS maintenance, but the team remains fully responsible for application behavior, secrets, authorization correctness, SQL migrations, and data protection. Think of this like renting a commercial cooking station in a food court\u2014the management provides the gas supply, stoves, and water, but you bring your own recipes, food ingredients, and secret spices. Exact Azure term to remember: Platform as a Service (PaaS).",
+        "explanation_word_count": 71
+      },
+      {
+        "id": "D",
+        "text": "Nothing\u2014Azure App Service is fully managed, so Microsoft takes responsibility for all aspects of the deployed service.",
+        "is_correct": false,
+        "rationale": "PaaS does not make the deployment fully managed from end to end. The customer retains responsibility for application code, data, identities, configuration, and secure operation. 'Fully managed' applies only to the platform layer, not to the customer's application and data.",
+        "explanation": "Not quite: Option D is incorrect because PaaS does not make the deployment fully managed from end to end. Think of this like renting a commercial cooking station in a food court\u2014the management provides the gas supply, stoves, and water, but you bring your own recipes, food ingredients, and secret spices. Exact Azure term to remember: Platform as a Service (PaaS).",
+        "explanation_word_count": 61
+      }
+    ],
+    "summary": "PaaS manages the OS and runtime platform; the customer still owns application code, data, authorization logic, and secrets.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Platform as a Service (PaaS)",
+      "analogy": "Think of this like renting a commercial cooking station in a food court\u2014the management provides the gas supply, stoves, and water, but you bring your own recipes, food ingredients, and secret spices.",
+      "key_takeaway": "In PaaS, Microsoft manages the OS, runtime, and hardware, while the customer owns application code, business logic, and data."
+    }
+  },
+  {
+    "topic_id": "cloud-concepts-mod3",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-cloud-service-types/4-describe-software-service",
+    "difficulty": 1,
+    "question": "A Kisumu SACCO adopts Microsoft 365 for staff email and document collaboration. After switching to this SaaS product, what responsibility does the SACCO IT team retain?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Updating the email application software when new versions are released.",
+        "is_correct": false,
+        "rationale": "Application updates are handled by the SaaS provider. Keeping the software current is one of the core responsibilities that shifts to the provider in a SaaS model.",
+        "explanation": "Not quite: Option A is incorrect because Application updates are handled by the SaaS provider. Think of this like ordering lunch delivered from a restaurant\u2014you don't manage the kitchen, pots, or chefs, but you decide who sits at your table and who is allowed to eat. Exact Azure term to remember: Software as a Service (SaaS).",
+        "explanation_word_count": 56
+      },
+      {
+        "id": "B",
+        "text": "Managing staff user accounts, access permissions, and the organization's data-sharing policies.",
+        "is_correct": true,
+        "rationale": "SaaS removes most infrastructure and application management from the customer, but the customer always retains responsibility for user accounts, access rights, and data governance. The SACCO must control who can access which data and ensure appropriate sharing policies are configured.",
+        "explanation": "Spot on! Option B is correct: SaaS removes most infrastructure and application management from the customer, but the customer always retains responsibility for user accounts, access rights, and data governance. Think of this like ordering lunch delivered from a restaurant\u2014you don't manage the kitchen, pots, or chefs, but you decide who sits at your table and who is allowed to eat. Exact Azure term to remember: Software as a Service (SaaS).",
+        "explanation_word_count": 71
+      },
+      {
+        "id": "C",
+        "text": "Maintaining the physical servers that host the Microsoft 365 service.",
+        "is_correct": false,
+        "rationale": "Physical infrastructure is always the provider's responsibility. In a SaaS model, the customer has no role in server maintenance\u2014this is entirely managed by the provider.",
+        "explanation": "Not quite: Option C is incorrect because physical infrastructure is always the provider's responsibility. Think of this like ordering lunch delivered from a restaurant\u2014you don't manage the kitchen, pots, or chefs, but you decide who sits at your table and who is allowed to eat. Exact Azure term to remember: Software as a Service (SaaS).",
+        "explanation_word_count": 55
+      },
+      {
+        "id": "D",
+        "text": "Nothing\u2014SaaS means Microsoft takes full responsibility for all security and data governance.",
+        "is_correct": false,
+        "rationale": "SaaS reduces operational overhead but does not eliminate the customer's data and identity responsibilities. The customer must still manage user accounts, configure access policies, and ensure data is handled appropriately. The provider cannot govern the customer's own users or data on the customer's behalf.",
+        "explanation": "Not quite: Option D is incorrect because SaaS reduces operational overhead but does not eliminate the customer's data and identity responsibilities. Think of this like ordering lunch delivered from a restaurant\u2014you don't manage the kitchen, pots, or chefs, but you decide who sits at your table and who is allowed to eat. Exact Azure term to remember: Software as a Service (SaaS).",
+        "explanation_word_count": 62
+      }
+    ],
+    "summary": "SaaS eliminates infrastructure and application maintenance, but user accounts, access permissions, and data governance remain the customer's responsibility.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Software as a Service (SaaS)",
+      "analogy": "Think of this like ordering lunch delivered from a restaurant\u2014you don't manage the kitchen, pots, or chefs, but you decide who sits at your table and who is allowed to eat.",
+      "key_takeaway": "In SaaS, the provider manages the entire application and infrastructure, but the customer retains responsibility for user accounts, access permissions, and data sharing."
+    }
+  },
+  {
+    "topic_id": "cloud-concepts-mod3",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-cloud-service-types/2-describe-infrastructure-service",
+    "difficulty": 3,
+    "question": "A Kenyan university IT committee is selecting an Azure service model for three separate needs: (1) migrating a legacy student-records system that requires a specific Windows Server configuration, (2) deploying a new Python web portal where developers want to avoid OS maintenance, and (3) providing staff with a ready-made collaboration suite. Which service-model sequence (in order) best fits these three needs?",
+    "options": [
+      {
+        "id": "A",
+        "text": "PaaS, IaaS, SaaS \u2014 because PaaS gives the most control for legacy systems.",
+        "is_correct": false,
+        "rationale": "PaaS abstracts the OS away, which conflicts with need (1) that requires a specific Windows Server configuration. IaaS gives OS-level control and is more appropriate for a legacy lift-and-shift requiring custom OS settings.",
+        "explanation": "Not quite: Option A is incorrect because PaaS abstracts the OS away, which conflicts with need (1) that requires a specific Windows Server configuration. Think of the trade-off: IaaS is buying flour and baking bread at home (full control); PaaS is using a bakery's commercial oven to bake your dough (shared platform); SaaS is buying a sliced loaf off the supermarket shelf (consume ready-made). Exact Azure term to remember: Cloud Service Models (IaaS / PaaS / SaaS).",
+        "explanation_word_count": 77
+      },
+      {
+        "id": "B",
+        "text": "SaaS, PaaS, IaaS \u2014 because SaaS is the most powerful model for custom legacy workloads.",
+        "is_correct": false,
+        "rationale": "SaaS delivers a complete, provider-operated application with the least customer control\u2014it is the opposite of what a legacy workload needing a custom OS configuration requires. SaaS is for consuming finished applications, not for hosting custom workloads.",
+        "explanation": "Not quite: Option B is incorrect because SaaS delivers a complete, provider-operated application with the least customer control\u2014it is the opposite of what a legacy workload needing a custom OS configuration requires. Think of the trade-off: IaaS is buying flour and baking bread at home (full control); PaaS is using a bakery's commercial oven to bake your dough (shared platform); SaaS is buying a sliced loaf off the supermarket shelf (consume ready-made). Exact Azure term to remember: Cloud Service Models (IaaS / PaaS / SaaS).",
+        "explanation_word_count": 85
+      },
+      {
+        "id": "C",
+        "text": "IaaS, PaaS, SaaS \u2014 because IaaS gives OS control for the legacy system, PaaS removes OS maintenance for the new portal, and SaaS provides the ready-made collaboration suite.",
+        "is_correct": true,
+        "rationale": "Need (1) requires OS-level control \u2192 IaaS (e.g., Azure VM). Need (2) wants no OS maintenance for a custom application \u2192 PaaS (e.g., Azure App Service). Need (3) is a complete ready-made application \u2192 SaaS (e.g., Microsoft 365). Each model matches the control and management trade-off described.",
+        "explanation": "Spot on! Option C is correct: Need (1) requires OS-level control \u2192 IaaS (e.g., Azure VM). Think of the trade-off: IaaS is buying flour and baking bread at home (full control); PaaS is using a bakery's commercial oven to bake your dough (shared platform); SaaS is buying a sliced loaf off the supermarket shelf (consume ready-made). Exact Azure term to remember: Cloud Service Models (IaaS / PaaS / SaaS).",
+        "explanation_word_count": 69
+      },
+      {
+        "id": "D",
+        "text": "IaaS, SaaS, PaaS \u2014 because SaaS is better than PaaS for custom Python development.",
+        "is_correct": false,
+        "rationale": "SaaS delivers a complete provider-run application; it is not suitable for deploying custom Python code. PaaS (e.g., Azure App Service) is the appropriate model when developers want to run their own application code on a managed platform without managing the OS.",
+        "explanation": "Not quite: Option D is incorrect because SaaS delivers a complete provider-run application; it is not suitable for deploying custom Python code. Think of the trade-off: IaaS is buying flour and baking bread at home (full control); PaaS is using a bakery's commercial oven to bake your dough (shared platform); SaaS is buying a sliced loaf off the supermarket shelf (consume ready-made). Exact Azure term to remember: Cloud Service Models (IaaS / PaaS / SaaS).",
+        "explanation_word_count": 75
+      }
+    ],
+    "summary": "Match the service model to the control need: IaaS for OS-level control, PaaS for custom code without OS management, SaaS for a complete ready-made application.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Cloud Service Models (IaaS / PaaS / SaaS)",
+      "analogy": "Think of the trade-off: IaaS is buying flour and baking bread at home (full control); PaaS is using a bakery's commercial oven to bake your dough (shared platform); SaaS is buying a sliced loaf off the supermarket shelf (consume ready-made).",
+      "key_takeaway": "Choose IaaS for OS-level control, PaaS for custom code without OS management, and SaaS for ready-to-use software applications."
+    }
+  }
+]

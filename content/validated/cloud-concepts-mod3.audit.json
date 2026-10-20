@@ -1,0 +1,30 @@
+[
+  {
+    "index": 0,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "",
+    "verify_on_microsoft_learn": ""
+  },
+  {
+    "index": 1,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "",
+    "verify_on_microsoft_learn": ""
+  },
+  {
+    "index": 2,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "",
+    "verify_on_microsoft_learn": ""
+  },
+  {
+    "index": 3,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "",
+    "verify_on_microsoft_learn": ""
+  }
+]

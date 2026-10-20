@@ -1,0 +1,39 @@
+[
+  {
+    "index": 0,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "",
+    "verify_on_microsoft_learn": ""
+  },
+  {
+    "index": 1,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "",
+    "verify_on_microsoft_learn": ""
+  },
+  {
+    "index": 2,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "",
+    "verify_on_microsoft_learn": ""
+  },
+  {
+    "index": 3,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "",
+    "verify_on_microsoft_learn": ""
+  },
+  {
+    "index": 4,
+    "verdict": "PASS",
+    "issues": [
+      "Polished: Distractors B ('VM, VM, VM') and D ('App Service, App Service, App Service') were simplistic non-permutations. Replaced with plausible service permutations."
+    ],
+    "suggested_fix": "Applied: Replaced repetitive options with realistic alternative sequences.",
+    "verify_on_microsoft_learn": "https://learn.microsoft.com/en-us/training/modules/describe-azure-compute-networking-services/7-describe-application-hosting-options"
+  }
+]

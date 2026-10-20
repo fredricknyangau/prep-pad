@@ -1,0 +1,247 @@
+[
+  {
+    "topic_id": "mgmt-mod2",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-features-tools-azure-for-governance-compliance/4-describe-purpose-resource-locks",
+    "difficulty": 1,
+    "question": "A Nairobi fintech company hosts its production transactional database on an Azure Database for PostgreSQL flexible server. The lead database administrator wants to ensure that developers and automated CI/CD pipelines can continue updating database configurations and writing data, but nobody\u2014including users with Subscription Owner permissions\u2014can accidentally delete the database resource during infrastructure cleanup. Which type of resource lock should the administrator apply to the database?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A ReadOnly lock, which prevents unauthorized modifications while permitting read traffic.",
+        "is_correct": false,
+        "rationale": "A ReadOnly lock prevents both modification and deletion of the resource. Because the scenario requires developers and automated pipelines to continue updating configurations, a ReadOnly lock is too restrictive.",
+        "explanation": "Not quite: Option A is incorrect because a ReadOnly lock prevents both modification and deletion of the resource. Think of this like placing a protective locked cover over the fire alarm or emergency power switch\u2014technicians can still inspect and clean the panel, but nobody can accidentally yank the switch. Exact Azure term to remember: Delete Resource Lock.",
+        "explanation_word_count": 57
+      },
+      {
+        "id": "B",
+        "text": "An Immutable lock, which converts the database storage volume into write-once read-many compliance storage.",
+        "is_correct": false,
+        "rationale": "Immutability policies apply to Azure Blob Storage containers for WORM compliance, not standard Azure resource management locks.",
+        "explanation": "Not quite: Option B is incorrect because immutability policies apply to Azure Blob Storage containers for WORM compliance, not standard Azure resource management locks. Think of this like placing a protective locked cover over the fire alarm or emergency power switch\u2014technicians can still inspect and clean the panel, but nobody can accidentally yank the switch. Exact Azure term to remember: Delete Resource Lock.",
+        "explanation_word_count": 63
+      },
+      {
+        "id": "C",
+        "text": "A DenyAssignment lock, which revokes resource deletion rights from all non-administrative identity principals.",
+        "is_correct": false,
+        "rationale": "DenyAssignment is an Azure RBAC mechanism used by Azure Blueprints or managed applications to prevent role holders from performing specific actions, not a standard configurable resource lock.",
+        "explanation": "Not quite: Option C is incorrect because DenyAssignment is an Azure RBAC mechanism used by Azure Blueprints or managed applications to prevent role holders from performing specific actions, not a standard configurable resource lock. Think of this like placing a protective locked cover over the fire alarm or emergency power switch\u2014technicians can still inspect and clean the panel, but nobody can accidentally yank the switch. Exact Azure term to remember: Delete Resource Lock.",
+        "explanation_word_count": 73
+      },
+      {
+        "id": "D",
+        "text": "A Delete lock, which allows authorized users to read and modify the resource but blocks deletion until the lock is removed.",
+        "is_correct": true,
+        "rationale": "A Delete lock prevents authorized users (even subscription owners) from deleting the resource, while still allowing them to read and modify its configuration. This precisely matches the scenario requirements.",
+        "explanation": "Spot on! Option D is correct: A Delete lock prevents authorized users (even subscription owners) from deleting the resource, while still allowing them to read and modify its configuration. Think of this like placing a protective locked cover over the fire alarm or emergency power switch\u2014technicians can still inspect and clean the panel, but nobody can accidentally yank the switch. Exact Azure term to remember: Delete Resource Lock.",
+        "explanation_word_count": 68
+      }
+    ],
+    "summary": "A Delete resource lock permits reading and modifying a resource while preventing deletion, whereas a ReadOnly lock blocks both modification and deletion.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Delete Resource Lock",
+      "analogy": "Think of this like placing a protective locked cover over the fire alarm or emergency power switch\u2014technicians can still inspect and clean the panel, but nobody can accidentally yank the switch.",
+      "key_takeaway": "A Delete lock allows authorized users to read and modify a resource while preventing anyone (even owners) from deleting it until the lock is removed."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "mgmt-mod2",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-features-tools-azure-for-governance-compliance/3-describe-purpose-azure-policy",
+    "difficulty": 1,
+    "question": "An insurance enterprise based in Nairobi must comply with local data protection regulations requiring customer data to reside exclusively within Africa. The IT security team wants to ensure that any engineer attempting to provision a virtual machine or database in any region other than South Africa North is automatically blocked from completing the deployment. Which Azure service should the team use to enforce this requirement across their Azure subscriptions?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Role-Based Access Control (RBAC), by creating custom roles with regional deployment restrictions.",
+        "is_correct": false,
+        "rationale": "Azure RBAC manages user permissions (who can perform operations on resources); it is not designed to inspect or enforce property conditions like geographic deployment locations on resource creation.",
+        "explanation": "Not quite: Option A is incorrect because Azure RBAC manages user permissions (who can perform operations on resources); it is not designed to inspect or enforce property conditions like geographic deployment locations on resource creation. Think of this like a corporate policy mandating that all company delivery vans must only be refueled at approved partner stations in Nairobi, automatically preventing fueling anywhere else. Exact Azure term to remember: Azure Policy.",
+        "explanation_word_count": 70
+      },
+      {
+        "id": "B",
+        "text": "Microsoft Defender for Cloud, by scanning virtual network firewalls to block outbound cross-border IP packets.",
+        "is_correct": false,
+        "rationale": "Microsoft Defender for Cloud provides security posture management and threat detection; it does not prevent resource deployments based on geographic regions.",
+        "explanation": "Not quite: Option B is incorrect because Microsoft Defender for Cloud provides security posture management and threat detection; it does not prevent resource deployments based on geographic regions. Think of this like a corporate policy mandating that all company delivery vans must only be refueled at approved partner stations in Nairobi, automatically preventing fueling anywhere else. Exact Azure term to remember: Azure Policy.",
+        "explanation_word_count": 63
+      },
+      {
+        "id": "C",
+        "text": "Azure Policy, by assigning a policy definition that specifies allowed deployment locations and denies non-compliant deployments.",
+        "is_correct": true,
+        "rationale": "Azure Policy enforces organizational standards and resource compliance. A built-in policy definition for allowed locations evaluates resource deployment requests and denies the creation of resources in unapproved regions.",
+        "explanation": "Spot on! Option C is correct: Azure Policy enforces organizational standards and resource compliance. Think of this like a corporate policy mandating that all company delivery vans must only be refueled at approved partner stations in Nairobi, automatically preventing fueling anywhere else. Exact Azure term to remember: Azure Policy.",
+        "explanation_word_count": 49
+      },
+      {
+        "id": "D",
+        "text": "Microsoft Entra Conditional Access, by blocking user sign-ins from devices located outside South Africa.",
+        "is_correct": false,
+        "rationale": "Conditional Access evaluates authentication signals (user location, device health) for user sign-in to Microsoft Entra ID; it does not govern where Azure infrastructure resources are provisioned.",
+        "explanation": "Not quite: Option D is incorrect because conditional Access evaluates authentication signals (user location, device health) for user sign-in to Microsoft Entra ID; it does not govern where Azure infrastructure resources are provisioned. Think of this like a corporate policy mandating that all company delivery vans must only be refueled at approved partner stations in Nairobi, automatically preventing fueling anywhere else. Exact Azure term to remember: Azure Policy.",
+        "explanation_word_count": 68
+      }
+    ],
+    "summary": "Azure Policy evaluates resource configurations and properties (such as allowed regions or SKUs), while RBAC governs user identity permissions.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Azure Policy",
+      "analogy": "Think of this like a corporate policy mandating that all company delivery vans must only be refueled at approved partner stations in Nairobi, automatically preventing fueling anywhere else.",
+      "key_takeaway": "Azure Policy evaluates resource properties and configurations to enforce organizational standards, such as restricting deployments to approved geographic regions."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "mgmt-mod2",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-features-tools-azure-for-governance-compliance/2-describe-purpose-microsoft-purview",
+    "difficulty": 2,
+    "question": "A commercial banking group operating in Kenya and Uganda stores customer financial data across on-premises SQL servers, Azure Blob Storage accounts, and an external SaaS CRM. The Chief Risk Officer needs an automated solution to discover data across these diverse repositories, classify sensitive fields (such as National ID numbers and debit card PANs), and trace the end-to-end data lineage showing how information flows between source systems and reporting pipelines. Which service is designed for this task?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Policy, which audits data configurations and enforces data schema compliance across storage accounts.",
+        "is_correct": false,
+        "rationale": "Azure Policy evaluates Azure resource properties and configuration settings (e.g., whether storage encryption is enabled); it does not scan, classify, or map the lineage of data contents stored inside databases.",
+        "explanation": "Not quite: Option A is incorrect because Azure Policy evaluates Azure resource properties and configuration settings (e.g., whether storage encryption is enabled); it does not scan, classify, or map the lineage of data contents stored inside databases. Think of this like an automated compliance officer who walks through every branch warehouse, stamps all boxes containing national ID cards, and draws a map showing which truck delivered them. Exact Azure term to remember: Microsoft Purview.",
+        "explanation_word_count": 74
+      },
+      {
+        "id": "B",
+        "text": "Azure Monitor, which aggregates transaction telemetry and tracks network packet movement between services.",
+        "is_correct": false,
+        "rationale": "Azure Monitor collects and analyzes operational performance metrics and diagnostic logs from applications and infrastructure, not data classification or data lineage.",
+        "explanation": "Not quite: Option B is incorrect because Azure Monitor collects and analyzes operational performance metrics and diagnostic logs from applications and infrastructure, not data classification or data lineage. Think of this like an automated compliance officer who walks through every branch warehouse, stamps all boxes containing national ID cards, and draws a map showing which truck delivered them. Exact Azure term to remember: Microsoft Purview.",
+        "explanation_word_count": 65
+      },
+      {
+        "id": "C",
+        "text": "Microsoft Sentinel, which correlates threat alerts across multicloud environments to detect unauthorized data downloads.",
+        "is_correct": false,
+        "rationale": "Microsoft Sentinel is a SIEM/SOAR platform focused on security event detection, threat investigation, and automated incident response, not data cataloging and governance.",
+        "explanation": "Not quite: Option C is incorrect because Microsoft Sentinel is a SIEM/SOAR platform focused on security event detection, threat investigation, and automated incident response, not data cataloging and governance. Think of this like an automated compliance officer who walks through every branch warehouse, stamps all boxes containing national ID cards, and draws a map showing which truck delivered them. Exact Azure term to remember: Microsoft Purview.",
+        "explanation_word_count": 66
+      },
+      {
+        "id": "D",
+        "text": "Microsoft Purview, which provides automated data discovery, sensitive data classification, and end-to-end data lineage across on-premises, multicloud, and SaaS data estates.",
+        "is_correct": true,
+        "rationale": "Microsoft Purview is a comprehensive data governance solution that discovers, classifies, and catalogs data assets across hybrid and multicloud environments while tracking data lineage from ingestion to consumption.",
+        "explanation": "Spot on! Option D is correct: Microsoft Purview is a comprehensive data governance solution that discovers, classifies, and catalogs data assets across hybrid and multicloud environments while tracking data lineage from ingestion to consumption. Think of this like an automated compliance officer who walks through every branch warehouse, stamps all boxes containing national ID cards, and draws a map showing which truck delivered them. Exact Azure term to remember: Microsoft Purview.",
+        "explanation_word_count": 71
+      }
+    ],
+    "summary": "Microsoft Purview provides data governance, discovery, sensitive data classification, and data lineage mapping across hybrid and multi-cloud estates.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Microsoft Purview",
+      "analogy": "Think of this like an automated compliance officer who walks through every branch warehouse, stamps all boxes containing national ID cards, and draws a map showing which truck delivered them.",
+      "key_takeaway": "Microsoft Purview provides unified data governance by discovering, classifying sensitive data, and mapping end-to-end data lineage across multicloud and on-prem estates."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "mgmt-mod2",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-features-tools-azure-for-governance-compliance/3-describe-purpose-azure-policy",
+    "difficulty": 2,
+    "question": "A security compliance lead at an East African payment platform needs to ensure all development subscriptions adhere to 15 different infrastructure security standards, including mandatory disk encryption, tag inheritance, and restrictions on public IP addresses. Rather than assigning and monitoring compliance for each of the 15 policies individually across every subscription, the lead wants to manage and report on the entire set of rules as a single unified compliance package. What should the lead configure in Azure Policy?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An initiative definition, which groups multiple related policy definitions into a single assignable compliance set.",
+        "is_correct": true,
+        "rationale": "An Azure Policy initiative (also known as a policy set) groups multiple policy definitions together toward a single compliance objective or regulatory standard, allowing administrators to assign and monitor them as a single collective unit.",
+        "explanation": "Spot on! Option A is correct: An Azure Policy initiative (also known as a policy set) groups multiple policy definitions together toward a single compliance objective or regulatory standard, allowing administrators to assign and monitor them as a single collective unit. Think of this like binding 15 individual health, safety, and fire bylaws into a single official restaurant handbook, allowing managers to sign and track compliance with one package. Exact Azure term to remember: Azure Policy Initiative.",
+        "explanation_word_count": 77
+      },
+      {
+        "id": "B",
+        "text": "A ReadOnly resource lock, which binds all 15 security requirements to every child resource group.",
+        "is_correct": false,
+        "rationale": "A ReadOnly resource lock prevents modification or deletion of resources; it cannot bundle or evaluate security policy definitions.",
+        "explanation": "Not quite: Option B is incorrect because a ReadOnly resource lock prevents modification or deletion of resources; it cannot bundle or evaluate security policy definitions. Think of this like binding 15 individual health, safety, and fire bylaws into a single official restaurant handbook, allowing managers to sign and track compliance with one package. Exact Azure term to remember: Azure Policy Initiative.",
+        "explanation_word_count": 61
+      },
+      {
+        "id": "C",
+        "text": "An Azure Management Group, which automatically merges multiple policy definitions into a single JSON schema.",
+        "is_correct": false,
+        "rationale": "Management groups organize subscriptions hierarchically for centralized governance and access management; they are scopes where policies or initiatives can be assigned, not the groupings of policy definitions themselves.",
+        "explanation": "Not quite: Option C is incorrect because management groups organize subscriptions hierarchically for centralized governance and access management; they are scopes where policies or initiatives can be assigned, not the groupings of policy definitions themselves. Think of this like binding 15 individual health, safety, and fire bylaws into a single official restaurant handbook, allowing managers to sign and track compliance with one package. Exact Azure term to remember: Azure Policy Initiative.",
+        "explanation_word_count": 71
+      },
+      {
+        "id": "D",
+        "text": "A Microsoft Entra security group, which automatically distributes policy definitions across administrative user accounts.",
+        "is_correct": false,
+        "rationale": "Entra security groups manage identity principals and permissions, not Azure infrastructure configuration policy definitions.",
+        "explanation": "Not quite: Option D is incorrect because Entra security groups manage identity principals and permissions, not Azure infrastructure configuration policy definitions. Think of this like binding 15 individual health, safety, and fire bylaws into a single official restaurant handbook, allowing managers to sign and track compliance with one package. Exact Azure term to remember: Azure Policy Initiative.",
+        "explanation_word_count": 57
+      }
+    ],
+    "summary": "An Azure Policy initiative groups multiple related policy definitions together to simplify assignment and provide aggregate compliance reporting.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Azure Policy Initiative",
+      "analogy": "Think of this like binding 15 individual health, safety, and fire bylaws into a single official restaurant handbook, allowing managers to sign and track compliance with one package.",
+      "key_takeaway": "An initiative definition (policy set) groups multiple related policy definitions together to simplify assignment and provide aggregate compliance reporting."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "mgmt-mod2",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-features-tools-azure-for-governance-compliance/6-describe-purpose-service-trust-portal",
+    "difficulty": 3,
+    "question": "An external financial regulator is conducting an operational risk audit on a Kenyan agritech SaaS platform before authorizing its digital lending license. The regulator requires independent third-party audit reports and compliance certificates verifying that Microsoft Azure's underlying physical datacenters and hypervisor infrastructure comply with ISO/IEC 27001, SOC 1, and SOC 2 Type II standards. Where should the SaaS company's compliance team go to download Microsoft's official independent audit reports?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Microsoft Cost Management, under the billing compliance and external accounting exports section.",
+        "is_correct": false,
+        "rationale": "Cost Management tracks, analyzes, and budgets cloud expenditures; it does not provide datacenter security or regulatory audit documentation.",
+        "explanation": "Not quite: Option A is incorrect because Cost Management tracks, analyzes, and budgets cloud expenditures; it does not provide datacenter security or regulatory audit documentation. Think of this like a public archive holding certified Bureau of Standards (KEBS) test reports and ISO audit documents proving a manufacturer's factory meets international safety criteria. Exact Azure term to remember: Microsoft Service Trust Portal.",
+        "explanation_word_count": 61
+      },
+      {
+        "id": "B",
+        "text": "Microsoft Service Trust Portal, which provides direct access to Microsoft's independent audit reports, compliance certificates, and security assessments.",
+        "is_correct": true,
+        "rationale": "The Microsoft Service Trust Portal is the official repository where customers and auditors can review and download Microsoft's independent third-party audit reports (SOC, ISO), penetration test summaries, and regulatory compliance documentation.",
+        "explanation": "Spot on! Option B is correct: The Microsoft Service Trust Portal is the official repository where customers and auditors can review and download Microsoft's independent third-party audit reports (SOC, ISO), penetration test summaries, and regulatory compliance documentation. Think of this like a public archive holding certified Bureau of Standards (KEBS) test reports and ISO audit documents proving a manufacturer's factory meets international safety criteria. Exact Azure term to remember: Microsoft Service Trust Portal.",
+        "explanation_word_count": 73
+      },
+      {
+        "id": "C",
+        "text": "Azure Service Health, under the planned maintenance and datacenter security advisory tab.",
+        "is_correct": false,
+        "rationale": "Azure Service Health provides notifications regarding service outages, planned maintenance, and resource health events, not third-party compliance audit certificates.",
+        "explanation": "Not quite: Option C is incorrect because Azure Service Health provides notifications regarding service outages, planned maintenance, and resource health events, not third-party compliance audit certificates. Think of this like a public archive holding certified Bureau of Standards (KEBS) test reports and ISO audit documents proving a manufacturer's factory meets international safety criteria. Exact Azure term to remember: Microsoft Service Trust Portal.",
+        "explanation_word_count": 62
+      },
+      {
+        "id": "D",
+        "text": "Azure Advisor, by generating a downloadable security score recommendation report from the Azure portal.",
+        "is_correct": false,
+        "rationale": "Azure Advisor provides optimization recommendations for the customer's own deployed Azure resources; it does not host Microsoft's corporate datacenter audit certificates or ISO reports.",
+        "explanation": "Not quite: Option D is incorrect because Azure Advisor provides optimization recommendations for the customer's own deployed Azure resources; it does not host Microsoft's corporate datacenter audit certificates or ISO reports. Think of this like a public archive holding certified Bureau of Standards (KEBS) test reports and ISO audit documents proving a manufacturer's factory meets international safety criteria. Exact Azure term to remember: Microsoft Service Trust Portal.",
+        "explanation_word_count": 67
+      }
+    ],
+    "summary": "The Microsoft Service Trust Portal provides access to Microsoft's official third-party audit reports, certifications, and compliance documentation.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Microsoft Service Trust Portal",
+      "analogy": "Think of this like a public archive holding certified Bureau of Standards (KEBS) test reports and ISO audit documents proving a manufacturer's factory meets international safety criteria.",
+      "key_takeaway": "The Service Trust Portal is Microsoft's central repository for independent third-party audit reports (SOC, ISO) and regulatory compliance documentation."
+    },
+    "reviewed_by_human": true
+  }
+]

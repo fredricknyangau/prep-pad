@@ -1,0 +1,242 @@
+[
+  {
+    "topic_id": "mgmt-mod1",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-cost-management-azure/2-describe-factors-affect-costs-azure",
+    "difficulty": 1,
+    "question": "A logistics company in Mombasa runs an API backend on Azure Virtual Machines that receives vehicle GPS telemetry from tracking devices across East Africa and generates daily downloadable PDF shipment reports for transport managers. The engineering team notices a recurring monthly charge for network data transfer on their invoice. Which traffic flow is primarily responsible for this Azure data transfer charge?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Inbound telemetry data sent from on-premises vehicle trackers into the Azure Virtual Machines.",
+        "is_correct": false,
+        "rationale": "Inbound data transfer (ingress) into Azure datacenters from the internet or on-premises networks is generally free of charge in Microsoft Azure's standard billing model.",
+        "explanation": "Not quite: Option A is incorrect because inbound data transfer (ingress) into Azure datacenters from the internet or on-premises networks is generally free of charge in Microsoft Azure's standard billing model. Think of this like visiting a wholesale market where entering with your truck is free, but driving out with heavy commercial cargo attracts a tollgate exit charge. Exact Azure term to remember: Egress Network Data Transfer.",
+        "explanation_word_count": 67
+      },
+      {
+        "id": "B",
+        "text": "Internal network traffic between two Virtual Machines located in the same virtual network and availability zone.",
+        "is_correct": false,
+        "rationale": "Network traffic moving between resources within the same Azure datacenter or availability zone over private IPs does not incur bandwidth egress charges.",
+        "explanation": "Not quite: Option B is incorrect because Network traffic moving between resources within the same Azure datacenter or availability zone over private IPs does not incur bandwidth egress charges. Think of this like visiting a wholesale market where entering with your truck is free, but driving out with heavy commercial cargo attracts a tollgate exit charge. Exact Azure term to remember: Egress Network Data Transfer.",
+        "explanation_word_count": 65
+      },
+      {
+        "id": "C",
+        "text": "Administrative commands sent into the Virtual Machines by engineers using an SSH terminal session.",
+        "is_correct": false,
+        "rationale": "Terminal command input is inbound traffic (which is free) and generates negligible packet volume that does not account for typical network data transfer line items on invoices.",
+        "explanation": "Not quite: Option C is incorrect because terminal command input is inbound traffic (which is free) and generates negligible packet volume that does not account for typical network data transfer line items on invoices. Think of this like visiting a wholesale market where entering with your truck is free, but driving out with heavy commercial cargo attracts a tollgate exit charge. Exact Azure term to remember: Egress Network Data Transfer.",
+        "explanation_word_count": 70
+      },
+      {
+        "id": "D",
+        "text": "Outbound PDF shipment reports downloaded by transport managers from the Azure service over the internet.",
+        "is_correct": true,
+        "rationale": "Data transferred out of Azure datacenters (egress) over the internet or across billing zones incurs outbound data transfer charges, making egress traffic the primary cost driver for data transfer on Azure invoices.",
+        "explanation": "Spot on! Option D is correct: Data transferred out of Azure datacenters (egress) over the internet or across billing zones incurs outbound data transfer charges, making egress traffic the primary cost driver for data transfer on Azure invoices. Think of this like visiting a wholesale market where entering with your truck is free, but driving out with heavy commercial cargo attracts a tollgate exit charge. Exact Azure term to remember: Egress Network Data Transfer.",
+        "explanation_word_count": 74
+      }
+    ],
+    "summary": "Inbound data transfer (ingress) to Azure is generally free, whereas outbound data transfer (egress) leaving Azure datacenters is billed.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Egress Network Data Transfer",
+      "analogy": "Think of this like visiting a wholesale market where entering with your truck is free, but driving out with heavy commercial cargo attracts a tollgate exit charge.",
+      "key_takeaway": "Inbound data transfer (ingress) into Azure is generally free, whereas outbound data transfer (egress) leaving Azure datacenters over the internet incurs bandwidth fees."
+    }
+  },
+  {
+    "topic_id": "mgmt-mod1",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-cost-management-azure/3-compare-pricing-total-cost-of-ownership-calculators",
+    "difficulty": 1,
+    "question": "An engineering team at a Nairobi payment gateway is designing a new microservice architecture consisting of Azure App Service, Azure Database for PostgreSQL, and Azure Cache for Redis. Before asking management for budget approval, they need an indicative monthly cost estimate for different compute tiers and redundancy configurations. Which tool should the team use to generate this estimate before provisioning any resources?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Advisor, which evaluates proposed architectures and outputs projected infrastructure invoices.",
+        "is_correct": false,
+        "rationale": "Azure Advisor analyzes currently deployed resources in active subscriptions to offer best-practice recommendations; it cannot model or estimate costs for uncreated, hypothetical architectures.",
+        "explanation": "Not quite: Option A is incorrect because Azure Advisor analyzes currently deployed resources in active subscriptions to offer best-practice recommendations; it cannot model or estimate costs for uncreated, hypothetical architectures. Think of this like drafting a shopping list and calculating your estimated bill using a supermarket price list before you leave home, ensuring you have enough money budgeted. Exact Azure term to remember: Azure Pricing Calculator.",
+        "explanation_word_count": 66
+      },
+      {
+        "id": "B",
+        "text": "Microsoft Cost Management, which forecasts prospective architectures by simulating unprovisioned workloads.",
+        "is_correct": false,
+        "rationale": "Microsoft Cost Management tracks, visualizes, and budgets actual accrued spend for deployed resources in existing subscriptions. It does not provide a pre-deployment quotation builder for hypothetical solutions.",
+        "explanation": "Not quite: Option B is incorrect because Microsoft Cost Management tracks, visualizes, and budgets actual accrued spend for deployed resources in existing subscriptions. Think of this like drafting a shopping list and calculating your estimated bill using a supermarket price list before you leave home, ensuring you have enough money budgeted. Exact Azure term to remember: Azure Pricing Calculator.",
+        "explanation_word_count": 59
+      },
+      {
+        "id": "C",
+        "text": "Azure Pricing calculator, which allows users to model solutions and estimate monthly costs across services and tiers prior to deployment.",
+        "is_correct": true,
+        "rationale": "The Azure Pricing calculator is a web-based planning tool designed specifically to estimate expected costs for selected Azure services, tiers, regions, and redundancy options before any resources are provisioned or billed.",
+        "explanation": "Spot on! Option C is correct: The Azure Pricing calculator is a web-based planning tool designed specifically to estimate expected costs for selected Azure services, tiers, regions, and redundancy options before any resources are provisioned or billed. Think of this like drafting a shopping list and calculating your estimated bill using a supermarket price list before you leave home, ensuring you have enough money budgeted. Exact Azure term to remember: Azure Pricing Calculator.",
+        "explanation_word_count": 73
+      },
+      {
+        "id": "D",
+        "text": "Azure Policy, which calculates financial estimates by validating resource definitions against organizational billing rules.",
+        "is_correct": false,
+        "rationale": "Azure Policy enforces governance, compliance, and configuration standards across resources; it is not a financial calculation or estimation tool.",
+        "explanation": "Not quite: Option D is incorrect because Azure Policy enforces governance, compliance, and configuration standards across resources; it is not a financial calculation or estimation tool. Think of this like drafting a shopping list and calculating your estimated bill using a supermarket price list before you leave home, ensuring you have enough money budgeted. Exact Azure term to remember: Azure Pricing Calculator.",
+        "explanation_word_count": 62
+      }
+    ],
+    "summary": "The Azure Pricing calculator estimates service costs before deployment, while Cost Management monitors and analyzes spend after deployment.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Azure Pricing Calculator",
+      "analogy": "Think of this like drafting a shopping list and calculating your estimated bill using a supermarket price list before you leave home, ensuring you have enough money budgeted.",
+      "key_takeaway": "The Pricing Calculator models hypothetical architectures and estimates monthly service costs prior to provisioning any infrastructure."
+    }
+  },
+  {
+    "topic_id": "mgmt-mod1",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-cost-management-azure/6-describe-azure-tool",
+    "difficulty": 2,
+    "question": "A DevOps engineer at an agritech company in Eldoret configures a monthly budget of $500 in Microsoft Cost Management for their development subscription, setting an automated email alert when spend reaches 100% of the budget. On the 20th day of the billing cycle, intensive load testing pushes total accrued spend to $550. What happens to the running Azure resources in the development subscription when spend exceeds the $500 budget threshold?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure automatically deallocates all running Virtual Machines and stops database instances to prevent further financial liability.",
+        "is_correct": false,
+        "rationale": "Cost Management budgets do not automatically stop, deallocate, or destroy resources by default when a threshold is breached. Doing so could cause unexpected outages in critical environments.",
+        "explanation": "Not quite: Option A is incorrect because Cost Management budgets do not automatically stop, deallocate, or destroy resources by default when a threshold is breached. Think of this like setting an SMS notification on your bank account when you spend over KES 10,000\u2014the bank sends an alert message to your phone, but your debit card doesn't suddenly stop working unless you set an automated block. Exact Azure term to remember: Cost Management Budgets and Alerts.",
+        "explanation_word_count": 75
+      },
+      {
+        "id": "B",
+        "text": "A cost alert notification email is sent to the configured recipients, while all running resources continue to operate and accumulate charges.",
+        "is_correct": true,
+        "rationale": "By default, Azure Cost Management budgets generate alerts and notifications when thresholds are crossed; they do not enforce a hard cap or halt resources unless custom automated actions (such as Azure Action Groups triggering automation runbooks) are explicitly configured.",
+        "explanation": "Spot on! Option B is correct: By default, Azure Cost Management budgets generate alerts and notifications when thresholds are crossed; they do not enforce a hard cap or halt resources unless custom automated actions (such as Azure Action Groups triggering automation runbooks) are explicitly configured. Think of this like setting an SMS notification on your bank account when you spend over KES 10,000\u2014the bank sends an alert message to your phone, but your debit card doesn't suddenly stop working unless you set an automated block. Exact Azure term to remember: Cost Management Budgets and Alerts.",
+        "explanation_word_count": 95
+      },
+      {
+        "id": "C",
+        "text": "Azure immediately throttles network throughput and converts standard compute instances into Spot Virtual Machines to lower ongoing costs.",
+        "is_correct": false,
+        "rationale": "Azure does not dynamically throttle network bandwidth or alter provisioned VM SKUs or purchasing models in response to budget thresholds.",
+        "explanation": "Not quite: Option C is incorrect because Azure does not dynamically throttle network bandwidth or alter provisioned VM SKUs or purchasing models in response to budget thresholds. Think of this like setting an SMS notification on your bank account when you spend over KES 10,000\u2014the bank sends an alert message to your phone, but your debit card doesn't suddenly stop working unless you set an automated block. Exact Azure term to remember: Cost Management Budgets and Alerts.",
+        "explanation_word_count": 77
+      },
+      {
+        "id": "D",
+        "text": "The subscription is placed into an administrative read-only lock until an authorized billing owner increases the budget limit in the portal.",
+        "is_correct": false,
+        "rationale": "Exceeding a Cost Management budget does not apply resource locks or lock down subscription operations. It simply triggers notifications.",
+        "explanation": "Not quite: Option D is incorrect because exceeding a Cost Management budget does not apply resource locks or lock down subscription operations. Think of this like setting an SMS notification on your bank account when you spend over KES 10,000\u2014the bank sends an alert message to your phone, but your debit card doesn't suddenly stop working unless you set an automated block. Exact Azure term to remember: Cost Management Budgets and Alerts.",
+        "explanation_word_count": 72
+      }
+    ],
+    "summary": "A budget in Microsoft Cost Management triggers alerts by default; it does not stop or shut down resources without explicit custom automation.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Cost Management Budgets and Alerts",
+      "analogy": "Think of this like setting an SMS notification on your bank account when you spend over KES 10,000\u2014the bank sends an alert message to your phone, but your debit card doesn't suddenly stop working unless you set an automated block.",
+      "key_takeaway": "Azure budgets evaluate spend against targets and send alert notifications; they do not automatically shut down resources unless paired with custom automation."
+    }
+  },
+  {
+    "topic_id": "mgmt-mod1",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-cost-management-azure/7-describe-purpose-of-tags",
+    "difficulty": 2,
+    "question": "A multi-tenant SaaS provider in Nairobi has multiple business units (Engineering, Marketing, Customer Operations) deploying services within a single shared Azure subscription. The finance director requires a monthly cost breakdown that attributes cloud spend to each respective department, but all resources currently appear in a single aggregate invoice. Which feature should the cloud administrator use to allow the finance team to filter and allocate costs by department in Microsoft Cost Management?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Resource tags, by applying key-value metadata pairs such as Department: Engineering and Department: Marketing to supported resources.",
+        "is_correct": true,
+        "rationale": "Tags are key-value metadata labels applied to Azure resources that provide business context, enabling teams to categorize, filter, and allocate costs across departments, environments, or cost centers in Microsoft Cost Management.",
+        "explanation": "Spot on! Option A is correct: Tags are key-value metadata labels applied to Azure resources that provide business context, enabling teams to categorize, filter, and allocate costs across departments, environments, or cost centers in Microsoft Cost Management. Think of this like putting color-coded stickers on office equipment (green for Sales, blue for Tech, yellow for HR) so the accountant knows exactly which department to charge on the invoice. Exact Azure term to remember: Resource Tags.",
+        "explanation_word_count": 75
+      },
+      {
+        "id": "B",
+        "text": "Azure Role-Based Access Control (RBAC), by assigning distinct Reader permissions to department heads on the subscription root.",
+        "is_correct": false,
+        "rationale": "RBAC manages user permissions and authorization over Azure resources; it does not classify, label, or allocate resource usage for financial reporting.",
+        "explanation": "Not quite: Option B is incorrect because RBAC manages user permissions and authorization over Azure resources; it does not classify, label, or allocate resource usage for financial reporting. Think of this like putting color-coded stickers on office equipment (green for Sales, blue for Tech, yellow for HR) so the accountant knows exactly which department to charge on the invoice. Exact Azure term to remember: Resource Tags.",
+        "explanation_word_count": 66
+      },
+      {
+        "id": "C",
+        "text": "ReadOnly resource locks, by applying delete and modify locks labeled with department names across resource groups.",
+        "is_correct": false,
+        "rationale": "Resource locks prevent accidental modification or deletion of resources; they have no role in categorizing or filtering financial spend.",
+        "explanation": "Not quite: Option C is incorrect because resource locks prevent accidental modification or deletion of resources; they have no role in categorizing or filtering financial spend. Think of this like putting color-coded stickers on office equipment (green for Sales, blue for Tech, yellow for HR) so the accountant knows exactly which department to charge on the invoice. Exact Azure term to remember: Resource Tags.",
+        "explanation_word_count": 64
+      },
+      {
+        "id": "D",
+        "text": "Azure Network Watcher, by packet-inspecting network headers to identify which departmental servers generated outgoing traffic.",
+        "is_correct": false,
+        "rationale": "Network Watcher is a network monitoring and diagnostic tool, not an administrative or billing categorization mechanism.",
+        "explanation": "Not quite: Option D is incorrect because Network Watcher is a network monitoring and diagnostic tool, not an administrative or billing categorization mechanism. Think of this like putting color-coded stickers on office equipment (green for Sales, blue for Tech, yellow for HR) so the accountant knows exactly which department to charge on the invoice. Exact Azure term to remember: Resource Tags.",
+        "explanation_word_count": 61
+      }
+    ],
+    "summary": "Resource tags are key-value metadata pairs used to organize resources and allocate costs across departments or projects in Cost Management.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Resource Tags",
+      "analogy": "Think of this like putting color-coded stickers on office equipment (green for Sales, blue for Tech, yellow for HR) so the accountant knows exactly which department to charge on the invoice.",
+      "key_takeaway": "Tags are key-value metadata pairs applied to resources to categorize, filter, and allocate costs across departments, environments, and projects."
+    }
+  },
+  {
+    "topic_id": "mgmt-mod1",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-cost-management-azure/7a-describe-cost-optimization-options",
+    "difficulty": 3,
+    "question": "A data engineering team at a Kenyan microfinance platform runs a nightly batch workload that aggregates transaction records, calculates risk scores, and outputs audit reports. The workload runs for approximately 3 hours every night, writes intermediate checkpoints to persistent storage so it can cleanly resume if interrupted, and must run at the lowest possible compute cost. Which compute purchasing option is most cost-effective for this workload?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Reserved Virtual Machine Instances with a 3-year upfront commitment, guaranteeing dedicated compute capacity.",
+        "is_correct": false,
+        "rationale": "Reservations require a 1-year or 3-year continuous commitment and are ideal for 24/7 predictable, steady-state workloads. Committing to a multi-year continuous reservation for a workload that runs only 3 hours per night is financially inefficient.",
+        "explanation": "Not quite: Option A is incorrect because Reservations require a 1-year or 3-year continuous commitment and are ideal for 24/7 predictable, steady-state workloads. Think of this like buying standby bus tickets on a long-distance coach at a 90% discount\u2014you get a great price, but if a regular full-price passenger books the seat, you step off and take the next bus. Exact Azure term to remember: Spot Virtual Machines.",
+        "explanation_word_count": 68
+      },
+      {
+        "id": "B",
+        "text": "Standard On-Demand Virtual Machines, because they guarantee the lowest hourly price across all Azure compute pricing tiers.",
+        "is_correct": false,
+        "rationale": "Standard Pay-As-You-Go / On-Demand instances provide maximum flexibility without commitment, but they charge full retail hourly rates, which is significantly more expensive than discounted options designed for interruptible workloads.",
+        "explanation": "Not quite: Option B is incorrect because standard Pay-As-You-Go / On-Demand instances provide maximum flexibility without commitment, but they charge full retail hourly rates, which is significantly more expensive than discounted options designed for interruptible workloads. Think of this like buying standby bus tickets on a long-distance coach at a 90% discount\u2014you get a great price, but if a regular full-price passenger books the seat, you step off and take the next bus. Exact Azure term to remember: Spot Virtual Machines.",
+        "explanation_word_count": 81
+      },
+      {
+        "id": "C",
+        "text": "Spot Virtual Machines, which offer spare Azure capacity at deep discounts for workloads that can tolerate unexpected interruptions and eviction.",
+        "is_correct": true,
+        "rationale": "Spot Virtual Machines allow customers to purchase unused Azure compute capacity at substantial discounts (often up to 90%). Because Azure can evict Spot VMs when capacity is needed, they are uniquely suited for fault-tolerant, checkpointed batch jobs and processing tasks that tolerate interruption.",
+        "explanation": "Spot on! Option C is correct: Spot Virtual Machines allow customers to purchase unused Azure compute capacity at substantial discounts (often up to 90%). Think of this like buying standby bus tickets on a long-distance coach at a 90% discount\u2014you get a great price, but if a regular full-price passenger books the seat, you step off and take the next bus. Exact Azure term to remember: Spot Virtual Machines.",
+        "explanation_word_count": 69
+      },
+      {
+        "id": "D",
+        "text": "Azure Dedicated Hosts, which reduce costs by renting a complete physical server with fixed unmetered compute execution.",
+        "is_correct": false,
+        "rationale": "Azure Dedicated Hosts provide dedicated physical servers to run VMs for compliance, hardware isolation, or licensing requirements, and are far more costly than Spot instances for short batch jobs.",
+        "explanation": "Not quite: Option D is incorrect because Azure Dedicated Hosts provide dedicated physical servers to run VMs for compliance, hardware isolation, or licensing requirements, and are far more costly than Spot instances for short batch jobs. Think of this like buying standby bus tickets on a long-distance coach at a 90% discount\u2014you get a great price, but if a regular full-price passenger books the seat, you step off and take the next bus. Exact Azure term to remember: Spot Virtual Machines.",
+        "explanation_word_count": 81
+      }
+    ],
+    "summary": "Spot Virtual Machines utilize spare Azure compute capacity at steep discounts, making them ideal for checkpointed, interruptible batch workloads.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Spot Virtual Machines",
+      "analogy": "Think of this like buying standby bus tickets on a long-distance coach at a 90% discount\u2014you get a great price, but if a regular full-price passenger books the seat, you step off and take the next bus.",
+      "key_takeaway": "Spot VMs leverage spare Azure compute capacity at deep discounts for fault-tolerant, checkpointed batch jobs that tolerate unexpected eviction."
+    }
+  }
+]

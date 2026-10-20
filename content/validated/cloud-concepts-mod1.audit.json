@@ -1,0 +1,46 @@
+[
+  {
+    "index": 0,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "",
+    "verify_on_microsoft_learn": ""
+  },
+  {
+    "index": 1,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "",
+    "verify_on_microsoft_learn": ""
+  },
+  {
+    "index": 2,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "",
+    "verify_on_microsoft_learn": ""
+  },
+  {
+    "index": 3,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "Clarified that on-premises datacenter database explicitly integrates with Azure for staff communication and off-site backup (hybrid cloud definition tightened).",
+    "verify_on_microsoft_learn": "https://learn.microsoft.com/en-us/training/modules/describe-cloud-compute/5-define-cloud-models"
+  },
+  {
+    "index": 4,
+    "verdict": "PASS",
+    "issues": [
+      "Resolved: Ambiguity in workload ownership eliminated. Stem now clearly specifies the startup deploys API on Azure and ML pipeline on GCP."
+    ],
+    "suggested_fix": "Applied and verified: Multi-provider workload ownership explicitly assigned to startup.",
+    "verify_on_microsoft_learn": "https://learn.microsoft.com/en-us/training/modules/describe-cloud-compute/5-define-cloud-models"
+  },
+  {
+    "index": 5,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "",
+    "verify_on_microsoft_learn": ""
+  }
+]

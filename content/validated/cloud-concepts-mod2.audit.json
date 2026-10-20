@@ -1,0 +1,48 @@
+[
+  {
+    "index": 0,
+    "verdict": "PASS",
+    "issues": [
+      "Polished: Distractor D updated from duplicate 'Vertical scaling' to 'Disaster recovery' for cleaner distinct concept testing."
+    ],
+    "suggested_fix": "Applied: D changed to disaster recovery distractor.",
+    "verify_on_microsoft_learn": "https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/2-high-availability-scalability-cloud"
+  },
+  {
+    "index": 1,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "",
+    "verify_on_microsoft_learn": ""
+  },
+  {
+    "index": 2,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "",
+    "verify_on_microsoft_learn": ""
+  },
+  {
+    "index": 3,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "",
+    "verify_on_microsoft_learn": ""
+  },
+  {
+    "index": 4,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "",
+    "verify_on_microsoft_learn": ""
+  },
+  {
+    "index": 5,
+    "verdict": "PASS",
+    "issues": [
+      "Resolved: Replaced weak distractors with the formal Shared Responsibility Model for Sustainability (sustainability OF the cloud vs IN the cloud)."
+    ],
+    "suggested_fix": "Applied: Stem and distractors reframed around customer responsibility (workload rightsizing and scheduling) vs provider datacenter operations.",
+    "verify_on_microsoft_learn": "https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/5a-describe-sustainability-cloud"
+  }
+]

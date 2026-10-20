@@ -1,0 +1,247 @@
+[
+  {
+    "topic_id": "arch-mod3",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-azure-networking-services/2-virtual-network",
+    "difficulty": 1,
+    "question": "A Kenyan SACCO places its web application and its PostgreSQL database inside the same Azure Virtual Network. The security team wants to ensure that only the web application can send queries to the database server, blocking all other inbound traffic to the database subnet. Which Azure networking feature should they configure?",
+    "options": [
+      {
+        "id": "A",
+        "text": "VNet peering, which connects the two subnets and controls which traffic is allowed between them.",
+        "is_correct": false,
+        "rationale": "VNet peering connects two separate virtual networks, not subnets within the same VNet. It does not provide traffic filtering rules; it is a connectivity mechanism, not an access control one.",
+        "explanation": "Not quite: Option A is incorrect because VNet peering connects two separate virtual networks, not subnets within the same VNet. Think of this like a security guard stationed at the entrance of a bank branch checking IDs and allowing only authorized staff into the cash vault room while turning everyone else away. Exact Azure term to remember: Network Security Group (NSG).",
+        "explanation_word_count": 61
+      },
+      {
+        "id": "B",
+        "text": "Azure DNS, which resolves the database hostname so only the web app can find it.",
+        "is_correct": false,
+        "rationale": "DNS resolves names to addresses; it does not enforce traffic access. A client that already knows the database's IP address could still attempt a connection regardless of DNS. DNS is not a traffic filter.",
+        "explanation": "Not quite: Option B is incorrect because DNS resolves names to addresses; it does not enforce traffic access. Think of this like a security guard stationed at the entrance of a bank branch checking IDs and allowing only authorized staff into the cash vault room while turning everyone else away. Exact Azure term to remember: Network Security Group (NSG).",
+        "explanation_word_count": 59
+      },
+      {
+        "id": "C",
+        "text": "A Network Security Group (NSG), which applies inbound and outbound traffic rules to the database subnet.",
+        "is_correct": true,
+        "rationale": "An NSG is a rule-based filter that controls inbound and outbound network traffic for subnets or network interfaces. Applying an NSG to the database subnet with rules that permit only the web tier's traffic is the correct mechanism for this access-control requirement.",
+        "explanation": "Spot on! Option C is correct: An NSG is a rule-based filter that controls inbound and outbound network traffic for subnets or network interfaces. Think of this like a security guard stationed at the entrance of a bank branch checking IDs and allowing only authorized staff into the cash vault room while turning everyone else away. Exact Azure term to remember: Network Security Group (NSG).",
+        "explanation_word_count": 65
+      },
+      {
+        "id": "D",
+        "text": "A subnet, which automatically blocks all traffic from other subnets within the same VNet.",
+        "is_correct": false,
+        "rationale": "A subnet partitions the VNet's address space into logical segments but does not automatically block inter-subnet traffic. Traffic filtering requires an NSG or other explicit access control applied to the subnet or network interface.",
+        "explanation": "Not quite: Option D is incorrect because a subnet partitions the VNet's address space into logical segments but does not automatically block inter-subnet traffic. Think of this like a security guard stationed at the entrance of a bank branch checking IDs and allowing only authorized staff into the cash vault room while turning everyone else away. Exact Azure term to remember: Network Security Group (NSG).",
+        "explanation_word_count": 65
+      }
+    ],
+    "summary": "An NSG applies inbound/outbound traffic rules; subnets segment address space but do not automatically block inter-subnet traffic, and DNS resolves names\u2014it does not filter connections.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Network Security Group (NSG)",
+      "analogy": "Think of this like a security guard stationed at the entrance of a bank branch checking IDs and allowing only authorized staff into the cash vault room while turning everyone else away.",
+      "key_takeaway": "An NSG acts as a stateful packet firewall that filters inbound and outbound traffic to subnets and network interfaces based on IP and port rules."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "arch-mod3",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-azure-networking-services/3-virtual-private-networks",
+    "difficulty": 1,
+    "question": "A Kisumu cooperative's head office needs an encrypted connection between its on-premises office network and an Azure Virtual Network where its membership database is hosted. Which Azure networking service and connection type is designed for this scenario?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure DNS with a private zone, to resolve on-premises hostnames inside the Azure VNet.",
+        "is_correct": false,
+        "rationale": "Azure Private DNS provides name resolution within VNets; it does not create a network connection between the office and Azure. Name resolution and network connectivity are separate networking concerns.",
+        "explanation": "Not quite: Option A is incorrect because Azure Private DNS provides name resolution within VNets; it does not create a network connection between the office and Azure. Think of this like an armored escort vehicle traveling between your head office and a branch office over the public highway, protected by locked doors and armed security guards. Exact Azure term to remember: Site-to-Site VPN Gateway.",
+        "explanation_word_count": 64
+      },
+      {
+        "id": "B",
+        "text": "VNet peering, which links the on-premises network to the Azure VNet over the Microsoft backbone.",
+        "is_correct": false,
+        "rationale": "VNet peering connects Azure VNets to each other, not on-premises networks to Azure VNets. An on-premises-to-Azure connection requires a gateway service such as VPN Gateway (or ExpressRoute for a private provider connection).",
+        "explanation": "Not quite: Option B is incorrect because VNet peering connects Azure VNets to each other, not on-premises networks to Azure VNets. Think of this like an armored escort vehicle traveling between your head office and a branch office over the public highway, protected by locked doors and armed security guards. Exact Azure term to remember: Site-to-Site VPN Gateway.",
+        "explanation_word_count": 58
+      },
+      {
+        "id": "C",
+        "text": "Azure VPN Gateway with a site-to-site connection, which creates an encrypted tunnel between the office network and the Azure VNet over the internet.",
+        "is_correct": true,
+        "rationale": "A site-to-site VPN connection links an on-premises network to an Azure VNet through an encrypted tunnel carried over the internet. This matches the scenario: two network endpoints (office and Azure) joined by a VPN gateway.",
+        "explanation": "Spot on! Option C is correct: A site-to-site VPN connection links an on-premises network to an Azure VNet through an encrypted tunnel carried over the internet. Think of this like an armored escort vehicle traveling between your head office and a branch office over the public highway, protected by locked doors and armed security guards. Exact Azure term to remember: Site-to-Site VPN Gateway.",
+        "explanation_word_count": 63
+      },
+      {
+        "id": "D",
+        "text": "Azure VPN Gateway with a point-to-site connection, which connects the entire office network to the Azure VNet.",
+        "is_correct": false,
+        "rationale": "A point-to-site VPN connects an individual client device to a VNet, not an entire office network. Connecting an office network\u2014multiple devices and servers\u2014to Azure is a site-to-site scenario, not point-to-site.",
+        "explanation": "Not quite: Option D is incorrect because a point-to-site VPN connects an individual client device to a VNet, not an entire office network. Think of this like an armored escort vehicle traveling between your head office and a branch office over the public highway, protected by locked doors and armed security guards. Exact Azure term to remember: Site-to-Site VPN Gateway.",
+        "explanation_word_count": 60
+      }
+    ],
+    "summary": "Site-to-site VPN connects a whole on-premises network to an Azure VNet; point-to-site connects a single client device\u2014they are not interchangeable.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Site-to-Site VPN Gateway",
+      "analogy": "Think of this like an armored escort vehicle traveling between your head office and a branch office over the public highway, protected by locked doors and armed security guards.",
+      "key_takeaway": "A site-to-site VPN establishes an encrypted IPsec tunnel connecting an entire on-premises network to an Azure Virtual Network over the public internet."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "arch-mod3",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-azure-networking-services/4-expressroute",
+    "difficulty": 2,
+    "question": "A Kenyan bank's network architect compares two options for connecting a major data centre to Azure: an internet-based VPN Gateway and Azure ExpressRoute. Which statement correctly distinguishes ExpressRoute from a VPN Gateway connection?",
+    "options": [
+      {
+        "id": "A",
+        "text": "ExpressRoute is an encrypted VPN tunnel sent over the public internet, while VPN Gateway uses a private dedicated line.",
+        "is_correct": false,
+        "rationale": "This reverses the distinction. A VPN Gateway connection is an encrypted tunnel sent over the public internet. ExpressRoute provides a private connection through a connectivity provider, specifically designed to avoid traversing the public internet for the private path.",
+        "explanation": "Not quite: Option A is incorrect because this reverses the distinction. Think of this like building a dedicated private underground train line directly connecting your office building to the airport, completely avoiding public road traffic. Exact Azure term to remember: Azure ExpressRoute.",
+        "explanation_word_count": 42
+      },
+      {
+        "id": "B",
+        "text": "ExpressRoute provides a private connection to Microsoft cloud services through a connectivity provider, without routing through the public internet.",
+        "is_correct": true,
+        "rationale": "ExpressRoute extends an on-premises network to Microsoft cloud using a private connection supplied through an ExpressRoute connectivity provider. Unlike VPN Gateway, the ExpressRoute path is designed to avoid the public internet for the private connection segment, offering a dedicated private link.",
+        "explanation": "Spot on! Option B is correct: ExpressRoute extends an on-premises network to Microsoft cloud using a private connection supplied through an ExpressRoute connectivity provider. Think of this like building a dedicated private underground train line directly connecting your office building to the airport, completely avoiding public road traffic. Exact Azure term to remember: Azure ExpressRoute.",
+        "explanation_word_count": 55
+      },
+      {
+        "id": "C",
+        "text": "ExpressRoute and VPN Gateway are equivalent; the only difference is that ExpressRoute uses a different encryption algorithm.",
+        "is_correct": false,
+        "rationale": "The difference is architectural, not algorithmic. ExpressRoute uses a private provider connection that avoids the public internet; VPN Gateway uses an encrypted tunnel over the public internet. They serve different connectivity models.",
+        "explanation": "Not quite: Option C is incorrect because the difference is architectural, not algorithmic. Think of this like building a dedicated private underground train line directly connecting your office building to the airport, completely avoiding public road traffic. Exact Azure term to remember: Azure ExpressRoute.",
+        "explanation_word_count": 44
+      },
+      {
+        "id": "D",
+        "text": "VPN Gateway requires a connectivity provider while ExpressRoute connects directly over the internet with no provider needed.",
+        "is_correct": false,
+        "rationale": "Again this reverses reality. ExpressRoute requires an ExpressRoute connectivity provider to supply the private connection. VPN Gateway connects over the public internet without needing a specialist network provider for the path.",
+        "explanation": "Not quite: Option D is incorrect because again this reverses reality. Think of this like building a dedicated private underground train line directly connecting your office building to the airport, completely avoiding public road traffic. Exact Azure term to remember: Azure ExpressRoute.",
+        "explanation_word_count": 42
+      }
+    ],
+    "summary": "ExpressRoute uses a private provider connection that avoids the public internet; VPN Gateway uses an encrypted tunnel over the public internet\u2014they are not the same type of connection.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Azure ExpressRoute",
+      "analogy": "Think of this like building a dedicated private underground train line directly connecting your office building to the airport, completely avoiding public road traffic.",
+      "key_takeaway": "ExpressRoute provides a dedicated, private connection through a connectivity provider to Azure that does not traverse the public internet."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "arch-mod3",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-azure-networking-services/5-domain-name-system",
+    "difficulty": 1,
+    "question": "A Kenyan agritech startup hosts a FastAPI service on Azure and assigns it a friendly hostname like api.agriapp.co.ke. When a mobile app on a farmer's phone makes a request to that hostname, what role does the Domain Name System (DNS) play?",
+    "options": [
+      {
+        "id": "A",
+        "text": "DNS encrypts the traffic between the mobile app and the API to keep the data secure.",
+        "is_correct": false,
+        "rationale": "DNS resolves names to records such as IP addresses; it does not encrypt application traffic. Encryption is handled by protocols such as TLS, not by DNS.",
+        "explanation": "Not quite: Option A is incorrect because DNS resolves names to records such as IP addresses; it does not encrypt application traffic. Think of this like the contact list in your phone\u2014you search for a contact's friendly name and it looks up their numeric Safaricom phone number so your phone knows who to call. Exact Azure term to remember: Azure DNS.",
+        "explanation_word_count": 61
+      },
+      {
+        "id": "B",
+        "text": "DNS verifies the farmer's identity and grants permission to call the API.",
+        "is_correct": false,
+        "rationale": "DNS performs name resolution only; it has no role in authentication or authorization. Whether a caller is permitted to access the API is governed by application-layer identity and access controls, not DNS.",
+        "explanation": "Not quite: Option B is incorrect because DNS performs name resolution only; it has no role in authentication or authorization. Think of this like the contact list in your phone\u2014you search for a contact's friendly name and it looks up their numeric Safaricom phone number so your phone knows who to call. Exact Azure term to remember: Azure DNS.",
+        "explanation_word_count": 59
+      },
+      {
+        "id": "C",
+        "text": "DNS routes the request along the fastest network path from the phone to the Azure datacenter.",
+        "is_correct": false,
+        "rationale": "DNS does not route network traffic; it translates names into records like IP addresses so that the network stack can then route the packets. Routing is handled by network infrastructure separate from DNS.",
+        "explanation": "Not quite: Option C is incorrect because DNS does not route network traffic; it translates names into records like IP addresses so that the network stack can then route the packets. Think of this like the contact list in your phone\u2014you search for a contact's friendly name and it looks up their numeric Safaricom phone number so your phone knows who to call. Exact Azure term to remember: Azure DNS.",
+        "explanation_word_count": 70
+      },
+      {
+        "id": "D",
+        "text": "DNS translates the hostname into the IP address of the API, allowing the phone to locate and connect to the correct server.",
+        "is_correct": true,
+        "rationale": "DNS resolves a human-readable hostname (api.agriapp.co.ke) into a corresponding IP address. The mobile app uses that IP address to establish the connection. DNS answers 'what address is this name?' and nothing more.",
+        "explanation": "Spot on! Option D is correct: DNS resolves a human-readable hostname (api.agriapp.co.ke) into a corresponding IP address. Think of this like the contact list in your phone\u2014you search for a contact's friendly name and it looks up their numeric Safaricom phone number so your phone knows who to call. Exact Azure term to remember: Azure DNS.",
+        "explanation_word_count": 56
+      }
+    ],
+    "summary": "DNS translates hostnames to IP addresses so clients can locate services; it does not encrypt traffic, authorize callers, or route packets.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Azure DNS",
+      "analogy": "Think of this like the contact list in your phone\u2014you search for a contact's friendly name and it looks up their numeric Safaricom phone number so your phone knows who to call.",
+      "key_takeaway": "Azure DNS resolves human-readable domain names into IP addresses so clients can connect to network services."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "arch-mod3",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-azure-networking-services/2-virtual-network",
+    "difficulty": 3,
+    "question": "A Nairobi fintech runs its API in VNet-A and its analytics platform in VNet-B, both in the same Azure region. The engineering lead connects them using VNet peering and claims: 'Now our analytics platform can automatically reach every database in VNet-A, and all existing security rules no longer apply.' What is the primary flaw in the lead's understanding?",
+    "options": [
+      {
+        "id": "A",
+        "text": "VNet peering does not connect VNets at all; only ExpressRoute can link two Azure VNets.",
+        "is_correct": false,
+        "rationale": "VNet peering does connect Azure VNets and allows supported traffic to flow between them. ExpressRoute is a different service used for on-premises-to-Azure private connectivity. Both statements in this option are false.",
+        "explanation": "Not quite: Option A is incorrect because VNet peering does connect Azure VNets and allows supported traffic to flow between them. Think of this like opening an interconnecting hallway between two adjacent office towers\u2014workers can now walk directly between towers, but security doors in each tower still check badges. Exact Azure term to remember: Virtual Network Peering (VNet Peering).",
+        "explanation_word_count": 59
+      },
+      {
+        "id": "B",
+        "text": "VNet peering enables traffic to flow between the peered VNets, but NSG and routing rules in VNet-A still apply to that traffic; peering does not disable existing security controls.",
+        "is_correct": true,
+        "rationale": "VNet peering establishes connectivity between two VNets, but it does not override or remove NSG rules, route tables, or other access controls configured in either VNet. Security rules in VNet-A continue to evaluate traffic arriving from VNet-B. Peering changes what networks can communicate; it does not grant blanket access or remove existing filters.",
+        "explanation": "Spot on! Option B is correct: VNet peering establishes connectivity between two VNets, but it does not override or remove NSG rules, route tables, or other access controls configured in either VNet. Think of this like opening an interconnecting hallway between two adjacent office towers\u2014workers can now walk directly between towers, but security doors in each tower still check badges. Exact Azure term to remember: Virtual Network Peering (VNet Peering).",
+        "explanation_word_count": 70
+      },
+      {
+        "id": "C",
+        "text": "VNet peering requires both VNets to share the same address space, so the analytics platform must be re-addressed before peering can work.",
+        "is_correct": false,
+        "rationale": "VNet peering actually requires that the peered VNets do not have overlapping address spaces. The statement inverts this requirement. Sharing the same address space would prevent peering, not enable it.",
+        "explanation": "Not quite: Option C is incorrect because VNet peering actually requires that the peered VNets do not have overlapping address spaces. Think of this like opening an interconnecting hallway between two adjacent office towers\u2014workers can now walk directly between towers, but security doors in each tower still check badges. Exact Azure term to remember: Virtual Network Peering (VNet Peering).",
+        "explanation_word_count": 59
+      },
+      {
+        "id": "D",
+        "text": "VNet peering only works between VNets in different Azure regions, so two VNets in the same region cannot be peered.",
+        "is_correct": false,
+        "rationale": "VNet peering works between VNets in the same region as well as across regions (global VNet peering). The scenario is entirely valid from a peering-capability standpoint; the error is the assumption that security rules are removed.",
+        "explanation": "Not quite: Option D is incorrect because VNet peering works between VNets in the same region as well as across regions (global VNet peering). Think of this like opening an interconnecting hallway between two adjacent office towers\u2014workers can now walk directly between towers, but security doors in each tower still check badges. Exact Azure term to remember: Virtual Network Peering (VNet Peering).",
+        "explanation_word_count": 62
+      }
+    ],
+    "summary": "VNet peering enables connectivity between VNets but does not remove or bypass NSG rules or routing controls\u2014existing security policies in each VNet still apply to peered traffic.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Virtual Network Peering (VNet Peering)",
+      "analogy": "Think of this like opening an interconnecting hallway between two adjacent office towers\u2014workers can now walk directly between towers, but security doors in each tower still check badges.",
+      "key_takeaway": "VNet peering connects separate VNets over Microsoft's backbone, but existing NSG security rules and route tables continue to filter traffic."
+    },
+    "reviewed_by_human": true
+  }
+]

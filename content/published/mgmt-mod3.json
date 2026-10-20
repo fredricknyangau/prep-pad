@@ -1,0 +1,247 @@
+[
+  {
+    "topic_id": "mgmt-mod3",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-features-tools-manage-deploy-azure-resources/2-describe-interacting-azure",
+    "difficulty": 1,
+    "question": "A systems administrator for a healthcare provider in Nairobi needs to run Azure CLI scripts to inspect storage account configurations while traveling. The administrator is using a locked-down Chromebook that cannot install local terminal packages or desktop software. Which Azure tool allows the administrator to execute Azure CLI commands directly inside a web browser without requiring any local software installation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Cloud Shell, which provides an authenticated, browser-accessible hosted shell environment pre-configured with Azure CLI and PowerShell.",
+        "is_correct": true,
+        "rationale": "Azure Cloud Shell is an interactive, browser-accessible terminal hosted in the cloud. It comes pre-installed with common command-line tools including Azure CLI and Azure PowerShell, requiring no software installation on the user's local machine.",
+        "explanation": "Spot on! Option A is correct: Azure Cloud Shell is an interactive, browser-accessible terminal hosted in the cloud. Think of this like accessing your online banking portal through a web browser on a cyber cafe computer\u2014you don't have to carry or install any banking software on the cafe's machine. Exact Azure term to remember: Azure Cloud Shell.",
+        "explanation_word_count": 57
+      },
+      {
+        "id": "B",
+        "text": "Azure Virtual Network Gateway, which automatically relays terminal commands from web browsers to internal Azure subnets.",
+        "is_correct": false,
+        "rationale": "An Azure Virtual Network Gateway connects on-premises networks to Azure virtual networks over VPN or ExpressRoute; it does not provide an interactive browser shell interface.",
+        "explanation": "Not quite: Option B is incorrect because an Azure Virtual Network Gateway connects on-premises networks to Azure virtual networks over VPN or ExpressRoute; it does not provide an interactive browser shell interface. Think of this like accessing your online banking portal through a web browser on a cyber cafe computer\u2014you don't have to carry or install any banking software on the cafe's machine. Exact Azure term to remember: Azure Cloud Shell.",
+        "explanation_word_count": 71
+      },
+      {
+        "id": "C",
+        "text": "Azure Bastion, which provides an unauthenticated web command interpreter for Azure administrative commands.",
+        "is_correct": false,
+        "rationale": "Azure Bastion provides secure, browser-based RDP and SSH connectivity directly to specific Azure Virtual Machines; it does not provide a general command-line shell for running Azure CLI subscription commands.",
+        "explanation": "Not quite: Option C is incorrect because Azure Bastion provides secure, browser-based RDP and SSH connectivity directly to specific Azure Virtual Machines; it does not provide a general command-line shell for running Azure CLI subscription commands. Think of this like accessing your online banking portal through a web browser on a cyber cafe computer\u2014you don't have to carry or install any banking software on the cafe's machine. Exact Azure term to remember: Azure Cloud Shell.",
+        "explanation_word_count": 75
+      },
+      {
+        "id": "D",
+        "text": "Azure Automation State Configuration, which deploys local executable binaries into the user's browser runtime.",
+        "is_correct": false,
+        "rationale": "Azure Automation State Configuration is a PowerShell Desired State Configuration (DSC) service for configuring operating systems, not a browser terminal tool.",
+        "explanation": "Not quite: Option D is incorrect because Azure Automation State Configuration is a PowerShell Desired State Configuration (DSC) service for configuring operating systems, not a browser terminal tool. Think of this like accessing your online banking portal through a web browser on a cyber cafe computer\u2014you don't have to carry or install any banking software on the cafe's machine. Exact Azure term to remember: Azure Cloud Shell.",
+        "explanation_word_count": 67
+      }
+    ],
+    "summary": "Azure Cloud Shell provides a browser-accessible, hosted terminal environment with Azure CLI and PowerShell pre-installed without local setup.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Azure Cloud Shell",
+      "analogy": "Think of this like accessing your online banking portal through a web browser on a cyber cafe computer\u2014you don't have to carry or install any banking software on the cafe's machine.",
+      "key_takeaway": "Azure Cloud Shell is a browser-accessible, hosted terminal environment with Azure CLI and PowerShell pre-installed, requiring no local software setup."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "mgmt-mod3",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-features-tools-manage-deploy-azure-resources/4-describe-azure-resource-manager-azure-arm-templates",
+    "difficulty": 1,
+    "question": "An engineering manager at a Mombasa logistics company asks why creating a virtual machine through the Azure Portal, running an Azure CLI script, or executing an automated CI/CD deployment all enforce the exact same role-based access permissions and security tagging policies. Which Azure component acts as the unified management layer that receives, authenticates, and routes all resource requests across every interface and tool?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Microsoft Entra Connect, which replicates access policies across external developer workstations.",
+        "is_correct": false,
+        "rationale": "Microsoft Entra Connect synchronizes on-premises Active Directory identities with Microsoft Entra ID; it is not the Azure management control plane.",
+        "explanation": "Not quite: Option A is incorrect because Microsoft Entra Connect synchronizes on-premises Active Directory identities with Microsoft Entra ID; it is not the Azure management control plane. Think of this like a central bank teller counter\u2014whether you submit a paper withdrawal slip, insert an ATM card, or send an app transfer, every request passes through the same teller who verifies your identity and checks the rules. Exact Azure term to remember: Azure Resource Manager (ARM).",
+        "explanation_word_count": 75
+      },
+      {
+        "id": "B",
+        "text": "Azure Resource Manager (ARM), which serves as the centralized management layer that authenticates and orchestrates all requests regardless of the interface used.",
+        "is_correct": true,
+        "rationale": "Azure Resource Manager (ARM) is the consistent management layer for Azure. Whether requests originate from the Azure Portal, Azure CLI, Azure PowerShell, SDKs, or REST APIs, ARM receives, authenticates, and authorizes them before routing them to appropriate resource providers.",
+        "explanation": "Spot on! Option B is correct: Azure Resource Manager (ARM) is the consistent management layer for Azure. Think of this like a central bank teller counter\u2014whether you submit a paper withdrawal slip, insert an ATM card, or send an app transfer, every request passes through the same teller who verifies your identity and checks the rules. Exact Azure term to remember: Azure Resource Manager (ARM).",
+        "explanation_word_count": 65
+      },
+      {
+        "id": "C",
+        "text": "Azure App Service Environment, which provides isolated hardware hosting for cloud administration services.",
+        "is_correct": false,
+        "rationale": "An App Service Environment is a premium hosting tier for running Azure App Service apps with dedicated compute and network isolation, not the Azure control plane.",
+        "explanation": "Not quite: Option C is incorrect because an App Service Environment is a premium hosting tier for running Azure App Service apps with dedicated compute and network isolation, not the Azure control plane. Think of this like a central bank teller counter\u2014whether you submit a paper withdrawal slip, insert an ATM card, or send an app transfer, every request passes through the same teller who verifies your identity and checks the rules. Exact Azure term to remember: Azure Resource Manager (ARM).",
+        "explanation_word_count": 81
+      },
+      {
+        "id": "D",
+        "text": "Azure Front Door, which routes management traffic to the nearest global datacenter endpoint.",
+        "is_correct": false,
+        "rationale": "Azure Front Door is a global web application accelerator and content delivery network (CDN), not the control plane for Azure resource administration.",
+        "explanation": "Not quite: Option D is incorrect because Azure Front Door is a global web application accelerator and content delivery network (CDN), not the control plane for Azure resource administration. Think of this like a central bank teller counter\u2014whether you submit a paper withdrawal slip, insert an ATM card, or send an app transfer, every request passes through the same teller who verifies your identity and checks the rules. Exact Azure term to remember: Azure Resource Manager (ARM).",
+        "explanation_word_count": 77
+      }
+    ],
+    "summary": "Azure Resource Manager (ARM) is the unified management layer that authenticates, authorizes, and handles all resource operations across every Azure interface.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Azure Resource Manager (ARM)",
+      "analogy": "Think of this like a central bank teller counter\u2014whether you submit a paper withdrawal slip, insert an ATM card, or send an app transfer, every request passes through the same teller who verifies your identity and checks the rules.",
+      "key_takeaway": "ARM is the central management plane for Azure that receives, authenticates, and routes all resource requests across the Portal, CLI, PowerShell, and APIs."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "mgmt-mod3",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-features-tools-manage-deploy-azure-resources/3-describe-purpose-of-azure-arc",
+    "difficulty": 2,
+    "question": "A commercial bank in Nairobi operates physical Linux servers in its private on-premises datacenter and virtual machines in Amazon Web Services (AWS). Due to regulatory data sovereignty rules, the underlying workloads cannot be migrated into Azure datacenters. However, the bank's security lead wants a unified dashboard to view inventory, apply baseline Azure Policy configuration standards, and monitor compliance across all these external servers alongside their Azure resources. Which Azure technology enables the bank to manage and govern these external on-premises and multicloud servers without migrating them?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Migrate, which clones external physical servers and recreates them as native Azure Virtual Machines.",
+        "is_correct": false,
+        "rationale": "Azure Migrate is used to discover, assess, and migrate on-premises workloads into Azure. The scenario specifically requires managing external resources without migrating them.",
+        "explanation": "Not quite: Option A is incorrect because Azure Migrate is used to discover, assess, and migrate on-premises workloads into Azure. Think of this like a retail chain's central Nairobi headquarters managing and monitoring franchised stores in Nakuru and Kampala without moving the physical stores to Nairobi. Exact Azure term to remember: Azure Arc.",
+        "explanation_word_count": 53
+      },
+      {
+        "id": "B",
+        "text": "Azure ExpressRoute, which establishes a private encrypted line that bypasses the public internet.",
+        "is_correct": false,
+        "rationale": "ExpressRoute provides dedicated, private network connectivity between on-premises infrastructure and Azure, but networking alone does not project non-Azure servers into Azure's governance and management control plane.",
+        "explanation": "Not quite: Option B is incorrect because ExpressRoute provides dedicated, private network connectivity between on-premises infrastructure and Azure, but networking alone does not project non-Azure servers into Azure's governance and management control plane. Think of this like a retail chain's central Nairobi headquarters managing and monitoring franchised stores in Nakuru and Kampala without moving the physical stores to Nairobi. Exact Azure term to remember: Azure Arc.",
+        "explanation_word_count": 66
+      },
+      {
+        "id": "C",
+        "text": "Azure Virtual Desktop, which publishes centralized administrative desktops for managing external infrastructure.",
+        "is_correct": false,
+        "rationale": "Azure Virtual Desktop provides virtualized Windows client sessions for remote workers, not server governance or multicloud management.",
+        "explanation": "Not quite: Option C is incorrect because Azure Virtual Desktop provides virtualized Windows client sessions for remote workers, not server governance or multicloud management. Think of this like a retail chain's central Nairobi headquarters managing and monitoring franchised stores in Nakuru and Kampala without moving the physical stores to Nairobi. Exact Azure term to remember: Azure Arc.",
+        "explanation_word_count": 57
+      },
+      {
+        "id": "D",
+        "text": "Azure Arc, which projects supported on-premises and multicloud servers and Kubernetes clusters into Azure Resource Manager for centralized governance and monitoring.",
+        "is_correct": true,
+        "rationale": "Azure Arc extends Azure Resource Manager capabilities beyond Azure datacenters. It allows organizations to register on-premises physical servers, virtual machines, and multicloud resources to manage them with Azure Policy, tags, and Azure Monitor without migrating the workloads.",
+        "explanation": "Spot on! Option D is correct: Azure Arc extends Azure Resource Manager capabilities beyond Azure datacenters. Think of this like a retail chain's central Nairobi headquarters managing and monitoring franchised stores in Nakuru and Kampala without moving the physical stores to Nairobi. Exact Azure term to remember: Azure Arc.",
+        "explanation_word_count": 49
+      }
+    ],
+    "summary": "Azure Arc extends Azure management, governance, and compliance to servers and Kubernetes clusters hosted on-premises and in other clouds.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Azure Arc",
+      "analogy": "Think of this like a retail chain's central Nairobi headquarters managing and monitoring franchised stores in Nakuru and Kampala without moving the physical stores to Nairobi.",
+      "key_takeaway": "Azure Arc extends Azure Resource Manager governance, policies, and monitoring to servers and Kubernetes clusters hosted on-premises or in other clouds without migrating them."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "mgmt-mod3",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-features-tools-manage-deploy-azure-resources/4-describe-azure-resource-manager-azure-arm-templates",
+    "difficulty": 2,
+    "question": "A DevOps team at an Eldoret agritech startup needs to automate the provisioning of identical development, staging, and production environments. They want to define virtual networks, database instances, and app services in declarative template files stored in Git so that deployments are repeatable, version-controlled, and eliminate human configuration errors. Which deployment technology natively fulfills this declarative Infrastructure as Code (IaC) requirement in Azure?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Cloud Shell interactive prompts, where engineers execute manual shell scripts line-by-line during environment creation.",
+        "is_correct": false,
+        "rationale": "Manual command-line execution is imperative and procedural, relying on human intervention rather than automated, declarative Infrastructure as Code definitions.",
+        "explanation": "Not quite: Option A is incorrect because manual command-line execution is imperative and procedural, relying on human intervention rather than automated, declarative Infrastructure as Code definitions. Think of this like an architect's digital CAD blueprint\u2014feeding the blueprint to a 3D building printer produces identical houses with exact walls, windows, and doors every time. Exact Azure term to remember: ARM Templates and Bicep (IaC).",
+        "explanation_word_count": 63
+      },
+      {
+        "id": "B",
+        "text": "Azure Service Health webhook triggers, which automatically duplicate resource groups when availability drops.",
+        "is_correct": false,
+        "rationale": "Azure Service Health monitors cloud outage and maintenance notices; it does not provision infrastructure or define application architectures.",
+        "explanation": "Not quite: Option B is incorrect because Azure Service Health monitors cloud outage and maintenance notices; it does not provision infrastructure or define application architectures. Think of this like an architect's digital CAD blueprint\u2014feeding the blueprint to a 3D building printer produces identical houses with exact walls, windows, and doors every time. Exact Azure term to remember: ARM Templates and Bicep (IaC).",
+        "explanation_word_count": 62
+      },
+      {
+        "id": "C",
+        "text": "Azure Resource Manager (ARM) templates, which use declarative JSON or Bicep syntax to define the desired end-state of Azure infrastructure.",
+        "is_correct": true,
+        "rationale": "ARM templates (and Bicep) provide native declarative Infrastructure as Code (IaC) in Azure. Teams declare the desired resources, configurations, and dependencies in code files, allowing Azure Resource Manager to reliably and repeatably provision identical environments.",
+        "explanation": "Spot on! Option C is correct: ARM templates (and Bicep) provide native declarative Infrastructure as Code (IaC) in Azure. Think of this like an architect's digital CAD blueprint\u2014feeding the blueprint to a 3D building printer produces identical houses with exact walls, windows, and doors every time. Exact Azure term to remember: ARM Templates and Bicep (IaC).",
+        "explanation_word_count": 56
+      },
+      {
+        "id": "D",
+        "text": "Microsoft Entra ID Protection policies, which reconstruct infrastructure topologies from historical user sign-in events.",
+        "is_correct": false,
+        "rationale": "Microsoft Entra ID Protection evaluates identity and credential risks; it has nothing to do with infrastructure deployment or declarative IaC.",
+        "explanation": "Not quite: Option D is incorrect because Microsoft Entra ID Protection evaluates identity and credential risks; it has nothing to do with infrastructure deployment or declarative IaC. Think of this like an architect's digital CAD blueprint\u2014feeding the blueprint to a 3D building printer produces identical houses with exact walls, windows, and doors every time. Exact Azure term to remember: ARM Templates and Bicep (IaC).",
+        "explanation_word_count": 64
+      }
+    ],
+    "summary": "ARM templates and Bicep provide declarative Infrastructure as Code (IaC) to deploy repeatable and consistent Azure environments.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "ARM Templates and Bicep (IaC)",
+      "analogy": "Think of this like an architect's digital CAD blueprint\u2014feeding the blueprint to a 3D building printer produces identical houses with exact walls, windows, and doors every time.",
+      "key_takeaway": "ARM templates and Bicep provide declarative Infrastructure as Code (IaC) to automate consistent, repeatable deployments across environments."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "mgmt-mod3",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-features-tools-manage-deploy-azure-resources/2-describe-interacting-azure",
+    "difficulty": 3,
+    "question": "A cloud platform engineer in Nairobi is reviewing automated administrative scripts written by two different engineering teams. Team 1 uses scripts containing commands structured as 'az group create' and 'az vm start', parsing JSON text output with jq. Team 2 uses scripts that pass structured in-memory .NET objects between pipelined commands structured as 'New-AzResourceGroup' and 'Start-AzVM'. Which statement accurately identifies the two tools and their architectural characteristics?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Team 1 is using Azure Resource Manager templates in raw text mode, while Team 2 is executing Azure Policy automated remediations.",
+        "is_correct": false,
+        "rationale": "Neither team is using declarative ARM templates or Azure Policy remediation tasks; both teams are executing command-line administrative scripts.",
+        "explanation": "Not quite: Option A is incorrect because neither team is using declarative ARM templates or Azure Policy remediation tasks; both teams are executing command-line administrative scripts. Think of this like two skilled translators\u2014one speaks concise command shorthand and outputs structured text (CLI), while the other speaks formal corporate language passing structured objects (PowerShell). Both work on Linux, Mac, and Windows. Exact Azure term to remember: Azure CLI & Azure PowerShell.",
+        "explanation_word_count": 70
+      },
+      {
+        "id": "B",
+        "text": "Team 1 is using the Azure CLI which uses 'az' commands and JSON output, while Team 2 is using Azure PowerShell which uses 'Verb-Noun' cmdlet syntax and .NET objects.",
+        "is_correct": true,
+        "rationale": "Azure CLI is cross-platform, utilizes commands starting with 'az', and typically outputs text streams formatted as JSON. Azure PowerShell utilizes cmdlets following the standard PowerShell 'Verb-AzNoun' naming convention and passes structured .NET objects through the pipeline. Both run cross-platform on Windows, macOS, and Linux.",
+        "explanation": "Spot on! Option B is correct: Azure CLI is cross-platform, utilizes commands starting with 'az', and typically outputs text streams formatted as JSON. Think of this like two skilled translators\u2014one speaks concise command shorthand and outputs structured text (CLI), while the other speaks formal corporate language passing structured objects (PowerShell). Both work on Linux, Mac, and Windows. Exact Azure term to remember: Azure CLI & Azure PowerShell.",
+        "explanation_word_count": 67
+      },
+      {
+        "id": "C",
+        "text": "Team 1 is using Azure PowerShell which can only run on Linux, while Team 2 is using Azure CLI which strictly requires Windows PowerShell.",
+        "is_correct": false,
+        "rationale": "This statement is both inverted and technically incorrect. Both Azure CLI and Azure PowerShell are fully cross-platform tools that run on Windows, macOS, and Linux.",
+        "explanation": "Not quite: Option C is incorrect because this statement is both inverted and technically incorrect. Think of this like two skilled translators\u2014one speaks concise command shorthand and outputs structured text (CLI), while the other speaks formal corporate language passing structured objects (PowerShell). Both work on Linux, Mac, and Windows. Exact Azure term to remember: Azure CLI & Azure PowerShell.",
+        "explanation_word_count": 59
+      },
+      {
+        "id": "D",
+        "text": "Team 1 is interacting directly with the physical hypervisor, while Team 2 is issuing commands through the Microsoft 365 Admin Center.",
+        "is_correct": false,
+        "rationale": "Neither tool talks directly to physical hypervisors, and Azure PowerShell manages Azure resources, not Microsoft 365 software subscriptions.",
+        "explanation": "Not quite: Option D is incorrect because neither tool talks directly to physical hypervisors, and Azure PowerShell manages Azure resources, not Microsoft 365 software subscriptions. Think of this like two skilled translators\u2014one speaks concise command shorthand and outputs structured text (CLI), while the other speaks formal corporate language passing structured objects (PowerShell). Both work on Linux, Mac, and Windows. Exact Azure term to remember: Azure CLI & Azure PowerShell.",
+        "explanation_word_count": 69
+      }
+    ],
+    "summary": "Azure CLI uses 'az' commands with JSON text output, while Azure PowerShell uses 'Verb-AzNoun' cmdlets passing .NET objects; both are cross-platform.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Azure CLI & Azure PowerShell",
+      "analogy": "Think of this like two skilled translators\u2014one speaks concise command shorthand and outputs structured text (CLI), while the other speaks formal corporate language passing structured objects (PowerShell). Both work on Linux, Mac, and Windows.",
+      "key_takeaway": "Azure CLI uses 'az' commands with JSON output; Azure PowerShell uses 'Verb-AzNoun' cmdlets passing .NET objects. Both are cross-platform."
+    },
+    "reviewed_by_human": true
+  }
+]

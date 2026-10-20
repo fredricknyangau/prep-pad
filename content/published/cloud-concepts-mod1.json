@@ -1,0 +1,296 @@
+[
+  {
+    "topic_id": "cloud-concepts-mod1",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-cloud-compute/3-what-cloud-compute",
+    "difficulty": 1,
+    "question": "A Nairobi bookshop owner wants to let customers browse stock from any browser without the shop buying or running its own server. Which description best captures what cloud computing provides in this situation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A service that delivers computing resources such as processing, storage, and networking over the internet on demand.",
+        "is_correct": true,
+        "rationale": "Cloud computing is the delivery of computing services\u2014including VMs, storage, databases, and networking\u2014over the internet. The bookshop gets compute and storage without owning hardware.",
+        "explanation": "Spot on! Option A is correct: Cloud computing is the delivery of computing services\u2014including VMs, storage, databases, and networking\u2014over the internet. Think of this like renting a backup diesel generator from a local vendor only during a power blackout, instead of spending hundreds of thousands of shillings to buy, fuel, and service your own heavy generator full-time. Exact Azure term to remember: Cloud Computing.",
+        "explanation_word_count": 64
+      },
+      {
+        "id": "B",
+        "text": "A remote file-storage service that lets the shop upload documents and photos.",
+        "is_correct": false,
+        "rationale": "Remote storage is one capability within cloud computing, but cloud computing is much broader\u2014it also includes compute, networking, databases, and managed services. Defining it as only storage is the classic distractor this unit warns against.",
+        "explanation": "Not quite: Option B is incorrect because remote storage is one capability within cloud computing, but cloud computing is much broader\u2014it also includes compute, networking, databases, and managed services. Think of this like renting a backup diesel generator from a local vendor only during a power blackout, instead of spending hundreds of thousands of shillings to buy, fuel, and service your own heavy generator full-time. Exact Azure term to remember: Cloud Computing.",
+        "explanation_word_count": 72
+      },
+      {
+        "id": "C",
+        "text": "A virtual private network that securely connects the shop's laptop to a datacenter.",
+        "is_correct": false,
+        "rationale": "A VPN is a connectivity tool, not a definition of cloud computing. Cloud computing encompasses the delivery of multiple computing services, of which networking is just one component.",
+        "explanation": "Not quite: Option C is incorrect because a VPN is a connectivity tool, not a definition of cloud computing. Think of this like renting a backup diesel generator from a local vendor only during a power blackout, instead of spending hundreds of thousands of shillings to buy, fuel, and service your own heavy generator full-time. Exact Azure term to remember: Cloud Computing.",
+        "explanation_word_count": 62
+      },
+      {
+        "id": "D",
+        "text": "A software licence agreement that lets the shop install applications on its local computers.",
+        "is_correct": false,
+        "rationale": "A software licence governs on-premises installation. Cloud computing removes the need to install and maintain local software infrastructure; resources are provisioned and consumed over the internet.",
+        "explanation": "Not quite: Option D is incorrect because a software licence governs on-premises installation. Think of this like renting a backup diesel generator from a local vendor only during a power blackout, instead of spending hundreds of thousands of shillings to buy, fuel, and service your own heavy generator full-time. Exact Azure term to remember: Cloud Computing.",
+        "explanation_word_count": 56
+      }
+    ],
+    "summary": "Cloud computing delivers compute, storage, networking, and managed services over the internet\u2014not just remote storage.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Cloud Computing",
+      "analogy": "Think of this like renting a backup diesel generator from a local vendor only during a power blackout, instead of spending hundreds of thousands of shillings to buy, fuel, and service your own heavy generator full-time.",
+      "key_takeaway": "Cloud computing delivers on-demand compute, storage, and networking over the internet on a pay-as-you-go model."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "cloud-concepts-mod1",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-cloud-compute/4-describe-shared-responsibility-model",
+    "difficulty": 2,
+    "question": "A Nairobi SACCO is migrating its member-loan database to Azure Database for PostgreSQL (a managed PaaS service). After the migration, which task remains the SACCO's responsibility and cannot be delegated to Microsoft?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Patching the underlying database engine software.",
+        "is_correct": false,
+        "rationale": "With a managed PaaS database service, Microsoft handles database engine patching. This is one of the operational tasks that shifts to the provider.",
+        "explanation": "Not quite: Option A is incorrect because with a managed PaaS database service, Microsoft handles database engine patching. Think of this like renting an apartment in Kilimani\u2014the landlord maintains the building structure, plumbing, and electrical grid, but you remain strictly responsible for locking your front door and protecting your valuables inside. Exact Azure term to remember: Shared Responsibility Model (PaaS).",
+        "explanation_word_count": 60
+      },
+      {
+        "id": "B",
+        "text": "Replacing failed physical disks in the datacenter hosting the database.",
+        "is_correct": false,
+        "rationale": "Physical infrastructure, including disk replacement, is always the cloud provider's responsibility across all service models. The SACCO has no access to the physical hardware.",
+        "explanation": "Not quite: Option B is incorrect because physical infrastructure, including disk replacement, is always the cloud provider's responsibility across all service models. Think of this like renting an apartment in Kilimani\u2014the landlord maintains the building structure, plumbing, and electrical grid, but you remain strictly responsible for locking your front door and protecting your valuables inside. Exact Azure term to remember: Shared Responsibility Model (PaaS).",
+        "explanation_word_count": 64
+      },
+      {
+        "id": "C",
+        "text": "Managing database user accounts, access permissions, and the handling of member data.",
+        "is_correct": true,
+        "rationale": "Customer data, identities, and access control remain the customer's responsibility regardless of service model. The shared responsibility model is clear that moving to PaaS does not transfer data governance or identity management to Microsoft.",
+        "explanation": "Spot on! Option C is correct: Customer data, identities, and access control remain the customer's responsibility regardless of service model. Think of this like renting an apartment in Kilimani\u2014the landlord maintains the building structure, plumbing, and electrical grid, but you remain strictly responsible for locking your front door and protecting your valuables inside. Exact Azure term to remember: Shared Responsibility Model (PaaS).",
+        "explanation_word_count": 62
+      },
+      {
+        "id": "D",
+        "text": "Monitoring physical datacenter power and cooling for the region hosting the database.",
+        "is_correct": false,
+        "rationale": "Physical datacenter facilities\u2014power, cooling, and physical security\u2014are always the cloud provider's responsibility. The customer has no role in datacenter physical operations.",
+        "explanation": "Not quite: Option D is incorrect because physical datacenter facilities\u2014power, cooling, and physical security\u2014are always the cloud provider's responsibility. Think of this like renting an apartment in Kilimani\u2014the landlord maintains the building structure, plumbing, and electrical grid, but you remain strictly responsible for locking your front door and protecting your valuables inside. Exact Azure term to remember: Shared Responsibility Model (PaaS).",
+        "explanation_word_count": 61
+      }
+    ],
+    "summary": "Customer data, identities, and access control stay with the customer regardless of whether the service model is IaaS, PaaS, or SaaS.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Shared Responsibility Model (PaaS)",
+      "analogy": "Think of this like renting an apartment in Kilimani\u2014the landlord maintains the building structure, plumbing, and electrical grid, but you remain strictly responsible for locking your front door and protecting your valuables inside.",
+      "key_takeaway": "In PaaS, Microsoft patches the OS and database engine, but customer data and access permissions always remain the customer's responsibility."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "cloud-concepts-mod1",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-cloud-compute/4-describe-shared-responsibility-model",
+    "difficulty": 3,
+    "question": "A Kenyan university IT team is comparing two options: running its student portal on an Azure Virtual Machine (IaaS) versus hosting it on Azure App Service (PaaS). Which statement correctly identifies a difference in their operational responsibilities?",
+    "options": [
+      {
+        "id": "A",
+        "text": "With the VM, the university manages the operating system and runtime; with App Service, Microsoft manages those layers.",
+        "is_correct": true,
+        "rationale": "IaaS shifts operating system, runtime, middleware, and application management to the customer. PaaS (App Service) abstracts away the OS and runtime, so Microsoft manages those layers while the customer focuses on the application and its data.",
+        "explanation": "Spot on! Option A is correct: IaaS shifts operating system, runtime, middleware, and application management to the customer. Think of this like renting a self-drive car (IaaS, where you handle petrol, flat tires, and maintenance) versus hailing an Uber (PaaS, where the driver handles vehicle maintenance while you just sit inside and reach your destination). Exact Azure term to remember: IaaS vs PaaS Management Boundary.",
+        "explanation_word_count": 65
+      },
+      {
+        "id": "B",
+        "text": "With both options, Microsoft manages the operating system because both run in Azure datacenters.",
+        "is_correct": false,
+        "rationale": "Running in an Azure datacenter does not automatically shift OS management to Microsoft. With IaaS (VM), the customer is responsible for OS patching and configuration\u2014this is a core IaaS characteristic.",
+        "explanation": "Not quite: Option B is incorrect because running in an Azure datacenter does not automatically shift OS management to Microsoft. Think of this like renting a self-drive car (IaaS, where you handle petrol, flat tires, and maintenance) versus hailing an Uber (PaaS, where the driver handles vehicle maintenance while you just sit inside and reach your destination). Exact Azure term to remember: IaaS vs PaaS Management Boundary.",
+        "explanation_word_count": 67
+      },
+      {
+        "id": "C",
+        "text": "With App Service, the university is responsible for more infrastructure layers than with a VM.",
+        "is_correct": false,
+        "rationale": "The opposite is true. PaaS (App Service) reduces the infrastructure layers the customer must manage compared to IaaS (VM). Moving to PaaS shifts platform and runtime management to the provider.",
+        "explanation": "Not quite: Option C is incorrect because the opposite is true. Think of this like renting a self-drive car (IaaS, where you handle petrol, flat tires, and maintenance) versus hailing an Uber (PaaS, where the driver handles vehicle maintenance while you just sit inside and reach your destination). Exact Azure term to remember: IaaS vs PaaS Management Boundary.",
+        "explanation_word_count": 58
+      },
+      {
+        "id": "D",
+        "text": "The university's responsibility for student data is eliminated when it moves to App Service.",
+        "is_correct": false,
+        "rationale": "Customer data responsibility is never transferred to the provider, regardless of the service model. The university retains responsibility for its student data whether it uses a VM or App Service.",
+        "explanation": "Not quite: Option D is incorrect because customer data responsibility is never transferred to the provider, regardless of the service model. Think of this like renting a self-drive car (IaaS, where you handle petrol, flat tires, and maintenance) versus hailing an Uber (PaaS, where the driver handles vehicle maintenance while you just sit inside and reach your destination). Exact Azure term to remember: IaaS vs PaaS Management Boundary.",
+        "explanation_word_count": 68
+      }
+    ],
+    "summary": "IaaS leaves OS and runtime management to the customer; PaaS shifts those layers to the provider\u2014but customer data remains the customer's responsibility in both models.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "IaaS vs PaaS Management Boundary",
+      "analogy": "Think of this like renting a self-drive car (IaaS, where you handle petrol, flat tires, and maintenance) versus hailing an Uber (PaaS, where the driver handles vehicle maintenance while you just sit inside and reach your destination).",
+      "key_takeaway": "IaaS leaves operating system and runtime management to the customer; PaaS abstracts the OS away so the cloud provider manages it."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "cloud-concepts-mod1",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-cloud-compute/5-define-cloud-models",
+    "difficulty": 1,
+    "question": "A Kenyan hospital maintains its patient health database on physical servers in its own on-premises datacenter, and connects this infrastructure to Microsoft Azure services to run staff communications and off-site encrypted backup. Which cloud deployment model describes this integrated arrangement?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Public cloud, because one of the services runs on Microsoft's shared infrastructure.",
+        "is_correct": false,
+        "rationale": "Public cloud would mean all resources run on the provider's shared infrastructure. Here, the hospital also maintains its own on-premises servers, so the arrangement is not purely public cloud.",
+        "explanation": "Not quite: Option A is incorrect because public cloud would mean all resources run on the provider's shared infrastructure. Think of this like running your main physical retail shop on Biashara Street while simultaneously integrating an online M-Pesa web portal and cloud backup for digital orders. Exact Azure term to remember: Hybrid Cloud.",
+        "explanation_word_count": 53
+      },
+      {
+        "id": "B",
+        "text": "Private cloud, because the hospital controls its patient-record servers.",
+        "is_correct": false,
+        "rationale": "Private cloud means all resources are dedicated to one organization and run entirely in that organization's environment. The hospital's use of a Microsoft-hosted email service means it is not exclusively private cloud.",
+        "explanation": "Not quite: Option B is incorrect because private cloud means all resources are dedicated to one organization and run entirely in that organization's environment. Think of this like running your main physical retail shop on Biashara Street while simultaneously integrating an online M-Pesa web portal and cloud backup for digital orders. Exact Azure term to remember: Hybrid Cloud.",
+        "explanation_word_count": 58
+      },
+      {
+        "id": "C",
+        "text": "Hybrid cloud, because the hospital connects its own on-premises infrastructure with a public cloud service.",
+        "is_correct": true,
+        "rationale": "Hybrid cloud combines private (on-premises or dedicated) infrastructure with public cloud services, allowing data and apps to be integrated between them. The hospital's datacenter servers represent the private environment, and Azure represents the public cloud environment.",
+        "explanation": "Spot on! Option C is correct: Hybrid cloud combines private (on-premises or dedicated) infrastructure with public cloud services, allowing data and apps to be integrated between them. Think of this like running your main physical retail shop on Biashara Street while simultaneously integrating an online M-Pesa web portal and cloud backup for digital orders. Exact Azure term to remember: Hybrid Cloud.",
+        "explanation_word_count": 61
+      },
+      {
+        "id": "D",
+        "text": "Multicloud, because the hospital uses both its own hardware and a cloud provider's service.",
+        "is_correct": false,
+        "rationale": "Multicloud means using services from two or more cloud providers (e.g., Azure and AWS simultaneously). Using an organization's own on-premises infrastructure alongside one cloud provider is a hybrid pattern, not multicloud.",
+        "explanation": "Not quite: Option D is incorrect because multicloud means using services from two or more cloud providers (e.g., Azure and AWS simultaneously). Think of this like running your main physical retail shop on Biashara Street while simultaneously integrating an online M-Pesa web portal and cloud backup for digital orders. Exact Azure term to remember: Hybrid Cloud.",
+        "explanation_word_count": 56
+      }
+    ],
+    "summary": "Hybrid cloud combines on-premises (private) infrastructure with public cloud services; multicloud means using two or more separate cloud providers.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Hybrid Cloud",
+      "analogy": "Think of this like running your main physical retail shop on Biashara Street while simultaneously integrating an online M-Pesa web portal and cloud backup for digital orders.",
+      "key_takeaway": "Hybrid cloud specifically connects and interoperates on-premises private infrastructure with public cloud services."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "cloud-concepts-mod1",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-cloud-compute/5-define-cloud-models",
+    "difficulty": 2,
+    "question": "A Kenyan agritech startup deploys its core API backend on Microsoft Azure and its machine learning analytics pipeline on Google Cloud Platform to leverage specialized capabilities from each provider. Which cloud computing model describes the startup's deployment across multiple public cloud vendors?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Hybrid cloud, because the startup combines multiple cloud environments into a unified solution.",
+        "is_correct": false,
+        "rationale": "Hybrid cloud specifically combines an organization's private (on-premises or dedicated) infrastructure with a public cloud. Deploying across two public cloud providers\u2014Azure and Google Cloud\u2014without on-premises datacenter infrastructure is a multicloud arrangement, not hybrid.",
+        "explanation": "Not quite: Option A is incorrect because hybrid cloud specifically combines an organization's private (on-premises or dedicated) infrastructure with a public cloud. Think of this like using Safaricom M-Pesa for instant local customer payments while using Equity Bank for international supplier wires to leverage the distinct advantages of both providers. Exact Azure term to remember: Multicloud.",
+        "explanation_word_count": 56
+      },
+      {
+        "id": "B",
+        "text": "Multicloud, because the startup distributes its production workloads across two different public cloud providers.",
+        "is_correct": true,
+        "rationale": "Multicloud means using services from two or more public cloud providers. Here, the startup actively runs workloads on both Microsoft Azure and Google Cloud, which is the defining characteristic of a multicloud deployment.",
+        "explanation": "Spot on! Option B is correct: Multicloud means using services from two or more public cloud providers. Think of this like using Safaricom M-Pesa for instant local customer payments while using Equity Bank for international supplier wires to leverage the distinct advantages of both providers. Exact Azure term to remember: Multicloud.",
+        "explanation_word_count": 51
+      },
+      {
+        "id": "C",
+        "text": "Private cloud, because the startup retains administrative control over its application code and data.",
+        "is_correct": false,
+        "rationale": "Private cloud refers to dedicated computing infrastructure used exclusively by a single organization, typically hosted on-premises or via dedicated hosting. Using public cloud providers is the opposite of private cloud.",
+        "explanation": "Not quite: Option C is incorrect because private cloud refers to dedicated computing infrastructure used exclusively by a single organization, typically hosted on-premises or via dedicated hosting. Think of this like using Safaricom M-Pesa for instant local customer payments while using Equity Bank for international supplier wires to leverage the distinct advantages of both providers. Exact Azure term to remember: Multicloud.",
+        "explanation_word_count": 61
+      },
+      {
+        "id": "D",
+        "text": "Community cloud, because multiple cloud providers share physical datacenters in the same region.",
+        "is_correct": false,
+        "rationale": "Community cloud is shared infrastructure specifically built for organizations with common concerns (such as compliance or regulatory requirements). Deploying standard services across Azure and Google Cloud is a multicloud architecture.",
+        "explanation": "Not quite: Option D is incorrect because community cloud is shared infrastructure specifically built for organizations with common concerns (such as compliance or regulatory requirements). Think of this like using Safaricom M-Pesa for instant local customer payments while using Equity Bank for international supplier wires to leverage the distinct advantages of both providers. Exact Azure term to remember: Multicloud.",
+        "explanation_word_count": 59
+      }
+    ],
+    "summary": "Multicloud means deploying workloads across two or more separate public cloud providers; hybrid cloud combines on-premises infrastructure with public cloud.",
+    "needs_human_check": false,
+    "check_note": "Resolved during P2c validation: clarified startup workload ownership across Azure and GCP.",
+    "explain_simply": {
+      "azure_term": "Multicloud",
+      "analogy": "Think of this like using Safaricom M-Pesa for instant local customer payments while using Equity Bank for international supplier wires to leverage the distinct advantages of both providers.",
+      "key_takeaway": "Multicloud means deploying production workloads across two or more separate public cloud providers (such as Azure and Google Cloud)."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "cloud-concepts-mod1",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-cloud-compute/6-describe-consumption-based-model",
+    "difficulty": 2,
+    "question": "A Kenyan e-commerce team sets up a test environment on Azure VMs to trial a new feature. The trial finishes on Friday but no one removes the VMs over the weekend. Which statement best describes what happens?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure automatically stops billing once the team stops sending traffic to the VMs.",
+        "is_correct": false,
+        "rationale": "Provisioned resources continue to incur charges regardless of whether they receive traffic. The consumption-based model bills for resources that are deployed and running, not only for active usage. This is the key distractor this unit highlights.",
+        "explanation": "Not quite: Option A is incorrect because provisioned resources continue to incur charges regardless of whether they receive traffic. Think of this like leaving the tap running in your rental house while traveling upcountry for the weekend\u2014Nairobi Water bills you for every drop that flowed through the meter regardless of whether anyone was home drinking it. Exact Azure term to remember: Consumption-Based Model.",
+        "explanation_word_count": 63
+      },
+      {
+        "id": "B",
+        "text": "Azure converts the VMs to a free tier when they are idle for more than eight hours.",
+        "is_correct": false,
+        "rationale": "Azure does not have an automatic conversion to a free tier based on idle time for general-purpose VMs. Billing continues for deployed resources; the team must explicitly stop or delete the VMs to stop charges.",
+        "explanation": "Not quite: Option B is incorrect because Azure does not have an automatic conversion to a free tier based on idle time for general-purpose VMs. Think of this like leaving the tap running in your rental house while traveling upcountry for the weekend\u2014Nairobi Water bills you for every drop that flowed through the meter regardless of whether anyone was home drinking it. Exact Azure term to remember: Consumption-Based Model.",
+        "explanation_word_count": 69
+      },
+      {
+        "id": "C",
+        "text": "No cost is incurred because the team purchased an upfront CapEx commitment covering the weekend.",
+        "is_correct": false,
+        "rationale": "CapEx describes on-premises or reserved-capacity purchases, not a general mechanism that stops cloud billing. Standard pay-as-you-go VM billing continues until the resource is released, regardless of any upfront CapEx made for separate hardware.",
+        "explanation": "Not quite: Option C is incorrect because capex describes on-premises or reserved-capacity purchases, not a general mechanism that stops cloud billing. Think of this like leaving the tap running in your rental house while traveling upcountry for the weekend\u2014Nairobi Water bills you for every drop that flowed through the meter regardless of whether anyone was home drinking it. Exact Azure term to remember: Consumption-Based Model.",
+        "explanation_word_count": 65
+      },
+      {
+        "id": "D",
+        "text": "The VMs continue to generate costs because provisioned resources are billed while they remain deployed.",
+        "is_correct": true,
+        "rationale": "Consumption-based pricing does not stop automatically when the team stops using a resource. VMs that are left running accumulate charges. Releasing or deallocating resources when they are no longer needed is an operational discipline, not something Azure enforces automatically.",
+        "explanation": "Spot on! Option D is correct: Consumption-based pricing does not stop automatically when the team stops using a resource. Think of this like leaving the tap running in your rental house while traveling upcountry for the weekend\u2014Nairobi Water bills you for every drop that flowed through the meter regardless of whether anyone was home drinking it. Exact Azure term to remember: Consumption-Based Model.",
+        "explanation_word_count": 63
+      }
+    ],
+    "summary": "Provisioned cloud resources continue to generate costs while running, even when idle\u2014releasing resources is an active operational responsibility.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Consumption-Based Model",
+      "analogy": "Think of this like leaving the tap running in your rental house while traveling upcountry for the weekend\u2014Nairobi Water bills you for every drop that flowed through the meter regardless of whether anyone was home drinking it.",
+      "key_takeaway": "Cloud resources are billed while deployed and running; stopping application traffic does not stop billing unless resources are deallocated."
+    },
+    "reviewed_by_human": true
+  }
+]

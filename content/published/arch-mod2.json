@@ -1,0 +1,247 @@
+[
+  {
+    "topic_id": "arch-mod2",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-azure-compute-networking-services/2-virtual-machines",
+    "difficulty": 1,
+    "question": "A Kenyan logistics company needs to run a legacy route-planning tool that requires a specific version of a Linux distribution and several custom kernel modules. Which Azure compute option is the most appropriate starting point?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Functions, because it is serverless and avoids any server management.",
+        "is_correct": false,
+        "rationale": "Azure Functions runs short event-triggered code without a persistent server environment. It does not let you install a specific OS version or custom kernel modules, so it cannot satisfy the legacy tool's dependency requirements.",
+        "explanation": "Not quite: Option A is incorrect because Azure Functions runs short event-triggered code without a persistent server environment. Think of this like renting a private mechanical workshop garage where you have full permission to rebuild the vehicle engine, install custom gearboxes, and tune the exhaust. Exact Azure term to remember: Azure Virtual Machines (IaaS).",
+        "explanation_word_count": 54
+      },
+      {
+        "id": "B",
+        "text": "Azure Virtual Machines, because they give the customer OS-level control and support custom kernel configuration.",
+        "is_correct": true,
+        "rationale": "Azure Virtual Machines let the customer choose an OS image and maintain the guest operating system, including kernel modules and custom packages. This OS-level control makes VMs the correct fit for workloads with specific OS dependencies that cannot be met on a managed platform.",
+        "explanation": "Spot on! Option B is correct: Azure Virtual Machines let the customer choose an OS image and maintain the guest operating system, including kernel modules and custom packages. Think of this like renting a private mechanical workshop garage where you have full permission to rebuild the vehicle engine, install custom gearboxes, and tune the exhaust. Exact Azure term to remember: Azure Virtual Machines (IaaS).",
+        "explanation_word_count": 64
+      },
+      {
+        "id": "C",
+        "text": "Azure App Service, because it is a managed platform that handles OS-level concerns automatically.",
+        "is_correct": false,
+        "rationale": "Azure App Service abstracts the OS away from the customer\u2014which is precisely what the logistics company cannot accept if it needs a specific Linux kernel configuration. A managed platform removes OS control; IaaS (VM) preserves it.",
+        "explanation": "Not quite: Option C is incorrect because Azure App Service abstracts the OS away from the customer\u2014which is precisely what the logistics company cannot accept if it needs a specific Linux kernel configuration. Think of this like renting a private mechanical workshop garage where you have full permission to rebuild the vehicle engine, install custom gearboxes, and tune the exhaust. Exact Azure term to remember: Azure Virtual Machines (IaaS).",
+        "explanation_word_count": 69
+      },
+      {
+        "id": "D",
+        "text": "Azure Container Instances, because containers include their own full guest operating system that can be configured freely.",
+        "is_correct": false,
+        "rationale": "Containers share the host OS kernel rather than running their own separate guest OS. A container image can include application dependencies but cannot independently control the kernel version or load custom kernel modules on the host.",
+        "explanation": "Not quite: Option D is incorrect because containers share the host OS kernel rather than running their own separate guest OS. Think of this like renting a private mechanical workshop garage where you have full permission to rebuild the vehicle engine, install custom gearboxes, and tune the exhaust. Exact Azure term to remember: Azure Virtual Machines (IaaS).",
+        "explanation_word_count": 57
+      }
+    ],
+    "summary": "Azure VMs provide OS-level control including custom kernel and package configuration; managed platforms and containers abstract those concerns away.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Azure Virtual Machines (IaaS)",
+      "analogy": "Think of this like renting a private mechanical workshop garage where you have full permission to rebuild the vehicle engine, install custom gearboxes, and tune the exhaust.",
+      "key_takeaway": "Azure VMs provide complete operating system-level control, allowing installation of custom kernels, drivers, and legacy packages."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "arch-mod2",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-azure-compute-networking-services/4-virtual-desktop",
+    "difficulty": 1,
+    "question": "A Kenyan SACCO wants remote auditors and branch staff to access its finance application from their personal laptops without installing the software locally. Which Azure service is designed for this scenario?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Virtual Desktop, which delivers managed Windows desktops and applications to users over a network.",
+        "is_correct": true,
+        "rationale": "Azure Virtual Desktop (AVD) is specifically designed to provide remote access to Windows desktops and applications. The software runs on Azure infrastructure while users connect from their own devices, satisfying the SACCO's need without local installation.",
+        "explanation": "Spot on! Option A is correct: Azure Virtual Desktop (AVD) is specifically designed to provide remote access to Windows desktops and applications. Think of this like streaming a movie on Netflix from your phone\u2014the heavy computing and video playback run in the cloud, while your device just displays the picture without storing the film. Exact Azure term to remember: Azure Virtual Desktop (AVD).",
+        "explanation_word_count": 63
+      },
+      {
+        "id": "B",
+        "text": "Azure Virtual Machines, which gives the SACCO a server it can configure and share with auditors.",
+        "is_correct": false,
+        "rationale": "A VM is a general-purpose compute resource; it is not specifically designed to deliver managed desktop sessions to multiple remote users. Azure Virtual Desktop is the purpose-built service for centralized desktop delivery.",
+        "explanation": "Not quite: Option B is incorrect because a VM is a general-purpose compute resource; it is not specifically designed to deliver managed desktop sessions to multiple remote users. Think of this like streaming a movie on Netflix from your phone\u2014the heavy computing and video playback run in the cloud, while your device just displays the picture without storing the film. Exact Azure term to remember: Azure Virtual Desktop (AVD).",
+        "explanation_word_count": 69
+      },
+      {
+        "id": "C",
+        "text": "Azure App Service, which hosts the finance application as a public web API for auditors.",
+        "is_correct": false,
+        "rationale": "Azure App Service is a platform for hosting web applications and APIs, not for delivering full Windows desktop sessions. The SACCO needs desktop and application virtualization, not a web hosting platform.",
+        "explanation": "Not quite: Option C is incorrect because Azure App Service is a platform for hosting web applications and APIs, not for delivering full Windows desktop sessions. Think of this like streaming a movie on Netflix from your phone\u2014the heavy computing and video playback run in the cloud, while your device just displays the picture without storing the film. Exact Azure term to remember: Azure Virtual Desktop (AVD).",
+        "explanation_word_count": 67
+      },
+      {
+        "id": "D",
+        "text": "Azure Container Instances, which packages the finance application so auditors can pull and run it locally.",
+        "is_correct": false,
+        "rationale": "Azure Container Instances runs containers in Azure, not on users' laptops. Even if the application were containerized, that would not prevent local installation of the container runtime. AVD is the service that keeps the application centrally hosted and delivered remotely.",
+        "explanation": "Not quite: Option D is incorrect because Azure Container Instances runs containers in Azure, not on users' laptops. Think of this like streaming a movie on Netflix from your phone\u2014the heavy computing and video playback run in the cloud, while your device just displays the picture without storing the film. Exact Azure term to remember: Azure Virtual Desktop (AVD).",
+        "explanation_word_count": 59
+      }
+    ],
+    "summary": "Azure Virtual Desktop delivers centralized Windows desktops and applications to remote users over a network; it is not a general-purpose compute or web hosting service.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Azure Virtual Desktop (AVD)",
+      "analogy": "Think of this like streaming a movie on Netflix from your phone\u2014the heavy computing and video playback run in the cloud, while your device just displays the picture without storing the film.",
+      "key_takeaway": "Azure Virtual Desktop delivers centralized, secure Windows desktops and applications to remote users over the network without local installation."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "arch-mod2",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-azure-compute-networking-services/5-containers",
+    "difficulty": 2,
+    "question": "A Nairobi fintech packages its payment reconciliation service and all its Python dependencies into a single portable unit that starts in seconds and runs on a shared host OS kernel. What term describes this packaging and execution model?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A virtual machine, because the service has its own isolated runtime environment.",
+        "is_correct": false,
+        "rationale": "A virtual machine includes a full guest OS and does not share the host kernel. VMs take longer to start and are heavier than containers. The scenario explicitly describes sharing the host OS kernel and fast startup\u2014characteristics of containers, not VMs.",
+        "explanation": "Not quite: Option A is incorrect because a virtual machine includes a full guest OS and does not share the host kernel. Think of this like standard shipping containers on a freight train\u2014cargo is packed in identical standardized boxes sharing the same train locomotive and tracks, loading in seconds compared to building custom trucks. Exact Azure term to remember: Containers.",
+        "explanation_word_count": 60
+      },
+      {
+        "id": "B",
+        "text": "A container, because it packages the application and dependencies and runs using the shared host OS kernel.",
+        "is_correct": true,
+        "rationale": "A container packages an application and its dependencies into a portable unit that runs using the host operating-system kernel. Containers start faster and use fewer resources than separate VMs precisely because they share the kernel rather than running a full guest OS.",
+        "explanation": "Spot on! Option B is correct: A container packages an application and its dependencies into a portable unit that runs using the host operating-system kernel. Think of this like standard shipping containers on a freight train\u2014cargo is packed in identical standardized boxes sharing the same train locomotive and tracks, loading in seconds compared to building custom trucks. Exact Azure term to remember: Containers.",
+        "explanation_word_count": 63
+      },
+      {
+        "id": "C",
+        "text": "A serverless function, because the code runs without the team managing a dedicated server.",
+        "is_correct": false,
+        "rationale": "Serverless functions run event-triggered code without persistent server management. They are not described as packaging an application with dependencies into a portable image that shares the host OS kernel\u2014that is the defining characteristic of containers.",
+        "explanation": "Not quite: Option C is incorrect because serverless functions run event-triggered code without persistent server management. Think of this like standard shipping containers on a freight train\u2014cargo is packed in identical standardized boxes sharing the same train locomotive and tracks, loading in seconds compared to building custom trucks. Exact Azure term to remember: Containers.",
+        "explanation_word_count": 54
+      },
+      {
+        "id": "D",
+        "text": "A virtual machine scale set, because the service can run multiple identical instances.",
+        "is_correct": false,
+        "rationale": "A VM Scale Set is a mechanism for managing groups of VMs that can scale. It is not a packaging or execution model, and it uses full VMs rather than the lightweight container model described in the scenario.",
+        "explanation": "Not quite: Option D is incorrect because a VM Scale Set is a mechanism for managing groups of VMs that can scale. Think of this like standard shipping containers on a freight train\u2014cargo is packed in identical standardized boxes sharing the same train locomotive and tracks, loading in seconds compared to building custom trucks. Exact Azure term to remember: Containers.",
+        "explanation_word_count": 60
+      }
+    ],
+    "summary": "Containers package an application with its dependencies and share the host OS kernel, giving faster startup and lighter resource use than full virtual machines.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Containers",
+      "analogy": "Think of this like standard shipping containers on a freight train\u2014cargo is packed in identical standardized boxes sharing the same train locomotive and tracks, loading in seconds compared to building custom trucks.",
+      "key_takeaway": "Containers package application code with dependencies and share the host operating system kernel, making them lightweight and fast to start."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "arch-mod2",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-azure-compute-networking-services/6-functions",
+    "difficulty": 2,
+    "question": "A Kenyan e-commerce platform receives an M-Pesa payment callback over HTTP each time a customer completes a purchase. The engineering team wants to run validation code for each callback without provisioning or managing a dedicated server. Which Azure compute service fits this requirement?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Virtual Machines, because a dedicated VM can remain on standby to receive each callback.",
+        "is_correct": false,
+        "rationale": "A VM requires the team to provision, maintain, and manage a server continuously. The scenario specifically requires avoiding that management overhead. Azure Functions is designed for event-triggered execution without persistent server provisioning.",
+        "explanation": "Not quite: Option A is incorrect because a VM requires the team to provision, maintain, and manage a server continuously. Think of this like a boda-boda rider at the stage who only starts his motorcycle engine when a paying passenger arrives, rather than burning fuel idling his engine all morning. Exact Azure term to remember: Azure Functions (Serverless).",
+        "explanation_word_count": 58
+      },
+      {
+        "id": "B",
+        "text": "Azure App Service, because it provides a managed web host that listens for incoming HTTP requests.",
+        "is_correct": false,
+        "rationale": "Azure App Service is a managed hosting platform for conventional web applications and APIs. While it can handle HTTP, it still requires the team to deploy and scale a running application. Azure Functions is the more appropriate fit for short, event-triggered code with no server management.",
+        "explanation": "Not quite: Option B is incorrect because Azure App Service is a managed hosting platform for conventional web applications and APIs. Think of this like a boda-boda rider at the stage who only starts his motorcycle engine when a paying passenger arrives, rather than burning fuel idling his engine all morning. Exact Azure term to remember: Azure Functions (Serverless).",
+        "explanation_word_count": 59
+      },
+      {
+        "id": "C",
+        "text": "Azure Virtual Desktop, because it provides a centralized computing environment for running business logic.",
+        "is_correct": false,
+        "rationale": "Azure Virtual Desktop delivers remote desktop sessions to users\u2014it is not a service for running application logic triggered by incoming webhooks or events. It is the wrong service category for this requirement entirely.",
+        "explanation": "Not quite: Option C is incorrect because Azure Virtual Desktop delivers remote desktop sessions to users\u2014it is not a service for running application logic triggered by incoming webhooks or events. Think of this like a boda-boda rider at the stage who only starts his motorcycle engine when a paying passenger arrives, rather than burning fuel idling his engine all morning. Exact Azure term to remember: Azure Functions (Serverless).",
+        "explanation_word_count": 68
+      },
+      {
+        "id": "D",
+        "text": "Azure Functions, because it executes code in response to triggers such as HTTP requests without the team managing a dedicated server.",
+        "is_correct": true,
+        "rationale": "Azure Functions is a serverless compute service that runs code when triggered by an event\u2014including HTTP requests. The team writes the validation logic; Azure handles the underlying execution infrastructure. This matches both requirements: HTTP-triggered execution and no dedicated server management.",
+        "explanation": "Spot on! Option D is correct: Azure Functions is a serverless compute service that runs code when triggered by an event\u2014including HTTP requests. Think of this like a boda-boda rider at the stage who only starts his motorcycle engine when a paying passenger arrives, rather than burning fuel idling his engine all morning. Exact Azure term to remember: Azure Functions (Serverless).",
+        "explanation_word_count": 61
+      }
+    ],
+    "summary": "Azure Functions runs event-triggered code (HTTP, timer, message, etc.) without requiring the team to provision or manage a dedicated server\u2014'serverless' means the infrastructure is abstracted, not absent.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Azure Functions (Serverless)",
+      "analogy": "Think of this like a boda-boda rider at the stage who only starts his motorcycle engine when a paying passenger arrives, rather than burning fuel idling his engine all morning.",
+      "key_takeaway": "Azure Functions executes code in response to events (like HTTP webhooks) without requiring server provisioning or ongoing management."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "arch-mod2",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-azure-compute-networking-services/7-describe-application-hosting-options",
+    "difficulty": 3,
+    "question": "A Kenyan software house is assessing three workloads: (1) a FastAPI web API where the team wants to deploy code without touching the underlying OS, (2) a background image-processing job triggered each time a file is uploaded to storage, and (3) a legacy billing engine that requires a Windows Server 2016 OS with a specific third-party driver. Which Azure compute sequence (in order) best matches these three needs?",
+    "options": [
+      {
+        "id": "A",
+        "text": "App Service, Azure Functions, Virtual Machine \u2014 because App Service hosts the API on a managed platform, Functions handles the event-triggered job, and a VM provides the OS-level control the legacy engine requires.",
+        "is_correct": true,
+        "rationale": "Need 1 (managed web host, no OS work) \u2192 Azure App Service. Need 2 (trigger on file upload, event-driven) \u2192 Azure Functions. Need 3 (specific OS version and driver) \u2192 Azure Virtual Machine. Each choice matches the primary workload constraint without over-engineering the others.",
+        "explanation": "Spot on! Option A is correct: Need 1 (managed web host, no OS work) \u2192 Azure App Service. Think of choosing transport: an electric passenger train for daily commuters (App Service), an on-demand courier for instant package dispatch (Functions), and a heavy-duty customized tractor for rugged farm terrain (VM). Exact Azure term to remember: Azure Compute Hosting Hierarchy.",
+        "explanation_word_count": 58
+      },
+      {
+        "id": "B",
+        "text": "Virtual Machine, App Service, Azure Functions \u2014 because a VM provides dedicated compute for the API, App Service handles background events, and Functions runs the legacy engine.",
+        "is_correct": false,
+        "rationale": "This sequence inverts the roles: App Service is not designed for storage-triggered background image processing (which fits Functions), and Azure Functions cannot host a legacy Windows Server 2016 workload requiring custom OS drivers.",
+        "explanation": "Not quite: Option B is incorrect because this sequence inverts the roles: App Service is not designed for storage-triggered background image processing (which fits Functions), and Azure Functions cannot host a legacy Windows Server 2016 workload requiring custom OS drivers. Think of choosing transport: an electric passenger train for daily commuters (App Service), an on-demand courier for instant package dispatch (Functions), and a heavy-duty customized tractor for rugged farm terrain (VM). Exact Azure term to remember: Azure Compute Hosting Hierarchy.",
+        "explanation_word_count": 80
+      },
+      {
+        "id": "C",
+        "text": "Azure Functions, App Service, Azure Container Instances \u2014 because serverless handles the API, App Service handles events, and containers run legacy software.",
+        "is_correct": false,
+        "rationale": "Azure Functions is best for event-driven tasks, not persistent web APIs; App Service is a web host, not an event trigger service; and Azure Container Instances share the host kernel, making them unsuitable for a workload requiring a specific Windows OS version with a kernel-level driver.",
+        "explanation": "Not quite: Option C is incorrect because Azure Functions is best for event-driven tasks, not persistent web APIs; App Service is a web host, not an event trigger service; and Azure Container Instances share the host kernel, making them unsuitable for a workload requiring a specific Windows OS version with a kernel-level driver. Think of choosing transport: an electric passenger train for daily commuters (App Service), an on-demand courier for instant package dispatch (Functions), and a heavy-duty customized tractor for rugged farm terrain (VM). Exact Azure term to remember: Azure Compute Hosting Hierarchy.",
+        "explanation_word_count": 93
+      },
+      {
+        "id": "D",
+        "text": "App Service, Azure Container Instances, App Service \u2014 because App Service hosts the API, containers handle file triggers, and App Service hosts the legacy billing engine.",
+        "is_correct": false,
+        "rationale": "App Service cannot satisfy the legacy billing engine's requirement for a specific Windows Server 2016 OS with third-party kernel drivers. A virtual machine is required for custom OS and driver dependencies.",
+        "explanation": "Not quite: Option D is incorrect because app Service cannot satisfy the legacy billing engine's requirement for a specific Windows Server 2016 OS with third-party kernel drivers. Think of choosing transport: an electric passenger train for daily commuters (App Service), an on-demand courier for instant package dispatch (Functions), and a heavy-duty customized tractor for rugged farm terrain (VM). Exact Azure term to remember: Azure Compute Hosting Hierarchy.",
+        "explanation_word_count": 67
+      }
+    ],
+    "summary": "Match the compute service to the workload's primary constraint: managed web runtime \u2192 App Service; event-triggered execution \u2192 Functions; OS-level control \u2192 VM.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Azure Compute Hosting Hierarchy",
+      "analogy": "Think of choosing transport: an electric passenger train for daily commuters (App Service), an on-demand courier for instant package dispatch (Functions), and a heavy-duty customized tractor for rugged farm terrain (VM).",
+      "key_takeaway": "Match workload needs: managed web platforms use App Service, event-driven tasks use Functions, and custom OS/driver dependencies use VMs."
+    },
+    "reviewed_by_human": true
+  }
+]

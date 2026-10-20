@@ -1,0 +1,247 @@
+[
+  {
+    "topic_id": "arch-mod1",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/3-get-started-azure-accounts",
+    "difficulty": 1,
+    "question": "A Nairobi developer team wants to keep billing and access policies for its production workloads completely separate from those of its test environment on Azure. Which Azure concept lets them create this separation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A resource group, which acts as a billing boundary separating production from test.",
+        "is_correct": false,
+        "rationale": "A resource group is a logical container for organizing resources within a subscription, not a billing or governance boundary. Billing and policy scope are controlled at the subscription level, not the resource group level.",
+        "explanation": "Not quite: Option A is incorrect because a resource group is a logical container for organizing resources within a subscription, not a billing or governance boundary. Think of this like holding two separate commercial bank accounts and business PINs for your logistics company versus your farming business so their expenses, invoices, and audit trails never mix. Exact Azure term to remember: Azure Subscription.",
+        "explanation_word_count": 63
+      },
+      {
+        "id": "B",
+        "text": "An availability zone, which physically isolates the production environment from the test environment.",
+        "is_correct": false,
+        "rationale": "Availability zones are physical datacenter locations designed for fault isolation within a region. They are not a mechanism for separating billing or access policies between environments.",
+        "explanation": "Not quite: Option B is incorrect because availability zones are physical datacenter locations designed for fault isolation within a region. Think of this like holding two separate commercial bank accounts and business PINs for your logistics company versus your farming business so their expenses, invoices, and audit trails never mix. Exact Azure term to remember: Azure Subscription.",
+        "explanation_word_count": 57
+      },
+      {
+        "id": "C",
+        "text": "Separate Azure subscriptions for production and test, each providing an independent billing and management boundary.",
+        "is_correct": true,
+        "rationale": "An Azure subscription is the fundamental billing and management boundary. Using separate subscriptions for production and test means costs are tracked independently and access or governance policies can be applied per subscription without overlap.",
+        "explanation": "Spot on! Option C is correct: An Azure subscription is the fundamental billing and management boundary. Think of this like holding two separate commercial bank accounts and business PINs for your logistics company versus your farming business so their expenses, invoices, and audit trails never mix. Exact Azure term to remember: Azure Subscription.",
+        "explanation_word_count": 53
+      },
+      {
+        "id": "D",
+        "text": "A management group, which directly hosts the production resources in a dedicated vault.",
+        "is_correct": false,
+        "rationale": "A management group organizes and governs multiple subscriptions; it does not directly host resources or act as a billing container. Resources are created inside subscriptions, not management groups.",
+        "explanation": "Not quite: Option D is incorrect because a management group organizes and governs multiple subscriptions; it does not directly host resources or act as a billing container. Think of this like holding two separate commercial bank accounts and business PINs for your logistics company versus your farming business so their expenses, invoices, and audit trails never mix. Exact Azure term to remember: Azure Subscription.",
+        "explanation_word_count": 64
+      }
+    ],
+    "summary": "Azure subscriptions are the billing and management boundary; resource groups organize resources within a subscription but do not control billing or governance isolation.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Azure Subscription",
+      "analogy": "Think of this like holding two separate commercial bank accounts and business PINs for your logistics company versus your farming business so their expenses, invoices, and audit trails never mix.",
+      "key_takeaway": "An Azure subscription serves as the primary billing and governance isolation boundary in Azure."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "arch-mod1",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure",
+    "difficulty": 1,
+    "question": "A Kenyan fintech deploys its payment API across two separate Azure facilities within the same city region, each with its own power, cooling, and networking, so that a power failure in one facility does not take down the API. Which Azure physical concept describes each of those separate facilities?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Region pairs, which connect two geographically distant Azure regions for disaster recovery.",
+        "is_correct": false,
+        "rationale": "Region pairs connect two separate Azure regions (often in different countries or areas) for geographic resilience. The scenario describes two physically separate facilities within the same region, which describes availability zones.",
+        "explanation": "Not quite: Option A is incorrect because region pairs connect two separate Azure regions (often in different countries or areas) for geographic resilience. Think of this like having three independent M-Pesa kiosks on different streets in Westlands with separate electrical feeds\u2014if one kiosk experiences a blackout, customers simply walk 50 meters to the next kiosk. Exact Azure term to remember: Availability Zones.",
+        "explanation_word_count": 62
+      },
+      {
+        "id": "B",
+        "text": "Availability zones, which are physically separate datacenter locations within a region, each with independent infrastructure.",
+        "is_correct": true,
+        "rationale": "An availability zone is a physically distinct location within an Azure region with its own power, cooling, and networking. Deploying across two zones within the same region means a failure in one zone does not affect the other\u2014exactly the scenario described.",
+        "explanation": "Spot on! Option B is correct: An availability zone is a physically distinct location within an Azure region with its own power, cooling, and networking. Think of this like having three independent M-Pesa kiosks on different streets in Westlands with separate electrical feeds\u2014if one kiosk experiences a blackout, customers simply walk 50 meters to the next kiosk. Exact Azure term to remember: Availability Zones.",
+        "explanation_word_count": 64
+      },
+      {
+        "id": "C",
+        "text": "Resource groups, which separate workloads into logical containers within an Azure region.",
+        "is_correct": false,
+        "rationale": "Resource groups are logical management containers, not physical locations. They have no relationship to physical datacenter layout, power, or networking independence.",
+        "explanation": "Not quite: Option C is incorrect because resource groups are logical management containers, not physical locations. Think of this like having three independent M-Pesa kiosks on different streets in Westlands with separate electrical feeds\u2014if one kiosk experiences a blackout, customers simply walk 50 meters to the next kiosk. Exact Azure term to remember: Availability Zones.",
+        "explanation_word_count": 55
+      },
+      {
+        "id": "D",
+        "text": "Management groups, which govern multiple subscriptions across geographic boundaries.",
+        "is_correct": false,
+        "rationale": "Management groups sit above subscriptions in the management hierarchy and are used to apply governance across subscriptions. They are a management concept, not a physical infrastructure concept.",
+        "explanation": "Not quite: Option D is incorrect because management groups sit above subscriptions in the management hierarchy and are used to apply governance across subscriptions. Think of this like having three independent M-Pesa kiosks on different streets in Westlands with separate electrical feeds\u2014if one kiosk experiences a blackout, customers simply walk 50 meters to the next kiosk. Exact Azure term to remember: Availability Zones.",
+        "explanation_word_count": 63
+      }
+    ],
+    "summary": "Availability zones are physically separate datacenter locations within one region, each with independent infrastructure\u2014they protect against localized datacenter failures.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Availability Zones",
+      "analogy": "Think of this like having three independent M-Pesa kiosks on different streets in Westlands with separate electrical feeds\u2014if one kiosk experiences a blackout, customers simply walk 50 meters to the next kiosk.",
+      "key_takeaway": "Availability Zones are physically separate datacenter facilities within an Azure region, each with independent power, cooling, and networking."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "arch-mod1",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure",
+    "difficulty": 2,
+    "question": "A Kenyan bank's cloud architect says: \"We deployed our database to the West Europe / North Europe region pair, so our data is automatically replicated and will fail over to North Europe if West Europe goes down.\" What is the flaw in this statement?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Region pairs do not exist in Europe; they are only available in the United States.",
+        "is_correct": false,
+        "rationale": "Region pairs exist in multiple geographies worldwide and are not restricted to the United States. The flaw in the architect's statement is about automatic replication, not about region pair availability.",
+        "explanation": "Not quite: Option A is incorrect because region pairs exist in multiple geographies worldwide and are not restricted to the United States. Think of this like having a warehouse in Nairobi and another in Mombasa\u2014simply owning space in both cities doesn't automatically transport goods between them; you must explicitly book transport and replication. Exact Azure term to remember: Azure Region Pairs.",
+        "explanation_word_count": 61
+      },
+      {
+        "id": "B",
+        "text": "The database would need to be placed inside an availability zone, not a region pair, to support failover.",
+        "is_correct": false,
+        "rationale": "Availability zones protect against localized failures within a single region; they do not provide cross-region failover. Region pairs do support cross-region resilience strategies, but the flaw is that the architect assumes automatic replication, which is not guaranteed.",
+        "explanation": "Not quite: Option B is incorrect because availability zones protect against localized failures within a single region; they do not provide cross-region failover. Think of this like having a warehouse in Nairobi and another in Mombasa\u2014simply owning space in both cities doesn't automatically transport goods between them; you must explicitly book transport and replication. Exact Azure term to remember: Azure Region Pairs.",
+        "explanation_word_count": 62
+      },
+      {
+        "id": "C",
+        "text": "Choosing a region pair does not automatically replicate data or guarantee failover; those require explicit service configuration.",
+        "is_correct": true,
+        "rationale": "Region pairs can support cross-region resilience strategies, but replication and failover are not automatic for every service or workload by default. The architect must explicitly configure replication and failover; simply deploying to a paired region does not do this automatically.",
+        "explanation": "Spot on! Option C is correct: Region pairs can support cross-region resilience strategies, but replication and failover are not automatic for every service or workload by default. Think of this like having a warehouse in Nairobi and another in Mombasa\u2014simply owning space in both cities doesn't automatically transport goods between them; you must explicitly book transport and replication. Exact Azure term to remember: Azure Region Pairs.",
+        "explanation_word_count": 66
+      },
+      {
+        "id": "D",
+        "text": "Region pairs only support storage services; database services cannot be paired across regions.",
+        "is_correct": false,
+        "rationale": "Region pairs are not limited to storage services; they apply to Azure infrastructure broadly. The core issue is the assumption of automatic replication and failover, not any restriction on which service types can use paired regions.",
+        "explanation": "Not quite: Option D is incorrect because region pairs are not limited to storage services; they apply to Azure infrastructure broadly. Think of this like having a warehouse in Nairobi and another in Mombasa\u2014simply owning space in both cities doesn't automatically transport goods between them; you must explicitly book transport and replication. Exact Azure term to remember: Azure Region Pairs.",
+        "explanation_word_count": 60
+      }
+    ],
+    "summary": "Region pairs support cross-region resilience, but data replication and failover must be explicitly configured\u2014choosing a paired region does not make them automatic.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Azure Region Pairs",
+      "analogy": "Think of this like having a warehouse in Nairobi and another in Mombasa\u2014simply owning space in both cities doesn't automatically transport goods between them; you must explicitly book transport and replication.",
+      "key_takeaway": "Region pairs support cross-region disaster recovery, but data replication and automated failover must be explicitly configured by the customer."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "arch-mod1",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure",
+    "difficulty": 2,
+    "question": "Frixel Labs has three Azure subscriptions: one for production, one for development, and one for a client project. The CTO wants to apply a single security policy across all three from one place. Which Azure management concept allows this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A resource group placed above all three subscriptions to act as a policy scope.",
+        "is_correct": false,
+        "rationale": "Resource groups exist within a subscription, not above multiple subscriptions. They cannot span or govern multiple subscriptions. The management hierarchy goes: management group \u2192 subscription \u2192 resource group \u2192 resource.",
+        "explanation": "Not quite: Option A is incorrect because resource groups exist within a subscription, not above multiple subscriptions. Think of this like a SACCO board issuing an overarching lending policy that automatically applies to all regional branches, accounts, and staff underneath it. Exact Azure term to remember: Azure Management Groups.",
+        "explanation_word_count": 49
+      },
+      {
+        "id": "B",
+        "text": "A shared availability zone that encompasses all three subscriptions' resources for unified governance.",
+        "is_correct": false,
+        "rationale": "Availability zones are physical fault-isolation locations within a region. They have no governance or policy scope and do not span subscriptions.",
+        "explanation": "Not quite: Option B is incorrect because availability zones are physical fault-isolation locations within a region. Think of this like a SACCO board issuing an overarching lending policy that automatically applies to all regional branches, accounts, and staff underneath it. Exact Azure term to remember: Azure Management Groups.",
+        "explanation_word_count": 48
+      },
+      {
+        "id": "C",
+        "text": "A single Azure region chosen as the shared governance location for all three subscriptions.",
+        "is_correct": false,
+        "rationale": "An Azure region is a physical infrastructure concept\u2014a geographic area of datacenters. It is not a management boundary and cannot be used to apply policies across subscriptions.",
+        "explanation": "Not quite: Option C is incorrect because an Azure region is a physical infrastructure concept\u2014a geographic area of datacenters. Think of this like a SACCO board issuing an overarching lending policy that automatically applies to all regional branches, accounts, and staff underneath it. Exact Azure term to remember: Azure Management Groups.",
+        "explanation_word_count": 51
+      },
+      {
+        "id": "D",
+        "text": "A management group that contains all three subscriptions, with the policy assigned at that group's scope.",
+        "is_correct": true,
+        "rationale": "Management groups are designed to organize multiple subscriptions and apply governance at a scope that covers all subscriptions within the group. Assigning a policy at the management group level means it inherits down to every subscription, resource group, and resource within it.",
+        "explanation": "Spot on! Option D is correct: Management groups are designed to organize multiple subscriptions and apply governance at a scope that covers all subscriptions within the group. Think of this like a SACCO board issuing an overarching lending policy that automatically applies to all regional branches, accounts, and staff underneath it. Exact Azure term to remember: Azure Management Groups.",
+        "explanation_word_count": 59
+      }
+    ],
+    "summary": "Management groups sit above subscriptions and allow policies and access controls to be applied once at a group scope, inheriting down through all contained subscriptions.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Azure Management Groups",
+      "analogy": "Think of this like a SACCO board issuing an overarching lending policy that automatically applies to all regional branches, accounts, and staff underneath it.",
+      "key_takeaway": "Management groups sit above subscriptions in the hierarchy, allowing governance and policies to be applied once and inherited by all child subscriptions."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "arch-mod1",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure",
+    "difficulty": 3,
+    "question": "A Kenyan agritech startup organizes all its Azure resources in a single resource group called 'AgriProd'. The team lead claims the resource group is 'the production datacenter region' because all resources in it run in South Africa. Which statement accurately describes what an Azure resource group is and how its location behaves?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A resource group is a physical datacenter location; resources in it share the same hardware rack.",
+        "is_correct": false,
+        "rationale": "Resource groups are logical management containers, not physical locations. Resources within the same resource group can run in different Azure regions and share no physical proximity requirement.",
+        "explanation": "Not quite: Option A is incorrect because resource groups are logical management containers, not physical locations. Think of this like a labeled manila folder in an office filing cabinet\u2014putting documents into a folder labeled 'Coast Operations' doesn't mean the papers can only be read at the beach; the folder is just a logical organizer. Exact Azure term to remember: Azure Resource Group.",
+        "explanation_word_count": 62
+      },
+      {
+        "id": "B",
+        "text": "A resource group is a logical container for organizing and managing related Azure resources, and its location refers to where its metadata is stored, not where its resources must run.",
+        "is_correct": true,
+        "rationale": "A resource group is a logical management grouping. Its region setting controls where the resource group's own metadata is stored; resources within it can be deployed to any region. The team lead's description of it as 'the production region' is incorrect on both counts.",
+        "explanation": "Spot on! Option B is correct: A resource group is a logical management grouping. Think of this like a labeled manila folder in an office filing cabinet\u2014putting documents into a folder labeled 'Coast Operations' doesn't mean the papers can only be read at the beach; the folder is just a logical organizer. Exact Azure term to remember: Azure Resource Group.",
+        "explanation_word_count": 60
+      },
+      {
+        "id": "C",
+        "text": "A resource group is a billing boundary; each resource group has its own invoice separate from the subscription.",
+        "is_correct": false,
+        "rationale": "Billing is scoped at the subscription level, not the resource group level. Resource groups help organize resources but do not create separate billing boundaries.",
+        "explanation": "Not quite: Option C is incorrect because billing is scoped at the subscription level, not the resource group level. Think of this like a labeled manila folder in an office filing cabinet\u2014putting documents into a folder labeled 'Coast Operations' doesn't mean the papers can only be read at the beach; the folder is just a logical organizer. Exact Azure term to remember: Azure Resource Group.",
+        "explanation_word_count": 65
+      },
+      {
+        "id": "D",
+        "text": "A resource group sits above subscriptions in the management hierarchy and can span multiple subscriptions.",
+        "is_correct": false,
+        "rationale": "Resource groups are below subscriptions in the hierarchy: management group \u2192 subscription \u2192 resource group \u2192 resource. A resource group cannot span or sit above subscriptions.",
+        "explanation": "Not quite: Option D is incorrect because resource groups are below subscriptions in the hierarchy: management group \u2192 subscription \u2192 resource group \u2192 resource. Think of this like a labeled manila folder in an office filing cabinet\u2014putting documents into a folder labeled 'Coast Operations' doesn't mean the papers can only be read at the beach; the folder is just a logical organizer. Exact Azure term to remember: Azure Resource Group.",
+        "explanation_word_count": 70
+      }
+    ],
+    "summary": "A resource group is a logical management container, not a physical location or billing boundary; its region only determines where its metadata is stored.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Azure Resource Group",
+      "analogy": "Think of this like a labeled manila folder in an office filing cabinet\u2014putting documents into a folder labeled 'Coast Operations' doesn't mean the papers can only be read at the beach; the folder is just a logical organizer.",
+      "key_takeaway": "A resource group is a logical management container; its region setting only specifies where its management metadata is stored, not where contained resources must reside."
+    },
+    "reviewed_by_human": true
+  }
+]

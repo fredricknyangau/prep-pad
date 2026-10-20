@@ -1,0 +1,194 @@
+[
+  {
+    "topic_id": "mgmt-mod4",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-monitoring-tools-azure/2-describe-purpose-of-azure-advisor",
+    "difficulty": 1,
+    "question": "The lead engineer at a Nairobi agritech company wants to inspect automated guidance to eliminate unnecessary cloud spending on over-provisioned virtual machines and improve the fault tolerance and security posture of their production workloads across their active Azure subscriptions. Which Azure service analyzes deployed resource telemetry to provide personalized, actionable best-practice recommendations organized across pillars such as Cost, Reliability, and Performance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Service Health, which broadcasts alerts regarding global datacenter power failures and hardware incidents.",
+        "is_correct": false,
+        "rationale": "Azure Service Health notifies administrators about active Azure platform incidents, scheduled maintenance, and resource outages; it does not provide workload configuration recommendations across cost, performance, and reliability pillars.",
+        "explanation": "Not quite: Option A is incorrect because Azure Service Health notifies administrators about active Azure platform incidents, scheduled maintenance, and resource outages; it does not provide workload configuration recommendations across cost, performance, and reliability pillars. Think of this like a trusted veteran mechanic who inspects your commercial vehicle fleet weekly and advises: 'You are leaving three vans idling overnight; turn them off to cut fuel costs, and upgrade the locks on the cargo door.' Exact Azure term to remember: Azure Advisor.",
+        "explanation_word_count": 81
+      },
+      {
+        "id": "B",
+        "text": "Azure Advisor, which evaluates active resources and provides tailored recommendations across Cost, Security, Reliability, Performance, and Operational Excellence.",
+        "is_correct": true,
+        "rationale": "Azure Advisor is a personalized cloud consultant that analyzes your deployed Azure resources and configurations to suggest actionable best practices across five key pillars: Cost, Security, Reliability, Performance, and Operational Excellence.",
+        "explanation": "Spot on! Option B is correct: Azure Advisor is a personalized cloud consultant that analyzes your deployed Azure resources and configurations to suggest actionable best practices across five key pillars: Cost, Security, Reliability, Performance, and Operational Excellence. Think of this like a trusted veteran mechanic who inspects your commercial vehicle fleet weekly and advises: 'You are leaving three vans idling overnight; turn them off to cut fuel costs, and upgrade the locks on the cargo door.' Exact Azure term to remember: Azure Advisor.",
+        "explanation_word_count": 83
+      },
+      {
+        "id": "C",
+        "text": "Azure Monitor Log Analytics, which requires writing custom KQL queries to identify infrastructure configuration mistakes.",
+        "is_correct": false,
+        "rationale": "Log Analytics is a query tool used to search and analyze collected operational log data; it is not an automated advisory engine that provides curated architectural recommendations.",
+        "explanation": "Not quite: Option C is incorrect because Log Analytics is a query tool used to search and analyze collected operational log data; it is not an automated advisory engine that provides curated architectural recommendations. Think of this like a trusted veteran mechanic who inspects your commercial vehicle fleet weekly and advises: 'You are leaving three vans idling overnight; turn them off to cut fuel costs, and upgrade the locks on the cargo door.' Exact Azure term to remember: Azure Advisor.",
+        "explanation_word_count": 80
+      },
+      {
+        "id": "D",
+        "text": "Microsoft Service Trust Portal, which provides independent third-party audit reports and compliance certifications.",
+        "is_correct": false,
+        "rationale": "The Service Trust Portal hosts Microsoft's external compliance certifications and regulatory audit documentation, not tailored recommendations for customer subscriptions.",
+        "explanation": "Not quite: Option D is incorrect because the Service Trust Portal hosts Microsoft's external compliance certifications and regulatory audit documentation, not tailored recommendations for customer subscriptions. Think of this like a trusted veteran mechanic who inspects your commercial vehicle fleet weekly and advises: 'You are leaving three vans idling overnight; turn them off to cut fuel costs, and upgrade the locks on the cargo door.' Exact Azure term to remember: Azure Advisor.",
+        "explanation_word_count": 72
+      }
+    ],
+    "summary": "Azure Advisor provides personalized recommendations across Cost, Security, Reliability, Performance, and Operational Excellence to optimize Azure workloads.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Azure Advisor",
+      "analogy": "Think of this like a trusted veteran mechanic who inspects your commercial vehicle fleet weekly and advises: 'You are leaving three vans idling overnight; turn them off to cut fuel costs, and upgrade the locks on the cargo door.'",
+      "key_takeaway": "Azure Advisor analyzes active resource configurations to provide personalized recommendations across Cost, Security, Reliability, Performance, and Operational Excellence."
+    }
+  },
+  {
+    "topic_id": "mgmt-mod4",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-monitoring-tools-azure/3-describe-azure-service-health",
+    "difficulty": 2,
+    "question": "A DevOps engineer at a Kenyan SACCO receives reports that their member banking portal in the South Africa North region is intermittently failing to connect to cloud databases. The engineer needs to quickly determine whether Microsoft is currently experiencing an underlying cloud platform outage or conducting planned infrastructure maintenance that specifically impacts the services and region used by the SACCO's subscriptions. Which tool provides this personalized dashboard of cloud provider incidents and scheduled maintenance affecting the customer's specific subscriptions?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Status, which provides a personalized list of all virtual machines stopped by subscription administrators.",
+        "is_correct": false,
+        "rationale": "Azure Status is a global, public-facing web page that displays broad service availability across all Azure regions globally; it is not personalized to a specific customer's active subscriptions or resource dependencies.",
+        "explanation": "Not quite: Option A is incorrect because Azure Status is a global, public-facing web page that displays broad service availability across all Azure regions globally; it is not personalized to a specific customer's active subscriptions or resource dependencies. Think of this like a personalized SMS alert from Kenya Power informing you that power is out specifically in your neighborhood or that your substation has maintenance tomorrow, rather than checking a generic national status board. Exact Azure term to remember: Azure Service Health.",
+        "explanation_word_count": 82
+      },
+      {
+        "id": "B",
+        "text": "Microsoft Purview, which scans database network connections to trace data residency and sovereignty breaches.",
+        "is_correct": false,
+        "rationale": "Microsoft Purview is a data governance and classification service, not a platform availability and outage notification dashboard.",
+        "explanation": "Not quite: Option B is incorrect because Microsoft Purview is a data governance and classification service, not a platform availability and outage notification dashboard. Think of this like a personalized SMS alert from Kenya Power informing you that power is out specifically in your neighborhood or that your substation has maintenance tomorrow, rather than checking a generic national status board. Exact Azure term to remember: Azure Service Health.",
+        "explanation_word_count": 68
+      },
+      {
+        "id": "C",
+        "text": "Azure Service Health, which delivers personalized notifications and status updates about Azure service issues, planned maintenance, and health advisories affecting the customer's specific subscriptions and regions.",
+        "is_correct": true,
+        "rationale": "Azure Service Health provides a personalized view of the health of the specific Azure services and regions that your subscriptions rely on. It alerts you to ongoing platform incidents, upcoming planned maintenance, and resource health events.",
+        "explanation": "Spot on! Option C is correct: Azure Service Health provides a personalized view of the health of the specific Azure services and regions that your subscriptions rely on. Think of this like a personalized SMS alert from Kenya Power informing you that power is out specifically in your neighborhood or that your substation has maintenance tomorrow, rather than checking a generic national status board. Exact Azure term to remember: Azure Service Health.",
+        "explanation_word_count": 72
+      },
+      {
+        "id": "D",
+        "text": "Azure DevTest Labs, which automatically executes synthetic network latency tests against external partner APIs.",
+        "is_correct": false,
+        "rationale": "Azure DevTest Labs is designed to rapidly provision and manage self-service developer and test environments, not monitor cloud provider platform health.",
+        "explanation": "Not quite: Option D is incorrect because Azure DevTest Labs is designed to rapidly provision and manage self-service developer and test environments, not monitor cloud provider platform health. Think of this like a personalized SMS alert from Kenya Power informing you that power is out specifically in your neighborhood or that your substation has maintenance tomorrow, rather than checking a generic national status board. Exact Azure term to remember: Azure Service Health.",
+        "explanation_word_count": 72
+      }
+    ],
+    "summary": "Azure Service Health provides personalized notices about platform incidents, planned maintenance, and advisories impacting your specific subscriptions and regions.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Azure Service Health",
+      "analogy": "Think of this like a personalized SMS alert from Kenya Power informing you that power is out specifically in your neighborhood or that your substation has maintenance tomorrow, rather than checking a generic national status board.",
+      "key_takeaway": "Azure Service Health delivers personalized notifications and status updates about cloud incidents, planned maintenance, and advisories affecting your specific subscriptions and regions."
+    }
+  },
+  {
+    "topic_id": "mgmt-mod4",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-monitoring-tools-azure/4-describe-azure-monitor",
+    "difficulty": 2,
+    "question": "A software engineering team in Nairobi deploys a new FastAPI microservice to Azure App Service. Shortly after launch, users report sluggish checkout transactions. The developers need to trace end-to-end incoming HTTP requests, measure backend database call response times, and diagnose unhandled Python exceptions occurring inside the live application runtime. Which Azure Monitor capability is specifically designed to provide application performance management (APM) and live code diagnostics for web applications?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Network Watcher, which monitors packet headers and router hop latency across virtual network gateways.",
+        "is_correct": false,
+        "rationale": "Azure Network Watcher provides network monitoring and diagnostic tools at the infrastructure layer (such as packet capture and IP flow verify), not application-level code performance or request tracing.",
+        "explanation": "Not quite: Option A is incorrect because Azure Network Watcher provides network monitoring and diagnostic tools at the infrastructure layer (such as packet capture and IP flow verify), not application-level code performance or request tracing. Think of this like a fitness tracker watch on a marathon runner monitoring heart rate, breathing, and step cadence in real time, alerting immediately if a runner gets a leg cramp or pulse spikes. Exact Azure term to remember: Application Insights.",
+        "explanation_word_count": 76
+      },
+      {
+        "id": "B",
+        "text": "Azure Resource Health, which evaluates whether the underlying physical host server in the datacenter has lost power.",
+        "is_correct": false,
+        "rationale": "Azure Resource Health reports on whether individual Azure resources (like a VM or App Service plan) are operational from an infrastructure perspective, but it does not trace application transactions, database queries, or in-code exceptions.",
+        "explanation": "Not quite: Option B is incorrect because Azure Resource Health reports on whether individual Azure resources (like a VM or App Service plan) are operational from an infrastructure perspective, but it does not trace application transactions, database queries, or in-code exceptions. Think of this like a fitness tracker watch on a marathon runner monitoring heart rate, breathing, and step cadence in real time, alerting immediately if a runner gets a leg cramp or pulse spikes. Exact Azure term to remember: Application Insights.",
+        "explanation_word_count": 82
+      },
+      {
+        "id": "C",
+        "text": "Azure Advisor, which assesses whether App Service plans should be resized to reduce monthly licensing fees.",
+        "is_correct": false,
+        "rationale": "Azure Advisor provides optimization recommendations across architectural pillars, but it does not provide live APM request tracing or application exception debugging.",
+        "explanation": "Not quite: Option C is incorrect because Azure Advisor provides optimization recommendations across architectural pillars, but it does not provide live APM request tracing or application exception debugging. Think of this like a fitness tracker watch on a marathon runner monitoring heart rate, breathing, and step cadence in real time, alerting immediately if a runner gets a leg cramp or pulse spikes. Exact Azure term to remember: Application Insights.",
+        "explanation_word_count": 69
+      },
+      {
+        "id": "D",
+        "text": "Application Insights, an Azure Monitor capability that tracks live application telemetry, request rates, response times, dependencies, and code exceptions.",
+        "is_correct": true,
+        "rationale": "Application Insights is an application performance monitoring (APM) feature of Azure Monitor. It instruments live web applications to automatically capture request rates, response times, failure rates, external dependency performance, and unhandled code exceptions.",
+        "explanation": "Spot on! Option D is correct: Application Insights is an application performance monitoring (APM) feature of Azure Monitor. Think of this like a fitness tracker watch on a marathon runner monitoring heart rate, breathing, and step cadence in real time, alerting immediately if a runner gets a leg cramp or pulse spikes. Exact Azure term to remember: Application Insights.",
+        "explanation_word_count": 59
+      }
+    ],
+    "summary": "Application Insights is an Azure Monitor APM feature that monitors live applications, tracking request rates, dependencies, response times, and exceptions.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Application Insights",
+      "analogy": "Think of this like a fitness tracker watch on a marathon runner monitoring heart rate, breathing, and step cadence in real time, alerting immediately if a runner gets a leg cramp or pulse spikes.",
+      "key_takeaway": "Application Insights is an APM feature of Azure Monitor that tracks live web application requests, response times, database dependency calls, and runtime code exceptions."
+    }
+  },
+  {
+    "topic_id": "mgmt-mod4",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-monitoring-tools-azure/4-describe-azure-monitor",
+    "difficulty": 3,
+    "question": "A cloud reliability engineer at a Mombasa shipping firm configures Azure Monitor to detect when average CPU utilization across a cluster of backend virtual machines exceeds 90% for more than ten consecutive minutes. When this metric threshold condition is satisfied, the system must immediately send an SMS alert to the on-call engineer and trigger an automated runbook to scale up compute capacity. How does Azure Monitor architecturally separate these responsibilities?",
+    "options": [
+      {
+        "id": "A",
+        "text": "An Alert Rule defines the metric condition to monitor, while an Action Group defines the notification recipients (SMS) and automated actions (runbook) to execute when the condition is met.",
+        "is_correct": true,
+        "rationale": "In Azure Monitor, an Alert Rule specifies the evaluation criteria (e.g., metric threshold or log query condition), while an Action Group defines the collection of notification preferences (email, SMS, voice) and automated actions (runbooks, Azure Functions, webhooks) invoked when the alert fires.",
+        "explanation": "Spot on! Option A is correct: In Azure Monitor, an Alert Rule specifies the evaluation criteria (e.g., metric threshold or log query condition), while an Action Group defines the collection of notification preferences (email, SMS, voice) and automated actions (runbooks, Azure Functions, webhooks) invoked when the alert fires. Think of this like a smoke detector sensor (Alert Rule) detecting smoke in the warehouse, and the automated emergency plan (Action Group) that dials the fire brigade and activates the ceiling water sprinklers. Exact Azure term to remember: Alert Rules & Action Groups.",
+        "explanation_word_count": 91
+      },
+      {
+        "id": "B",
+        "text": "An Azure Policy definition detects the metric threshold condition, while a ReadOnly resource lock executes the automated scaling script.",
+        "is_correct": false,
+        "rationale": "Azure Policy enforces resource configuration compliance, and resource locks prevent resource modification or deletion; neither tool evaluates dynamic runtime metrics or triggers operational notifications.",
+        "explanation": "Not quite: Option B is incorrect because Azure Policy enforces resource configuration compliance, and resource locks prevent resource modification or deletion; neither tool evaluates dynamic runtime metrics or triggers operational notifications. Think of this like a smoke detector sensor (Alert Rule) detecting smoke in the warehouse, and the automated emergency plan (Action Group) that dials the fire brigade and activates the ceiling water sprinklers. Exact Azure term to remember: Alert Rules & Action Groups.",
+        "explanation_word_count": 74
+      },
+      {
+        "id": "C",
+        "text": "Azure Service Health evaluates the VM metric condition, while Azure Advisor executes the automated scale-up runbook.",
+        "is_correct": false,
+        "rationale": "Azure Service Health monitors cloud platform outages and planned maintenance, and Advisor offers configuration recommendations; neither monitors live VM metrics or executes automated scaling runbooks.",
+        "explanation": "Not quite: Option C is incorrect because Azure Service Health monitors cloud platform outages and planned maintenance, and Advisor offers configuration recommendations; neither monitors live VM metrics or executes automated scaling runbooks. Think of this like a smoke detector sensor (Alert Rule) detecting smoke in the warehouse, and the automated emergency plan (Action Group) that dials the fire brigade and activates the ceiling water sprinklers. Exact Azure term to remember: Alert Rules & Action Groups.",
+        "explanation_word_count": 75
+      },
+      {
+        "id": "D",
+        "text": "A Log Analytics workspace transmits SMS alerts directly to telecom providers, while Azure Bastion handles automated scaling over SSH sessions.",
+        "is_correct": false,
+        "rationale": "Log Analytics is a data repository and query interface; it does not send SMS messages. Action groups are the Azure Monitor mechanism for sending notifications and invoking automations.",
+        "explanation": "Not quite: Option D is incorrect because Log Analytics is a data repository and query interface; it does not send SMS messages. Think of this like a smoke detector sensor (Alert Rule) detecting smoke in the warehouse, and the automated emergency plan (Action Group) that dials the fire brigade and activates the ceiling water sprinklers. Exact Azure term to remember: Alert Rules & Action Groups.",
+        "explanation_word_count": 65
+      }
+    ],
+    "summary": "In Azure Monitor, Alert Rules evaluate telemetry conditions, while Action Groups execute the configured notifications (SMS/email) and automated actions (runbooks).",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Alert Rules & Action Groups",
+      "analogy": "Think of this like a smoke detector sensor (Alert Rule) detecting smoke in the warehouse, and the automated emergency plan (Action Group) that dials the fire brigade and activates the ceiling water sprinklers.",
+      "key_takeaway": "In Azure Monitor, an Alert Rule specifies the metric or log condition to evaluate, while an Action Group defines the notification recipients (SMS/email) and automated actions (runbooks/webhooks)."
+    }
+  }
+]

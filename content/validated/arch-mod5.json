@@ -1,0 +1,242 @@
+[
+  {
+    "topic_id": "arch-mod5",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-azure-identity-access-security/2-directory-services",
+    "difficulty": 1,
+    "question": "A Nairobi enterprise uses Microsoft Entra ID for employee sign-in to Microsoft 365 and Azure resources. A legacy HR application also needs to join domain and use Kerberos authentication, but the IT team does not want to operate their own domain controllers. Which Microsoft service addresses the legacy application's needs without requiring the team to manage domain controller infrastructure?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Microsoft Entra ID, because it is a cloud identity service that handles all directory needs including Kerberos.",
+        "is_correct": false,
+        "rationale": "Microsoft Entra ID is a cloud identity and access management service optimized for modern protocols and cloud/SaaS authentication. It is not a direct replacement for every AD DS protocol; the notes explicitly flag that Entra ID and traditional AD DS are related but not identical directory technologies.",
+        "explanation": "Not quite: Option A is incorrect because Microsoft Entra ID is a cloud identity and access management service optimized for modern protocols and cloud/SaaS authentication. Think of this like moving your business into a serviced office that comes pre-wired with a landline telephone switchboard and receptionist, so you don't have to purchase and maintain your own telephone servers. Exact Azure term to remember: Microsoft Entra Domain Services.",
+        "explanation_word_count": 67
+      },
+      {
+        "id": "B",
+        "text": "Azure Virtual Machines with Windows Server installed, allowing the team to run domain controllers themselves in the cloud.",
+        "is_correct": false,
+        "rationale": "Running domain controllers on Azure VMs is possible but requires the IT team to manage the domain controller infrastructure\u2014which the scenario specifically rules out. The question asks for a managed service that removes that operational burden.",
+        "explanation": "Not quite: Option B is incorrect because running domain controllers on Azure VMs is possible but requires the IT team to manage the domain controller infrastructure\u2014which the scenario specifically rules out. Think of this like moving your business into a serviced office that comes pre-wired with a landline telephone switchboard and receptionist, so you don't have to purchase and maintain your own telephone servers. Exact Azure term to remember: Microsoft Entra Domain Services.",
+        "explanation_word_count": 73
+      },
+      {
+        "id": "C",
+        "text": "Microsoft Entra Domain Services, which provides managed domain capabilities including domain join and Kerberos-based authentication without requiring the customer to operate domain controllers.",
+        "is_correct": true,
+        "rationale": "Microsoft Entra Domain Services provides managed domain services\u2014including domain join, LDAP, and Kerberos/NTLM authentication\u2014for workloads that need them, without the customer having to deploy or maintain domain controller VMs. This directly addresses the legacy application's needs and the team's constraint.",
+        "explanation": "Spot on! Option C is correct: Microsoft Entra Domain Services provides managed domain services\u2014including domain join, LDAP, and Kerberos/NTLM authentication\u2014for workloads that need them, without the customer having to deploy or maintain domain controller VMs. Think of this like moving your business into a serviced office that comes pre-wired with a landline telephone switchboard and receptionist, so you don't have to purchase and maintain your own telephone servers. Exact Azure term to remember: Microsoft Entra Domain Services.",
+        "explanation_word_count": 77
+      },
+      {
+        "id": "D",
+        "text": "Azure RBAC, which governs who can access Azure resources and can be extended to support legacy Kerberos workloads.",
+        "is_correct": false,
+        "rationale": "Azure RBAC manages permissions over Azure resources; it is an authorization system, not a directory or domain service. It does not provide domain join, Kerberos tickets, or LDAP capabilities that the legacy application requires.",
+        "explanation": "Not quite: Option D is incorrect because Azure RBAC manages permissions over Azure resources; it is an authorization system, not a directory or domain service. Think of this like moving your business into a serviced office that comes pre-wired with a landline telephone switchboard and receptionist, so you don't have to purchase and maintain your own telephone servers. Exact Azure term to remember: Microsoft Entra Domain Services.",
+        "explanation_word_count": 67
+      }
+    ],
+    "summary": "Entra ID handles cloud identity and SSO; Entra Domain Services provides managed domain capabilities (domain join, Kerberos, LDAP) for workloads that need them without self-managed domain controllers.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Microsoft Entra Domain Services",
+      "analogy": "Think of this like moving your business into a serviced office that comes pre-wired with a landline telephone switchboard and receptionist, so you don't have to purchase and maintain your own telephone servers.",
+      "key_takeaway": "Microsoft Entra Domain Services provides managed domain join, LDAP, and Kerberos authentication for legacy applications without deploying domain controller VMs."
+    }
+  },
+  {
+    "topic_id": "arch-mod5",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-azure-identity-access-security/3-authentication-methods",
+    "difficulty": 1,
+    "question": "A Kenyan SACCO configures its cloud portal so that employees sign in once in the morning and can then access the HR system, the document portal, and the finance application without being prompted for credentials again. Which authentication capability describes this behaviour?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Multifactor authentication (MFA), which requires multiple credential checks at each application sign-in.",
+        "is_correct": false,
+        "rationale": "MFA requires additional factors at sign-in to increase security; it does not reduce the number of sign-in prompts across applications. If anything, strict per-app MFA would increase prompts, not eliminate them.",
+        "explanation": "Not quite: Option A is incorrect because MFA requires additional factors at sign-in to increase security; it does not reduce the number of sign-in prompts across applications. Think of this like receiving an all-access security wristband at a conference that lets you walk into the keynote hall, lunch dining room, and workshop rooms without showing your ID at every single door. Exact Azure term to remember: Single Sign-On (SSO).",
+        "explanation_word_count": 69
+      },
+      {
+        "id": "B",
+        "text": "Passwordless authentication, which replaces the password with a device-based or cryptographic method.",
+        "is_correct": false,
+        "rationale": "Passwordless authentication changes the credential type used to sign in; it does not by itself allow one sign-in event to cover multiple applications. A user could sign in passwordlessly and still be prompted separately for each app.",
+        "explanation": "Not quite: Option B is incorrect because passwordless authentication changes the credential type used to sign in; it does not by itself allow one sign-in event to cover multiple applications. Think of this like receiving an all-access security wristband at a conference that lets you walk into the keynote hall, lunch dining room, and workshop rooms without showing your ID at every single door. Exact Azure term to remember: Single Sign-On (SSO).",
+        "explanation_word_count": 72
+      },
+      {
+        "id": "C",
+        "text": "Single sign-on (SSO), which allows one authentication event to provide access to multiple authorized applications without repeated credential prompts.",
+        "is_correct": true,
+        "rationale": "SSO is the capability that allows a user to authenticate once and then access multiple permitted applications without re-entering credentials. The scenario\u2014sign in once, access HR, documents, and finance without further prompts\u2014is the defining use case for SSO.",
+        "explanation": "Spot on! Option C is correct: SSO is the capability that allows a user to authenticate once and then access multiple permitted applications without re-entering credentials. Think of this like receiving an all-access security wristband at a conference that lets you walk into the keynote hall, lunch dining room, and workshop rooms without showing your ID at every single door. Exact Azure term to remember: Single Sign-On (SSO).",
+        "explanation_word_count": 68
+      },
+      {
+        "id": "D",
+        "text": "Conditional Access, which evaluates sign-in context and enforces which applications the employee can reach.",
+        "is_correct": false,
+        "rationale": "Conditional Access evaluates sign-in signals and decides whether to allow, challenge, or block access; it is an access-decision layer. It does not itself enable a single sign-in event to span multiple applications\u2014that is SSO's role.",
+        "explanation": "Not quite: Option D is incorrect because conditional Access evaluates sign-in signals and decides whether to allow, challenge, or block access; it is an access-decision layer. Think of this like receiving an all-access security wristband at a conference that lets you walk into the keynote hall, lunch dining room, and workshop rooms without showing your ID at every single door. Exact Azure term to remember: Single Sign-On (SSO).",
+        "explanation_word_count": 68
+      }
+    ],
+    "summary": "SSO lets one authentication event cover multiple applications without repeated prompts; MFA adds extra factors, passwordless changes credential type, and Conditional Access evaluates sign-in context.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Single Sign-On (SSO)",
+      "analogy": "Think of this like receiving an all-access security wristband at a conference that lets you walk into the keynote hall, lunch dining room, and workshop rooms without showing your ID at every single door.",
+      "key_takeaway": "SSO enables a user to authenticate once and access multiple authorized applications without having to re-enter credentials."
+    }
+  },
+  {
+    "topic_id": "arch-mod5",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-azure-identity-access-security/5-conditional-access",
+    "difficulty": 2,
+    "question": "A Kenyan fintech's security team wants to require MFA only when an administrator logs in from outside the company's registered office locations, while allowing normal sign-in within the office. Which Azure feature is designed to enforce this context-dependent sign-in requirement?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Microsoft Entra Conditional Access, which evaluates sign-in signals such as location and enforces the required access policy.",
+        "is_correct": true,
+        "rationale": "Conditional Access evaluates context signals at sign-in time\u2014including user identity, location, device compliance, and risk\u2014and applies configured policy responses such as requiring MFA. The scenario (require MFA outside the office, not inside) is a standard Conditional Access location-based policy.",
+        "explanation": "Spot on! Option A is correct: Conditional Access evaluates context signals at sign-in time\u2014including user identity, location, device compliance, and risk\u2014and applies configured policy responses such as requiring MFA. Think of this like a smart office door that lets employees in with just a badge during office hours, but demands a fingerprint scan and SMS confirmation if someone attempts entry at 2 AM from an unfamiliar laptop. Exact Azure term to remember: Microsoft Entra Conditional Access.",
+        "explanation_word_count": 76
+      },
+      {
+        "id": "B",
+        "text": "Azure RBAC, by assigning a role that enforces MFA as part of the permission definition.",
+        "is_correct": false,
+        "rationale": "Azure RBAC grants permissions over Azure resources by binding a principal to a role at a scope. It does not evaluate sign-in context such as location or device state, and role definitions do not include MFA enforcement conditions.",
+        "explanation": "Not quite: Option B is incorrect because Azure RBAC grants permissions over Azure resources by binding a principal to a role at a scope. Think of this like a smart office door that lets employees in with just a badge during office hours, but demands a fingerprint scan and SMS confirmation if someone attempts entry at 2 AM from an unfamiliar laptop. Exact Azure term to remember: Microsoft Entra Conditional Access.",
+        "explanation_word_count": 71
+      },
+      {
+        "id": "C",
+        "text": "Microsoft Defender for Cloud, which detects the login location and automatically prompts for MFA.",
+        "is_correct": false,
+        "rationale": "Defender for Cloud assesses security posture and provides recommendations; it is not a real-time sign-in access decision engine. MFA enforcement is configured in Conditional Access, not in Defender for Cloud.",
+        "explanation": "Not quite: Option C is incorrect because Defender for Cloud assesses security posture and provides recommendations; it is not a real-time sign-in access decision engine. Think of this like a smart office door that lets employees in with just a badge during office hours, but demands a fingerprint scan and SMS confirmation if someone attempts entry at 2 AM from an unfamiliar laptop. Exact Azure term to remember: Microsoft Entra Conditional Access.",
+        "explanation_word_count": 72
+      },
+      {
+        "id": "D",
+        "text": "Azure NSG rules, by blocking sign-in traffic from non-office IP addresses at the network layer.",
+        "is_correct": false,
+        "rationale": "NSGs filter network traffic for Azure resources within a VNet. Authentication to Entra ID does not typically traverse an NSG controlled by the customer, and blocking traffic is a blunter instrument than a conditional policy that allows access with an MFA step.",
+        "explanation": "Not quite: Option D is incorrect because nsgs filter network traffic for Azure resources within a VNet. Think of this like a smart office door that lets employees in with just a badge during office hours, but demands a fingerprint scan and SMS confirmation if someone attempts entry at 2 AM from an unfamiliar laptop. Exact Azure term to remember: Microsoft Entra Conditional Access.",
+        "explanation_word_count": 64
+      }
+    ],
+    "summary": "Conditional Access enforces context-dependent sign-in policies (location, device, risk \u2192 require MFA, block, etc.); RBAC grants resource permissions\u2014they are complementary, not interchangeable.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Microsoft Entra Conditional Access",
+      "analogy": "Think of this like a smart office door that lets employees in with just a badge during office hours, but demands a fingerprint scan and SMS confirmation if someone attempts entry at 2 AM from an unfamiliar laptop.",
+      "key_takeaway": "Conditional Access evaluates real-time signals (user, location, device health) to enforce access policies such as requiring multi-factor authentication (MFA)."
+    }
+  },
+  {
+    "topic_id": "arch-mod5",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-azure-identity-access-security/6-role-based-access-control",
+    "difficulty": 2,
+    "question": "A junior developer at a Nairobi agritech company needs to read log data from a specific Azure Monitor workspace but must not be able to create, modify, or delete any resources in the subscription. Following least-privilege principles, how should the administrator configure access?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Assign the Contributor role at the subscription scope, because it covers the full subscription including the Monitor workspace.",
+        "is_correct": false,
+        "rationale": "The Contributor role allows creating and modifying resources, which exceeds what the developer needs. Assigning it at subscription scope would also give access to every resource in the subscription, violating least-privilege by granting far more than read access to one workspace.",
+        "explanation": "Not quite: Option A is incorrect because the Contributor role allows creating and modifying resources, which exceeds what the developer needs. Think of this like giving the office intern a visitor pass that only unlocks the library door, rather than handing them the master keyring that opens the financial safe and executive boardroom. Exact Azure term to remember: Azure Role-Based Access Control (RBAC).",
+        "explanation_word_count": 63
+      },
+      {
+        "id": "B",
+        "text": "Assign the Owner role to the developer so they can configure their own access to exactly what they need.",
+        "is_correct": false,
+        "rationale": "Owner grants full control including the ability to assign roles to others\u2014the maximum privileged role in Azure RBAC. This is the opposite of least-privilege, and allowing the developer to manage their own access creates a privilege-escalation risk.",
+        "explanation": "Not quite: Option B is incorrect because owner grants full control including the ability to assign roles to others\u2014the maximum privileged role in Azure RBAC. Think of this like giving the office intern a visitor pass that only unlocks the library door, rather than handing them the master keyring that opens the financial safe and executive boardroom. Exact Azure term to remember: Azure Role-Based Access Control (RBAC).",
+        "explanation_word_count": 67
+      },
+      {
+        "id": "C",
+        "text": "Assign an appropriate read-only role scoped to the specific Monitor workspace resource, granting only the access required for the task.",
+        "is_correct": true,
+        "rationale": "Azure RBAC's three elements are: who (the developer), what permissions (read-only role), and where (the specific workspace resource). Narrowing both the role and the scope to exactly what is needed is the application of least privilege. This prevents access to any other subscription resource.",
+        "explanation": "Spot on! Option C is correct: Azure RBAC's three elements are: who (the developer), what permissions (read-only role), and where (the specific workspace resource). Think of this like giving the office intern a visitor pass that only unlocks the library door, rather than handing them the master keyring that opens the financial safe and executive boardroom. Exact Azure term to remember: Azure Role-Based Access Control (RBAC).",
+        "explanation_word_count": 66
+      },
+      {
+        "id": "D",
+        "text": "No role assignment is needed; all Azure users can read monitoring data by default.",
+        "is_correct": false,
+        "rationale": "Azure resources are not publicly readable by default. Without an explicit role assignment, the developer has no access to the Monitor workspace. RBAC requires an explicit binding of a principal to a role at a scope.",
+        "explanation": "Not quite: Option D is incorrect because Azure resources are not publicly readable by default. Think of this like giving the office intern a visitor pass that only unlocks the library door, rather than handing them the master keyring that opens the financial safe and executive boardroom. Exact Azure term to remember: Azure Role-Based Access Control (RBAC).",
+        "explanation_word_count": 57
+      }
+    ],
+    "summary": "RBAC least privilege means assigning the minimum role (read-only) at the narrowest scope (the specific resource) rather than a broad role at a wide scope.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Azure Role-Based Access Control (RBAC)",
+      "analogy": "Think of this like giving the office intern a visitor pass that only unlocks the library door, rather than handing them the master keyring that opens the financial safe and executive boardroom.",
+      "key_takeaway": "RBAC enforces least privilege by granting specific permissions (roles) to security principals at defined scopes (management group, subscription, resource group, or resource)."
+    }
+  },
+  {
+    "topic_id": "arch-mod5",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-azure-identity-access-security/8-describe-defense-depth",
+    "difficulty": 3,
+    "question": "A Kenyan fintech's security architect is reviewing its Azure-hosted payment API. She finds it relies entirely on a perimeter network firewall and argues that this single control is sufficient. Which principle most directly challenges her conclusion, and which example best illustrates why?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Zero Trust principle of 'verify explicitly'; once traffic passes the firewall, all subsequent requests should be trusted without further checks.",
+        "is_correct": false,
+        "rationale": "This describes the opposite of 'verify explicitly'. Zero Trust requires continuous evaluation of each request regardless of where it originates\u2014it explicitly rejects the assumption that passing a firewall grants implicit trust. This option reinforces the flaw, not the challenge to it.",
+        "explanation": "Not quite: Option A is incorrect because this describes the opposite of 'verify explicitly'. Think of this like protecting a commercial bank with perimeter perimeter walls, armed compound guards, biometric vault doors, and steel lockboxes\u2014if an intruder climbs the outer wall, the cash is still secure behind four more layers. Exact Azure term to remember: Defense in Depth.",
+        "explanation_word_count": 58
+      },
+      {
+        "id": "B",
+        "text": "Defense in depth; a compromised or bypassed firewall leaves the API, its data, and its identity controls with no remaining safeguard, whereas layered controls each limit a different attack path.",
+        "is_correct": true,
+        "rationale": "Defense in depth requires multiple distinct security layers\u2014identity, network, compute, application, data\u2014so that the failure or bypass of one layer does not expose the entire system. Relying on a single perimeter firewall means any breach of that perimeter (insider threat, misconfigured rule, stolen credentials) leaves everything exposed. Adding RBAC, encryption, application validation, and monitoring provides independent safeguards at each layer.",
+        "explanation": "Spot on! Option B is correct: Defense in depth requires multiple distinct security layers\u2014identity, network, compute, application, data\u2014so that the failure or bypass of one layer does not expose the entire system. Think of this like protecting a commercial bank with perimeter perimeter walls, armed compound guards, biometric vault doors, and steel lockboxes\u2014if an intruder climbs the outer wall, the cash is still secure behind four more layers. Exact Azure term to remember: Defense in Depth.",
+        "explanation_word_count": 76
+      },
+      {
+        "id": "C",
+        "text": "The least-privilege principle; the firewall should be configured with fewer inbound rules to reduce its attack surface.",
+        "is_correct": false,
+        "rationale": "Least privilege relates to restricting permissions, not to the number of firewall rules. Tightening the firewall's ruleset is good practice but does not introduce additional security layers\u2014it still leaves the system with a single control boundary.",
+        "explanation": "Not quite: Option C is incorrect because least privilege relates to restricting permissions, not to the number of firewall rules. Think of this like protecting a commercial bank with perimeter perimeter walls, armed compound guards, biometric vault doors, and steel lockboxes\u2014if an intruder climbs the outer wall, the cash is still secure behind four more layers. Exact Azure term to remember: Defense in Depth.",
+        "explanation_word_count": 64
+      },
+      {
+        "id": "D",
+        "text": "The shared responsibility model; because Microsoft manages the physical network, the fintech's perimeter firewall is redundant.",
+        "is_correct": false,
+        "rationale": "The shared responsibility model defines what Microsoft and the customer each manage; it does not argue that customer-side network controls are redundant. Microsoft managing the physical network does not remove the customer's responsibility to secure the application, identity, and data layers.",
+        "explanation": "Not quite: Option D is incorrect because the shared responsibility model defines what Microsoft and the customer each manage; it does not argue that customer-side network controls are redundant. Think of this like protecting a commercial bank with perimeter perimeter walls, armed compound guards, biometric vault doors, and steel lockboxes\u2014if an intruder climbs the outer wall, the cash is still secure behind four more layers. Exact Azure term to remember: Defense in Depth.",
+        "explanation_word_count": 73
+      }
+    ],
+    "summary": "Defense in depth requires multiple distinct layers of control; relying on a single perimeter firewall leaves every other layer unprotected if that one boundary is bypassed.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Defense in Depth",
+      "analogy": "Think of this like protecting a commercial bank with perimeter perimeter walls, armed compound guards, biometric vault doors, and steel lockboxes\u2014if an intruder climbs the outer wall, the cash is still secure behind four more layers.",
+      "key_takeaway": "Defense in depth employs multiple independent layers of security (perimeter, network, compute, application, data) so that a single failure does not compromise the system."
+    }
+  }
+]

@@ -1,0 +1,296 @@
+[
+  {
+    "topic_id": "cloud-concepts-mod2",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/2-high-availability-scalability-cloud",
+    "difficulty": 1,
+    "question": "A Kenyan e-commerce platform adds more virtual machine instances during a Nairobi sale event to handle the extra shoppers, then removes those instances when the event ends. Which type of scaling does this describe?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Vertical scaling, because the platform is adjusting capacity in response to demand.",
+        "is_correct": false,
+        "rationale": "Vertical scaling means increasing or decreasing the capacity of a single resource\u2014for example, upgrading a VM to a larger size with more CPU or RAM. Adding new instances is a different operation entirely.",
+        "explanation": "Not quite: Option A is incorrect because vertical scaling means increasing or decreasing the capacity of a single resource\u2014for example, upgrading a VM to a larger size with more CPU or RAM. Think of this like adding three more 14-seater matatus to your fleet during the morning rush hour on Thika Road, and parking them when passenger demand drops midday. Exact Azure term to remember: Horizontal Scaling (Scale Out / Scale In).",
+        "explanation_word_count": 72
+      },
+      {
+        "id": "B",
+        "text": "Horizontal scaling, because the platform is adding and removing resource instances.",
+        "is_correct": true,
+        "rationale": "Horizontal scaling means increasing or decreasing the number of resource instances. Adding VMs during the sale event and removing them afterwards is the defining example of horizontal (scale-out/scale-in) scaling.",
+        "explanation": "Spot on! Option B is correct: Horizontal scaling means increasing or decreasing the number of resource instances. Think of this like adding three more 14-seater matatus to your fleet during the morning rush hour on Thika Road, and parking them when passenger demand drops midday. Exact Azure term to remember: Horizontal Scaling (Scale Out / Scale In).",
+        "explanation_word_count": 57
+      },
+      {
+        "id": "C",
+        "text": "High availability, because the platform keeps running during the busy period.",
+        "is_correct": false,
+        "rationale": "High availability is about keeping a service accessible despite disruptions or failures, not about adding capacity for demand. Scaling handles load; availability addresses uptime. These are related but distinct concepts.",
+        "explanation": "Not quite: Option C is incorrect because high availability is about keeping a service accessible despite disruptions or failures, not about adding capacity for demand. Think of this like adding three more 14-seater matatus to your fleet during the morning rush hour on Thika Road, and parking them when passenger demand drops midday. Exact Azure term to remember: Horizontal Scaling (Scale Out / Scale In).",
+        "explanation_word_count": 65
+      },
+      {
+        "id": "D",
+        "text": "Disaster recovery, because the platform replicates operational state to a secondary recovery facility.",
+        "is_correct": false,
+        "rationale": "Disaster recovery is focused on business continuity and data restoration after a catastrophic infrastructure failure, not dynamically adding and removing compute instances to meet short-term customer shopping demand.",
+        "explanation": "Not quite: Option D is incorrect because disaster recovery is focused on business continuity and data restoration after a catastrophic infrastructure failure, not dynamically adding and removing compute instances to meet short-term customer shopping demand. Think of this like adding three more 14-seater matatus to your fleet during the morning rush hour on Thika Road, and parking them when passenger demand drops midday. Exact Azure term to remember: Horizontal Scaling (Scale Out / Scale In).",
+        "explanation_word_count": 75
+      }
+    ],
+    "summary": "Horizontal scaling adds or removes resource instances; vertical scaling changes the capacity (CPU, RAM) of a single existing resource.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Horizontal Scaling (Scale Out / Scale In)",
+      "analogy": "Think of this like adding three more 14-seater matatus to your fleet during the morning rush hour on Thika Road, and parking them when passenger demand drops midday.",
+      "key_takeaway": "Horizontal scaling adds or removes resource instances (VMs), while vertical scaling increases the CPU or RAM of a single instance."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "cloud-concepts-mod2",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/2-high-availability-scalability-cloud",
+    "difficulty": 2,
+    "question": "A Nairobi fintech's Azure-hosted payment API was unavailable for 40 minutes last month due to an infrastructure fault. The engineering lead says, \"We need to fix our autoscaling policy so this doesn't happen again.\" What is wrong with this plan?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Autoscaling cannot be configured on Azure App Service, so a different tool is needed.",
+        "is_correct": false,
+        "rationale": "Azure App Service does support autoscaling. The issue is not the tool but the mismatch between the problem (availability failure) and the proposed fix (autoscaling).",
+        "explanation": "Not quite: Option A is incorrect because Azure App Service does support autoscaling. Think of this like running a matatu business\u2014adding more vehicles handles crowded bus stages (scalability), but carrying spare tires and doing engine maintenance is what prevents roadside breakdowns (availability). Exact Azure term to remember: High Availability vs Scalability.",
+        "explanation_word_count": 51
+      },
+      {
+        "id": "B",
+        "text": "Nothing is wrong\u2014autoscaling directly prevents infrastructure faults from causing downtime.",
+        "is_correct": false,
+        "rationale": "Autoscaling adjusts capacity based on demand metrics; it does not detect or recover from infrastructure faults. An infrastructure failure can still cause downtime regardless of the autoscaling policy.",
+        "explanation": "Not quite: Option B is incorrect because autoscaling adjusts capacity based on demand metrics; it does not detect or recover from infrastructure faults. Think of this like running a matatu business\u2014adding more vehicles handles crowded bus stages (scalability), but carrying spare tires and doing engine maintenance is what prevents roadside breakdowns (availability). Exact Azure term to remember: High Availability vs Scalability.",
+        "explanation_word_count": 61
+      },
+      {
+        "id": "C",
+        "text": "Autoscaling addresses demand-based capacity, not infrastructure fault recovery; improving availability requires separate architectural decisions.",
+        "is_correct": true,
+        "rationale": "Scalability and high availability are distinct. Autoscaling matches resource count to demand; availability is preserved through mechanisms such as redundancy, zone-distribution, or failover. Fixing the autoscaling policy does not address a fault-recovery gap.",
+        "explanation": "Spot on! Option C is correct: Scalability and high availability are distinct. Think of this like running a matatu business\u2014adding more vehicles handles crowded bus stages (scalability), but carrying spare tires and doing engine maintenance is what prevents roadside breakdowns (availability). Exact Azure term to remember: High Availability vs Scalability.",
+        "explanation_word_count": 50
+      },
+      {
+        "id": "D",
+        "text": "The API should move to a private cloud to eliminate infrastructure faults entirely.",
+        "is_correct": false,
+        "rationale": "A private cloud deployment model does not eliminate infrastructure faults; hardware and software can still fail in any environment. The choice of cloud model does not by itself solve an availability design problem.",
+        "explanation": "Not quite: Option D is incorrect because a private cloud deployment model does not eliminate infrastructure faults; hardware and software can still fail in any environment. Think of this like running a matatu business\u2014adding more vehicles handles crowded bus stages (scalability), but carrying spare tires and doing engine maintenance is what prevents roadside breakdowns (availability). Exact Azure term to remember: High Availability vs Scalability.",
+        "explanation_word_count": 64
+      }
+    ],
+    "summary": "Autoscaling handles demand; high availability handles fault recovery\u2014they are distinct properties that require separate design decisions.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "High Availability vs Scalability",
+      "analogy": "Think of this like running a matatu business\u2014adding more vehicles handles crowded bus stages (scalability), but carrying spare tires and doing engine maintenance is what prevents roadside breakdowns (availability).",
+      "key_takeaway": "Scalability handles varying customer traffic; high availability ensures fault recovery and continuous operation through hardware disruptions."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "cloud-concepts-mod2",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/3-reliability-predictability-cloud",
+    "difficulty": 2,
+    "question": "A Kisumu microfinance platform distributes its loan-processing workload across three Azure regions so that a failure in one region does not stop loan applications from being processed. Which cloud benefit is the platform's architecture primarily designed to achieve?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Reliability, because the design allows the platform to keep functioning even when one region experiences a failure.",
+        "is_correct": true,
+        "rationale": "Reliability is the ability to recover from or continue operating through failures. A multi-region design where a single region failure does not halt processing is a classic reliability pattern. This is distinct from scalability (handling demand) or availability (uptime guarantees).",
+        "explanation": "Spot on! Option A is correct: Reliability is the ability to recover from or continue operating through failures. Think of this like storing your harvest in three separate granaries across Nakuru and Eldoret so that a fire in one facility never wipes out your entire season's food supply. Exact Azure term to remember: Cloud Reliability.",
+        "explanation_word_count": 55
+      },
+      {
+        "id": "B",
+        "text": "Cost predictability, because running in multiple regions makes billing easier to forecast.",
+        "is_correct": false,
+        "rationale": "Cost predictability is about forecasting spending, not about fault tolerance. Using multiple regions may actually increase cost; the reason for the design is failure tolerance, not billing clarity.",
+        "explanation": "Not quite: Option B is incorrect because Cost predictability is about forecasting spending, not about fault tolerance. Think of this like storing your harvest in three separate granaries across Nakuru and Eldoret so that a fire in one facility never wipes out your entire season's food supply. Exact Azure term to remember: Cloud Reliability.",
+        "explanation_word_count": 54
+      },
+      {
+        "id": "C",
+        "text": "Scalability, because distributing the workload across regions allows more users to be served simultaneously.",
+        "is_correct": false,
+        "rationale": "Scalability is about matching capacity to demand, not about recovering from or tolerating failure. The driving design goal here is continuing to function when one region fails, which is a reliability concern.",
+        "explanation": "Not quite: Option C is incorrect because scalability is about matching capacity to demand, not about recovering from or tolerating failure. Think of this like storing your harvest in three separate granaries across Nakuru and Eldoret so that a fire in one facility never wipes out your entire season's food supply. Exact Azure term to remember: Cloud Reliability.",
+        "explanation_word_count": 58
+      },
+      {
+        "id": "D",
+        "text": "Manageability, because Azure provides a portal to monitor all three regions from one place.",
+        "is_correct": false,
+        "rationale": "Manageability refers to the tools and methods used to administer and automate resources. The portal monitoring capability is a management tool; the multi-region distribution itself is an architectural choice driven by reliability goals.",
+        "explanation": "Not quite: Option D is incorrect because manageability refers to the tools and methods used to administer and automate resources. Think of this like storing your harvest in three separate granaries across Nakuru and Eldoret so that a fire in one facility never wipes out your entire season's food supply. Exact Azure term to remember: Cloud Reliability.",
+        "explanation_word_count": 57
+      }
+    ],
+    "summary": "Reliability is the ability to keep operating through failures; distributing workloads across regions is a reliability pattern, not a scalability or manageability one.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Cloud Reliability",
+      "analogy": "Think of this like storing your harvest in three separate granaries across Nakuru and Eldoret so that a fire in one facility never wipes out your entire season's food supply.",
+      "key_takeaway": "Reliability is the ability of a system to recover from infrastructure failures and continue functioning, such as deploying across multiple regions."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "cloud-concepts-mod2",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/4-security-governance-cloud",
+    "difficulty": 2,
+    "question": "A Kenyan bank uses Azure and notices that several development teams have been creating storage accounts with public access enabled, against the bank's internal policy. Which Azure capability is best suited to prevent this configuration drift going forward?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Autoscale, configured to remove non-compliant resources when load is low.",
+        "is_correct": false,
+        "rationale": "Autoscale adjusts resource capacity in response to demand metrics; it has no capability to evaluate or enforce configuration policies such as public access settings.",
+        "explanation": "Not quite: Option A is incorrect because autoscale adjusts resource capacity in response to demand metrics; it has no capability to evaluate or enforce configuration policies such as public access settings. Think of this like a SACCO bylaw that automatically rejects any withdrawal above KES 100,000 without a committee signature, preventing staff from accidentally or deliberately bypassing safety rules. Exact Azure term to remember: Azure Policy.",
+        "explanation_word_count": 66
+      },
+      {
+        "id": "B",
+        "text": "Azure Monitor alerts, set to notify the team when a storage account is created.",
+        "is_correct": false,
+        "rationale": "Alerting notifies the team after the fact but does not prevent the non-compliant configuration from being created. Governance requires a control that can evaluate and block or remediate the configuration, not only alert.",
+        "explanation": "Not quite: Option B is incorrect because alerting notifies the team after the fact but does not prevent the non-compliant configuration from being created. Think of this like a SACCO bylaw that automatically rejects any withdrawal above KES 100,000 without a committee signature, preventing staff from accidentally or deliberately bypassing safety rules. Exact Azure term to remember: Azure Policy.",
+        "explanation_word_count": 59
+      },
+      {
+        "id": "C",
+        "text": "The bank's Azure certifications, which automatically guarantee compliant resource configuration.",
+        "is_correct": false,
+        "rationale": "Cloud provider certifications or built-in security capabilities do not automatically make a customer's workload compliant. The customer retains responsibility for configuring resources correctly. Certifications attest to the provider's controls, not to the customer's configuration choices.",
+        "explanation": "Not quite: Option C is incorrect because Cloud provider certifications or built-in security capabilities do not automatically make a customer's workload compliant. Think of this like a SACCO bylaw that automatically rejects any withdrawal above KES 100,000 without a committee signature, preventing staff from accidentally or deliberately bypassing safety rules. Exact Azure term to remember: Azure Policy.",
+        "explanation_word_count": 57
+      },
+      {
+        "id": "D",
+        "text": "Azure Policy, to define and evaluate a rule that prevents or flags public-access configurations on storage accounts.",
+        "is_correct": true,
+        "rationale": "Azure Policy is the correct governance tool for enforcing organizational rules over Azure resource configurations. It can audit existing resources and deny or remediate non-compliant configurations, directly addressing configuration drift.",
+        "explanation": "Spot on! Option D is correct: Azure Policy is the correct governance tool for enforcing organizational rules over Azure resource configurations. Think of this like a SACCO bylaw that automatically rejects any withdrawal above KES 100,000 without a committee signature, preventing staff from accidentally or deliberately bypassing safety rules. Exact Azure term to remember: Azure Policy.",
+        "explanation_word_count": 56
+      }
+    ],
+    "summary": "Azure Policy enforces organizational governance rules over resource configurations and prevents or remediates configuration drift\u2014provider certifications do not do this automatically.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Azure Policy",
+      "analogy": "Think of this like a SACCO bylaw that automatically rejects any withdrawal above KES 100,000 without a committee signature, preventing staff from accidentally or deliberately bypassing safety rules.",
+      "key_takeaway": "Azure Policy audits, enforces, and prevents non-compliant resource configurations across your subscriptions."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "cloud-concepts-mod2",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/5-manageability-cloud",
+    "difficulty": 1,
+    "question": "A backend engineer at a Nairobi ISP wants to deploy identical Azure infrastructure for three customer environments without clicking through the portal each time. Which Azure management capability is most directly suited to this goal?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Monitor, which tracks resource health and can alert when a resource becomes unhealthy.",
+        "is_correct": false,
+        "rationale": "Azure Monitor observes and alerts on resource health; it is a monitoring tool. It does not deploy or configure resources, so it does not address the goal of consistent, repeatable deployment.",
+        "explanation": "Not quite: Option A is incorrect because Azure Monitor observes and alerts on resource health; it is a monitoring tool. Think of this like an architect's digital blueprint\u2014sending the blueprint to a modern pre-fabrication factory produces identical houses with exact measurements every single time. Exact Azure term to remember: Infrastructure as Code (IaC).",
+        "explanation_word_count": 53
+      },
+      {
+        "id": "B",
+        "text": "Azure Autoscale, which automatically adjusts the number of resource instances based on demand.",
+        "is_correct": false,
+        "rationale": "Autoscale adjusts capacity in response to load metrics. It does not provision new, identical environments; it scales existing resources up or down.",
+        "explanation": "Not quite: Option B is incorrect because autoscale adjusts capacity in response to load metrics. Think of this like an architect's digital blueprint\u2014sending the blueprint to a modern pre-fabrication factory produces identical houses with exact measurements every single time. Exact Azure term to remember: Infrastructure as Code (IaC).",
+        "explanation_word_count": 48
+      },
+      {
+        "id": "C",
+        "text": "Infrastructure as code using ARM or Bicep templates, which define the environment declaratively and can be deployed repeatedly.",
+        "is_correct": true,
+        "rationale": "Infrastructure as code lets engineers define resources in files and deploy them consistently across multiple environments without manual portal steps. This is the manageability capability designed for repeatable, standardized deployments.",
+        "explanation": "Spot on! Option C is correct: Infrastructure as code lets engineers define resources in files and deploy them consistently across multiple environments without manual portal steps. Think of this like an architect's digital blueprint\u2014sending the blueprint to a modern pre-fabrication factory produces identical houses with exact measurements every single time. Exact Azure term to remember: Infrastructure as Code (IaC).",
+        "explanation_word_count": 59
+      },
+      {
+        "id": "D",
+        "text": "The Azure portal, which provides a graphical interface for creating resources one at a time.",
+        "is_correct": false,
+        "rationale": "The portal is a management interface, but it requires manual steps each time. It does not provide the repeatability or automation that the engineer needs across three environments. The portal is one interface option, not the capability that solves the repeatability problem.",
+        "explanation": "Not quite: Option D is incorrect because the portal is a management interface, but it requires manual steps each time. Think of this like an architect's digital blueprint\u2014sending the blueprint to a modern pre-fabrication factory produces identical houses with exact measurements every single time. Exact Azure term to remember: Infrastructure as Code (IaC).",
+        "explanation_word_count": 53
+      }
+    ],
+    "summary": "Infrastructure as code (ARM/Bicep templates) enables repeatable, consistent resource deployment; the portal, CLI, and APIs are management interfaces\u2014not themselves the automation capability.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Infrastructure as Code (IaC)",
+      "analogy": "Think of this like an architect's digital blueprint\u2014sending the blueprint to a modern pre-fabrication factory produces identical houses with exact measurements every single time.",
+      "key_takeaway": "ARM templates and Bicep define infrastructure declaratively in version-controlled files, enabling repeatable, automated environment deployments."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "cloud-concepts-mod2",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/5a-describe-sustainability-cloud",
+    "difficulty": 3,
+    "question": "A Kenyan logistics enterprise migrates its legacy fleet-tracking workloads to Azure Virtual Machines to support corporate environmental sustainability goals. Under Microsoft's shared responsibility model for sustainability, which aspect of environmental impact is the customer's direct responsibility?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Sourcing renewable electricity contracts and power purchase agreements for Azure regional datacenters.",
+        "is_correct": false,
+        "rationale": "Power sourcing, renewable energy contracts, and datacenter utility agreements are physical infrastructure concerns managed exclusively by Microsoft as the cloud provider.",
+        "explanation": "Not quite: Option A is incorrect because power sourcing, renewable energy contracts, and datacenter utility agreements are physical infrastructure concerns managed exclusively by Microsoft as the cloud provider. Think of this like Kenya Power operating green geothermal power plants, while you are responsible for turning off factory lights and heavy machines when workers leave. Exact Azure term to remember: Shared Responsibility for Sustainability.",
+        "explanation_word_count": 63
+      },
+      {
+        "id": "B",
+        "text": "Designing, rightsizing, and scheduling cloud workloads to avoid running idle, overprovisioned, or unnecessary compute resources.",
+        "is_correct": true,
+        "rationale": "Under the shared model for sustainability, Microsoft is responsible for sustainability OF the cloud (datacenter efficiency, green power, server recycling), while the customer is responsible for sustainability IN the cloud (optimizing application architecture, rightsizing resources, and turning off idle instances).",
+        "explanation": "Spot on! Option B is correct: Under the shared model for sustainability, Microsoft is responsible for sustainability OF the cloud (datacenter efficiency, green power, server recycling), while the customer is responsible for sustainability IN the cloud (optimizing application architecture, rightsizing resources, and turning off idle instances). Think of this like Kenya Power operating green geothermal power plants, while you are responsible for turning off factory lights and heavy machines when workers leave. Exact Azure term to remember: Shared Responsibility for Sustainability.",
+        "explanation_word_count": 81
+      },
+      {
+        "id": "C",
+        "text": "Managing physical server decommissioning and responsible electronic waste recycling inside Azure facilities.",
+        "is_correct": false,
+        "rationale": "Physical server lifecycle management, e-waste handling, and hardware recycling inside Microsoft datacenters are entirely the provider's responsibility.",
+        "explanation": "Not quite: Option C is incorrect because physical server lifecycle management, e-waste handling, and hardware recycling inside Microsoft datacenters are entirely the provider's responsibility. Think of this like Kenya Power operating green geothermal power plants, while you are responsible for turning off factory lights and heavy machines when workers leave. Exact Azure term to remember: Shared Responsibility for Sustainability.",
+        "explanation_word_count": 59
+      },
+      {
+        "id": "D",
+        "text": "Upgrading cooling systems and server room airflow mechanics in the hosting cloud region.",
+        "is_correct": false,
+        "rationale": "Datacenter mechanical systems, airflow engineering, and cooling equipment are physical facility operations managed solely by Microsoft.",
+        "explanation": "Not quite: Option D is incorrect because datacenter mechanical systems, airflow engineering, and cooling equipment are physical facility operations managed solely by Microsoft. Think of this like Kenya Power operating green geothermal power plants, while you are responsible for turning off factory lights and heavy machines when workers leave. Exact Azure term to remember: Shared Responsibility for Sustainability.",
+        "explanation_word_count": 58
+      }
+    ],
+    "summary": "Microsoft manages sustainability OF the cloud (datacenters, power, cooling); customers manage sustainability IN the cloud (workload sizing, architecture, and reducing idle compute).",
+    "needs_human_check": false,
+    "check_note": "Resolved during P2c validation: updated to test shared responsibility model for sustainability with clear, defensible options.",
+    "explain_simply": {
+      "azure_term": "Shared Responsibility for Sustainability",
+      "analogy": "Think of this like Kenya Power operating green geothermal power plants, while you are responsible for turning off factory lights and heavy machines when workers leave.",
+      "key_takeaway": "Microsoft manages sustainability OF the cloud (datacenters, power, cooling); customers manage sustainability IN the cloud (workload sizing and eliminating idle compute)."
+    },
+    "reviewed_by_human": true
+  }
+]

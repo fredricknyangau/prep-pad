@@ -1,0 +1,198 @@
+[
+  {
+    "topic_id": "arch-mod4",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-azure-storage-services/4-describe-azure-storage-services",
+    "difficulty": 1,
+    "question": "A Nairobi SACCO wants to store thousands of scanned member-application PDFs in Azure so that its web portal can retrieve them on demand. Which Azure storage service is the best fit for this unstructured object data?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Disks, because they provide high-performance block storage for data-heavy workloads.",
+        "is_correct": false,
+        "rationale": "Azure Disks are block-level storage volumes designed to be attached to Azure Virtual Machines as persistent disks. They are not accessible as an object store for application retrieval of individual files, and they are not suited to storing a large collection of unstructured documents.",
+        "explanation": "Not quite: Option A is incorrect because Azure Disks are block-level storage volumes designed to be attached to Azure Virtual Machines as persistent disks. Think of this like a massive digital storage facility where you can store millions of document scans, photos, and video files with a unique barcode on each file for instant retrieval. Exact Azure term to remember: Azure Blob Storage.",
+        "explanation_word_count": 63
+      },
+      {
+        "id": "B",
+        "text": "Azure Queue Storage, because it can hold many items and processes them in order.",
+        "is_correct": false,
+        "rationale": "Queue Storage holds messages for asynchronous communication between application components, not persistent document storage. It is designed for short-lived messages, not for storing and retrieving large binary objects on demand.",
+        "explanation": "Not quite: Option B is incorrect because queue Storage holds messages for asynchronous communication between application components, not persistent document storage. Think of this like a massive digital storage facility where you can store millions of document scans, photos, and video files with a unique barcode on each file for instant retrieval. Exact Azure term to remember: Azure Blob Storage.",
+        "explanation_word_count": 60
+      },
+      {
+        "id": "C",
+        "text": "Azure Blob Storage, because it is designed for storing and retrieving large unstructured objects such as documents, images, and logs.",
+        "is_correct": true,
+        "rationale": "Blob Storage is Azure's object storage service, purpose-built for unstructured data such as scanned documents, images, videos, and log files. The web portal can retrieve individual blobs via URLs or the SDK, making this the correct match for the SACCO's requirement.",
+        "explanation": "Spot on! Option C is correct: Blob Storage is Azure's object storage service, purpose-built for unstructured data such as scanned documents, images, videos, and log files. Think of this like a massive digital storage facility where you can store millions of document scans, photos, and video files with a unique barcode on each file for instant retrieval. Exact Azure term to remember: Azure Blob Storage.",
+        "explanation_word_count": 65
+      },
+      {
+        "id": "D",
+        "text": "Azure Files, because it provides a shared file location where the SACCO can store and access documents.",
+        "is_correct": false,
+        "rationale": "Azure Files provides managed file shares accessible via SMB or NFS protocols, suited to applications that need a traditional shared file system. For an object store accessed via a web portal using HTTP/SDK calls, Blob Storage is the more appropriate service.",
+        "explanation": "Not quite: Option D is incorrect because Azure Files provides managed file shares accessible via SMB or NFS protocols, suited to applications that need a traditional shared file system. Think of this like a massive digital storage facility where you can store millions of document scans, photos, and video files with a unique barcode on each file for instant retrieval. Exact Azure term to remember: Azure Blob Storage.",
+        "explanation_word_count": 68
+      }
+    ],
+    "summary": "Blob Storage is for unstructured objects (images, documents, logs) accessed via HTTP or SDK; Azure Files is for shared file systems; Disks are VM block volumes; Queues are for messages.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Azure Blob Storage",
+      "analogy": "Think of this like a massive digital storage facility where you can store millions of document scans, photos, and video files with a unique barcode on each file for instant retrieval.",
+      "key_takeaway": "Blob Storage is an object storage solution designed for massive volumes of unstructured data like images, documents, and log files."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "arch-mod4",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-azure-storage-services/3-redundancy",
+    "difficulty": 2,
+    "question": "A Kenyan fintech stores daily transaction records in Azure Storage. Its recovery plan requires that data survive an outage that takes down an entire Azure availability zone in its primary region, but the team does not yet need copies in a second region. Which Azure Storage redundancy option fits this requirement?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Locally redundant storage (LRS), which keeps multiple copies within a single datacenter in the primary region.",
+        "is_correct": false,
+        "rationale": "LRS stores copies within one datacenter. A zone-level outage can affect an entire datacenter, so LRS does not satisfy the requirement to survive an availability-zone failure.",
+        "explanation": "Not quite: Option A is incorrect because LRS stores copies within one datacenter. Think of this like keeping backup copies of vital SACCO deed records in three separate strongrooms across Nairobi so that a localized fire in one building doesn't wipe out the deeds. Exact Azure term to remember: Zone-Redundant Storage (ZRS).",
+        "explanation_word_count": 52
+      },
+      {
+        "id": "B",
+        "text": "Geo-redundant storage (GRS), which replicates data to a secondary region for cross-region disaster recovery.",
+        "is_correct": false,
+        "rationale": "GRS adds cross-region replication, which goes beyond what the team currently needs. While it would survive a zone failure, the team explicitly does not yet require copies in a second region, so GRS is over-specified for the stated requirement.",
+        "explanation": "Not quite: Option B is incorrect because GRS adds cross-region replication, which goes beyond what the team currently needs. Think of this like keeping backup copies of vital SACCO deed records in three separate strongrooms across Nairobi so that a localized fire in one building doesn't wipe out the deeds. Exact Azure term to remember: Zone-Redundant Storage (ZRS).",
+        "explanation_word_count": 58
+      },
+      {
+        "id": "C",
+        "text": "Zone-redundant storage (ZRS), which replicates data across supported availability zones within the primary region.",
+        "is_correct": true,
+        "rationale": "ZRS places copies across multiple availability zones in a supported region, so a single zone outage does not affect data availability. It meets the requirement exactly: zone-level resilience without requiring a second region.",
+        "explanation": "Spot on! Option C is correct: ZRS places copies across multiple availability zones in a supported region, so a single zone outage does not affect data availability. Think of this like keeping backup copies of vital SACCO deed records in three separate strongrooms across Nairobi so that a localized fire in one building doesn't wipe out the deeds. Exact Azure term to remember: Zone-Redundant Storage (ZRS).",
+        "explanation_word_count": 66
+      },
+      {
+        "id": "D",
+        "text": "Geo-zone-redundant storage (GZRS), because only cross-region replication can protect against a zone failure.",
+        "is_correct": false,
+        "rationale": "Cross-region replication is not required to survive a zone failure; ZRS is sufficient for that. GZRS combines zone and geo redundancy, which is more than the team needs at this stage. Also, it is not true that only cross-region replication protects against zone failures.",
+        "explanation": "Not quite: Option D is incorrect because cross-region replication is not required to survive a zone failure; ZRS is sufficient for that. Think of this like keeping backup copies of vital SACCO deed records in three separate strongrooms across Nairobi so that a localized fire in one building doesn't wipe out the deeds. Exact Azure term to remember: Zone-Redundant Storage (ZRS).",
+        "explanation_word_count": 61
+      }
+    ],
+    "summary": "ZRS replicates across availability zones within one region; LRS stays in one datacenter; GRS/GZRS add cross-region replication\u2014choose by the failure scope you need to withstand.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Zone-Redundant Storage (ZRS)",
+      "analogy": "Think of this like keeping backup copies of vital SACCO deed records in three separate strongrooms across Nairobi so that a localized fire in one building doesn't wipe out the deeds.",
+      "key_takeaway": "ZRS synchronously replicates data across three separate availability zones within the primary region to survive zone-level failures."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "arch-mod4",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-azure-storage-services/3-redundancy",
+    "difficulty": 2,
+    "question": "A Kenyan bank's architect says: \"We enabled geo-redundant storage for our compliance archive, so if our primary region fails, our data will automatically fail over to the secondary region with zero data loss.\" Which part of this statement is incorrect?",
+    "options": [
+      {
+        "id": "A",
+        "text": "GRS does not replicate data to a secondary region at all; it only stores copies within the primary datacenter.",
+        "is_correct": false,
+        "rationale": "GRS does replicate data to a secondary region. The statement is incorrect in a different way: it is the claim about zero data loss and automatic failover, not the claim about secondary-region replication.",
+        "explanation": "Not quite: Option A is incorrect because GRS does replicate data to a secondary region. Think of this like dispatching bank deposit carbon-copy slips from Kisumu to Nairobi on the evening bus\u2014there is a slight travel delay, so any slip written seconds before an accident might not have reached Nairobi yet. Exact Azure term to remember: Geo-Redundant Storage (GRS).",
+        "explanation_word_count": 59
+      },
+      {
+        "id": "B",
+        "text": "Geo-replication is asynchronous and can leave a recovery-point gap; failover to the secondary region is also not automatically guaranteed for every workload.",
+        "is_correct": true,
+        "rationale": "GRS uses asynchronous replication, meaning there can be a gap between the last write to the primary and the latest copy in the secondary. This creates a recovery-point objective greater than zero. Additionally, failover is not automatic for every workload by default; it requires explicit action or configuration depending on the service.",
+        "explanation": "Spot on! Option B is correct: GRS uses asynchronous replication, meaning there can be a gap between the last write to the primary and the latest copy in the secondary. Think of this like dispatching bank deposit carbon-copy slips from Kisumu to Nairobi on the evening bus\u2014there is a slight travel delay, so any slip written seconds before an accident might not have reached Nairobi yet. Exact Azure term to remember: Geo-Redundant Storage (GRS).",
+        "explanation_word_count": 74
+      },
+      {
+        "id": "C",
+        "text": "GRS is identical to LRS; neither option replicates data outside the local datacenter.",
+        "is_correct": false,
+        "rationale": "GRS and LRS are distinct options. LRS stores copies within one datacenter; GRS adds replication to a secondary region. They are not the same.",
+        "explanation": "Not quite: Option C is incorrect because GRS and LRS are distinct options. Think of this like dispatching bank deposit carbon-copy slips from Kisumu to Nairobi on the evening bus\u2014there is a slight travel delay, so any slip written seconds before an accident might not have reached Nairobi yet. Exact Azure term to remember: Geo-Redundant Storage (GRS).",
+        "explanation_word_count": 57
+      },
+      {
+        "id": "D",
+        "text": "The secondary region is always in the same availability zone as the primary, making it useless for regional outages.",
+        "is_correct": false,
+        "rationale": "GRS replicates to a geographically separate secondary region, not to an availability zone within the same region. Availability zones and secondary regions are different Azure resilience concepts.",
+        "explanation": "Not quite: Option D is incorrect because GRS replicates to a geographically separate secondary region, not to an availability zone within the same region. Think of this like dispatching bank deposit carbon-copy slips from Kisumu to Nairobi on the evening bus\u2014there is a slight travel delay, so any slip written seconds before an accident might not have reached Nairobi yet. Exact Azure term to remember: Geo-Redundant Storage (GRS).",
+        "explanation_word_count": 68
+      }
+    ],
+    "summary": "Geo-replication is asynchronous\u2014there can be a recovery-point gap, and failover is not automatic for every workload. Zero data loss and instant automatic failover are not guaranteed.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Geo-Redundant Storage (GRS)",
+      "analogy": "Think of this like dispatching bank deposit carbon-copy slips from Kisumu to Nairobi on the evening bus\u2014there is a slight travel delay, so any slip written seconds before an accident might not have reached Nairobi yet.",
+      "key_takeaway": "GRS replicates data asynchronously to a secondary region hundreds of miles away; because replication is asynchronous, recovery point objective (RPO) is greater than zero."
+    },
+    "reviewed_by_human": true
+  },
+  {
+    "topic_id": "arch-mod4",
+    "skill_ref": "https://learn.microsoft.com/en-us/training/modules/describe-azure-storage-services/7-identify-azure-file-movement-options",
+    "difficulty": 3,
+    "question": "A Nairobi accounting firm has three separate data tasks: (1) a developer wants to script recurring uploads of daily CSV exports from a local server to Azure Blob Storage, (2) an administrator needs a graphical tool to browse and manage files already in a storage account, and (3) a branch office needs its Windows file server kept continuously synchronized with an Azure Files share. Which tool sequence (in order) best matches these three tasks?",
+    "options": [
+      {
+        "id": "A",
+        "text": "AzCopy, Azure Storage Explorer, Azure File Sync \u2014 because AzCopy handles scripted copies, Storage Explorer provides the GUI, and File Sync maintains ongoing hybrid synchronization.",
+        "is_correct": true,
+        "rationale": "Task 1 (scripted, recurring CLI uploads) \u2192 AzCopy, the command-line copy utility suited to automation. Task 2 (graphical browsing and management) \u2192 Azure Storage Explorer, the GUI application. Task 3 (continuous Windows Server to Azure Files synchronization) \u2192 Azure File Sync, the hybrid sync service. Each tool matches its task's mode of operation.",
+        "explanation": "Spot on! Option A is correct: Task 1 (scripted, recurring CLI uploads) \u2192 AzCopy, the command-line copy utility suited to automation. Think of using a motorized cargo conveyor for scheduled batch loading (AzCopy), a glass showcase display for manual inventory checks (Storage Explorer), and an automated courier continuously synchronizing stock between two warehouses (Azure File Sync). Exact Azure term to remember: Azure Storage Movement Tools.",
+        "explanation_word_count": 65
+      },
+      {
+        "id": "B",
+        "text": "Azure File Sync, AzCopy, Azure Storage Explorer \u2014 because File Sync handles uploads, AzCopy provides the GUI, and Storage Explorer manages synchronization.",
+        "is_correct": false,
+        "rationale": "This reverses the tools' roles. Azure File Sync is a hybrid synchronization service, not a one-off upload tool. AzCopy is a CLI utility, not a graphical browser. Azure Storage Explorer is the GUI application, not a sync service.",
+        "explanation": "Not quite: Option B is incorrect because this reverses the tools' roles. Think of using a motorized cargo conveyor for scheduled batch loading (AzCopy), a glass showcase display for manual inventory checks (Storage Explorer), and an automated courier continuously synchronizing stock between two warehouses (Azure File Sync). Exact Azure term to remember: Azure Storage Movement Tools.",
+        "explanation_word_count": 56
+      },
+      {
+        "id": "C",
+        "text": "Azure Storage Explorer, Azure File Sync, AzCopy \u2014 because the Explorer can script uploads, File Sync provides a GUI, and AzCopy synchronizes file servers.",
+        "is_correct": false,
+        "rationale": "Azure Storage Explorer is a graphical management tool, not a scripting utility. Azure File Sync is a hybrid synchronization service, not a GUI browser. AzCopy is a CLI copy tool, not a continuous two-way sync service for Windows file servers.",
+        "explanation": "Not quite: Option C is incorrect because Azure Storage Explorer is a graphical management tool, not a scripting utility. Think of using a motorized cargo conveyor for scheduled batch loading (AzCopy), a glass showcase display for manual inventory checks (Storage Explorer), and an automated courier continuously synchronizing stock between two warehouses (Azure File Sync). Exact Azure term to remember: Azure Storage Movement Tools.",
+        "explanation_word_count": 63
+      },
+      {
+        "id": "D",
+        "text": "Azure File Sync, Azure Storage Explorer, AzCopy \u2014 because File Sync automates batch transfers, Storage Explorer browses files, and AzCopy continuously synchronizes Windows servers.",
+        "is_correct": false,
+        "rationale": "This option inverts the command-line and synchronization tools. AzCopy is a one-way CLI batch copy utility, not a continuous background synchronization service for file servers. Azure File Sync is required for ongoing Windows Server caching and sync.",
+        "explanation": "Not quite: Option D is incorrect because this option inverts the command-line and synchronization tools. Think of using a motorized cargo conveyor for scheduled batch loading (AzCopy), a glass showcase display for manual inventory checks (Storage Explorer), and an automated courier continuously synchronizing stock between two warehouses (Azure File Sync). Exact Azure term to remember: Azure Storage Movement Tools.",
+        "explanation_word_count": 59
+      }
+    ],
+    "summary": "AzCopy scripts copies; Azure Storage Explorer provides a GUI for storage management; Azure File Sync maintains ongoing synchronization between Windows Server and Azure Files\u2014they are not interchangeable.",
+    "needs_human_check": false,
+    "check_note": "",
+    "explain_simply": {
+      "azure_term": "Azure Storage Movement Tools",
+      "analogy": "Think of using a motorized cargo conveyor for scheduled batch loading (AzCopy), a glass showcase display for manual inventory checks (Storage Explorer), and an automated courier continuously synchronizing stock between two warehouses (Azure File Sync).",
+      "key_takeaway": "AzCopy handles high-performance CLI scripted transfers; Storage Explorer provides a GUI for browsing; Azure File Sync keeps on-prem Windows Servers continuously synchronized with Azure Files."
+    },
+    "reviewed_by_human": true
+  }
+]

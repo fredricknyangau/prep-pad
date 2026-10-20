@@ -1,0 +1,39 @@
+[
+  {
+    "index": 0,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "",
+    "verify_on_microsoft_learn": ""
+  },
+  {
+    "index": 1,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "",
+    "verify_on_microsoft_learn": ""
+  },
+  {
+    "index": 2,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "",
+    "verify_on_microsoft_learn": ""
+  },
+  {
+    "index": 3,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "",
+    "verify_on_microsoft_learn": ""
+  },
+  {
+    "index": 4,
+    "verdict": "PASS",
+    "issues": [
+      "Resolved: Stem previously stated 'Which two statements correctly describe...', which erroneously suggested a multi-select question for a single-answer item."
+    ],
+    "suggested_fix": "Applied: Rephrased stem to 'Which statement accurately describes what an Azure resource group is and how its location behaves?' to match single-answer format.",
+    "verify_on_microsoft_learn": "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure"
+  }
+]

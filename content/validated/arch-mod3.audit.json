@@ -1,0 +1,39 @@
+[
+  {
+    "index": 0,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "",
+    "verify_on_microsoft_learn": ""
+  },
+  {
+    "index": 1,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "",
+    "verify_on_microsoft_learn": ""
+  },
+  {
+    "index": 2,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "",
+    "verify_on_microsoft_learn": ""
+  },
+  {
+    "index": 3,
+    "verdict": "PASS",
+    "issues": [],
+    "suggested_fix": "",
+    "verify_on_microsoft_learn": ""
+  },
+  {
+    "index": 4,
+    "verdict": "PASS",
+    "issues": [
+      "Resolved: Stem previously asked 'Which two parts of this statement are incorrect?', misleading learners into looking for multiple selections on a single-answer question."
+    ],
+    "suggested_fix": "Applied: Rephrased to 'What is the primary flaw in the lead's understanding?' to conform strictly to single-answer format.",
+    "verify_on_microsoft_learn": "https://learn.microsoft.com/en-us/training/modules/describe-azure-networking-services/2-virtual-network"
+  }
+]
