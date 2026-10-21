@@ -40,32 +40,110 @@ export interface Question {
     key_takeaway: string;
   };
   reviewed_by_human: boolean;
+  lesson_id?: string | null;
+}
+
+export interface KeyTerm {
+  term: string;
+  definition: string;
+}
+
+export interface CheckYourselfQuestion {
+  q: string;
+  a: string;
+}
+
+export interface Lesson {
+  id: string;
+  slug: string;
+  topic_id: string;
+  position: number;
+  title: string;
+  summary: string;
+  key_terms: KeyTerm[];
+  real_example: string;
+  exam_lens: string;
+  common_distractor: string | null;
+  memory_hook: string;
+  check_yourself: CheckYourselfQuestion[];
+  source_url: string;
+  est_read_minutes: number;
+  needs_verification: boolean;
+  verify_note: string | null;
+  reviewed_by_human: boolean;
+  created_at?: string;
+}
+
+export type LessonProgressStatus = 'viewed' | 'completed';
+
+export interface LessonProgress {
+  session_id: string;
+  lesson_id: string;
+  status: LessonProgressStatus;
+  first_viewed_at: string;
+  updated_at: string;
+  completed_at: string | null;
 }
 
 export interface ReadinessRow {
-  topic_id: string;
-  slug: string;
-  title: string;
-  parent_id: string | null;
-  total_attempts: number;
-  correct_attempts: number;
+  session_id?: string;
+  topic_id: string | null;
+  topic_title?: string;
+  domain_id?: string | null;
+  attempt_count: number;
+  correct_count: number;
   accuracy: number;
-  band: 'Not yet' | 'Getting there' | 'Likely ready' | 'Not enough data yet';
+  band: string;
 }
+
+export type QuizMode = 'topic' | 'mixed' | 'weak' | 'missed';
+export type QuizStatus = 'in_progress' | 'completed' | 'abandoned';
+
+export interface QuizRun {
+  id: string;
+  session_id: string;
+  mode: QuizMode;
+  topic_slug: string | null;
+  question_ids: string[];
+  current_index: number;
+  status: QuizStatus;
+  started_at: string;
+  updated_at: string;
+}
+
+export interface AttemptRecord {
+  id?: string;
+  run_id?: string | null;
+  session_id: string;
+  question_id: string;
+  topic_id: string;
+  chosen_id: string;
+  is_correct: boolean;
+  answered_at?: string;
+  created_at?: string;
+}
+
+let inMemorySessionId: string | null = null;
 
 /**
  * Retrieves or creates a client session ID persisted in localStorage.
- * Since we access Supabase directly via the Publishable API key without user logins,
- * this persistent UUID isolates the candidate's quiz attempts and readiness scores.
+ * Handles storage-blocked environments gracefully via in-memory fallback.
  */
 export function getOrCreateSessionId(): string {
   const STORAGE_KEY = 'az900_session_id';
-  let id = localStorage.getItem(STORAGE_KEY) || localStorage.getItem('az900_anon_session_id');
-  if (!id) {
-    id = crypto.randomUUID();
+  try {
+    let id = localStorage.getItem(STORAGE_KEY) || localStorage.getItem('az900_anon_session_id');
+    if (!id) {
+      id = crypto.randomUUID();
+    }
+    localStorage.setItem(STORAGE_KEY, id);
+    return id;
+  } catch (err) {
+    if (!inMemorySessionId) {
+      inMemorySessionId = crypto.randomUUID();
+    }
+    return inMemorySessionId;
   }
-  localStorage.setItem(STORAGE_KEY, id);
-  return id;
 }
 
 /**

@@ -129,6 +129,52 @@ This project is built 100% on free tiers with zero credit card requirements:
 
 ---
 
+## Learn, Check, Practice, Readiness
+
+The application integrates study, verification, practice, and readiness analysis into a closed feedback loop:
+
+```
+[ 1. Learn Mode ] ─────────► [ 2. Check Yourself ] ─────────► [ 3. Practice Quiz ]
+  Study revision units         Immediate self-check            10-question scenario runs
+  with Nairobi analogies       (2 Q&A cards per unit)          with full rationales
+         ▲                                                               │
+         │                                                               ▼
+[ Revisit Lessons ] ◄─────── [ 5. Results Breakdown ] ◄─────── [ 4. Server Readiness ]
+  Direct links from missed    Group missed items under          Rolling 10-attempt
+  questions back to units     "Lessons to revisit"              readiness bands
+```
+
+1. **Learn Mode:** Candidates study bite-sized revision units derived from Microsoft Learn source notes for Paths 1, 2, and 3. Each lesson provides a summary, key terms definition list, real-world East African startup analogies, exam lens objectives, distractor warnings, and memory hooks.
+2. **Check Yourself:** Every lesson ends with two self-test cards with accessible answer disclosure toggles (`aria-expanded`) to test recall immediately after reading. Answers are not persisted.
+3. **Practice Quiz:** Candidates take targeted module quizzes or mixed practice runs. In-quiz feedback provides instant explanations and links directly back to the relevant revision unit (**"Review the lesson: <title>"**). Opening a lesson preserves the in-progress quiz session so returning resumes at the exact question without losing state.
+4. **Readiness Dashboard:** Evaluates a rolling 10-attempt accuracy window per module directly in PostgreSQL. The dashboard detects the candidate's weakest module and recommends: **"Study this first"** (linking directly to the first uncompleted lesson) followed by **"Quiz it"**.
+5. **Results & Revisit:** After completing a quiz run, missed questions are automatically aggregated under **"Lessons to revisit"** with one-tap navigation to reinforce those concepts.
+6. **Offline Resilience & Sync:** Opened module lessons are cached locally in `localStorage` with a stale-while-revalidate strategy keyed by content version (`v1_2026_01_14`). Quiz answers and lesson progress updates are queued offline and idempotently synced via Supabase RPCs upon reconnection.
+
+### Content Pipeline & Strict Review Gate
+
+Educational content follows a deterministic pipeline before reaching candidates:
+
+```
+content/source-notes/ (Paths 1, 2, 3)
+                   │
+                   ▼  scripts/parse-notes.mjs
+content/lessons/path1..3.json + content/lessons/_report.md
+                   │
+                   ▼  scripts/build-lessons-seed.mjs
+supabase/seed/lessons_path1..3.sql
+                   │
+                   ▼  Human Review (reviewed_by_human = true)
+Production Database (PostgreSQL RLS Gate)
+```
+
+- **Source Notes (`content/source-notes/`):** Raw revision notes covering Path 1 (Cloud Concepts), Path 2 (Architecture and Services), and Path 3 (Management and Governance).
+- **Parser (`scripts/parse-notes.mjs`):** Plain Node.js script that splits exam lenses, extracts key terms, pairs 2-question check-yourself items with answer keys, sanitizes personal references into generic Nairobi startup scenarios, and flags temporal exam baseline risks (`needs_verification`).
+- **Seed Generator (`scripts/build-lessons-seed.mjs`):** Generates idempotent SQL scripts using `$lsn$` dollar quoting. Critically, seed updates never overwrite `reviewed_by_human`.
+- **Strict Content Gate:** Supabase Row-Level Security (RLS) on the `lessons` table serves only rows where `reviewed_by_human = true`. The parser and seed generator default this flag to `false`; only a human reviewer can verify and promote lessons to production.
+
+---
+
 ## Limitations
 
 Limitations: This is an unofficial conceptual readiness coach containing 59 curated questions across AZ-900 Paths 1–3, not an exhaustive brain dump or an official Microsoft certification exam engine.

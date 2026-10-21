@@ -43,4 +43,5 @@ Thumbs.db
 *.swo
 .vscode/*
 !.vscode/extensions.json
-.idea/
+tests/responsive/__screens__/
+test-results/
